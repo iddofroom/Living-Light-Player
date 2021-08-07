@@ -14,7 +14,7 @@ For Each 170 Led we adding a E131 sACN packet.
 2) use the Toolbar of the shpes to add Led Strings
 3) For each shepe chose the number of Nodes/String - as the number of LED in the string
 4) Chose the start Channel - from the univers number , or from the end of the previse string
-5) in the conrtoller connaction TAB - chose DMX protocol - PORT 1 , and the DMX channle according to the univers number
+5) in the controller connection TAB - chose DMX protocol - PORT 1 , and the DMX channle according to the univers number
 
 # ll-teensy-player
 Teensy library that play led frames from SD card. Library was written and tested for teensy 3.5, with OctoWS2811 and builtin SD slot on the board.
