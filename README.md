@@ -1,4 +1,4 @@
-# Living-Light-Player
+# Living-Light-Player - Devolap By Amir Blum , Oren Bigler , Guy Levitsky
 Use Xlight to run animation on Teensy
 
 **Xlight  Setup:**
