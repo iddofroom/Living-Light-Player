@@ -2,9 +2,9 @@
 #include "SdLedsPlayer.h"
 
 #define LEDS_PER_STRIP 11
-#define LEDS_FRAME_TIME 25
-#define FILE_TO_PLAY "out42"
-#define TOF_MEAS_INTERVAL 200
+#define LEDS_FRAME_TIME 26
+#define FILE_TO_PLAY "time"
+#define TOF_MEAS_INTERVAL 40
 #define KEYPIN 22
 #define DEBOUNCE_TIME 50
 #define RELAYPIN1 1
@@ -14,7 +14,7 @@
 #define OUTGPIO3 16 // TODO check what IOs are available
 
 int curr_file_i = 0;
-const char *files_iter_rr[] = {"out", "out"};
+const char *files_iter_rr[] = {"time", "time"};
 
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
@@ -26,12 +26,14 @@ const char *files_iter_rr[] = {"out", "out"};
 DMAMEM int display_memory[LEDS_PER_STRIP * 6]; 
 int drawing_memory[LEDS_PER_STRIP * 6];
 SdLedsPlayer sd_leds_player(LEDS_PER_STRIP, display_memory, drawing_memory);
-bool sd_leds_bool = false;
+unsigned long frame_timestamp;
 uint8_t brightness = 30; // range is 0 (off) to 255 (full brightness)
 
 Adafruit_VL53L0X lox = Adafruit_VL53L0X();
 int range = -1;
+int rangeAccum = -1;
 bool rangeActive = true;
+int rangeCnt = 0;
 
 int keyState = HIGH;
 int lastKeyState = HIGH;
@@ -40,53 +42,73 @@ unsigned long debounceDelay = DEBOUNCE_TIME;
 bool keyActive = true;
 int reading;
 
-unsigned long currFrameTime = 0, lastShowTime = 0, lastRangeTime = 0, procTime = 0;
+unsigned long currSongTime = 0, songStartTime = 0, lastRangeTime = 0, procTime = 0;
 
 void stateEncode (uint8_t state) {
   // Serial.println(state);
   switch (state) {
+    // Background index 0
     case 0:
       digitalWrite(OUTGPIO1, LOW);
       digitalWrite(OUTGPIO2, LOW);
       digitalWrite(OUTGPIO3, LOW);
+      // relays ON
+      digitalWrite(RELAYPIN1, HIGH); 
+      digitalWrite(RELAYPIN2, HIGH); 
       break;
 
+    // Background index 1
     case 1:
       digitalWrite(OUTGPIO1, HIGH);
       digitalWrite(OUTGPIO2, LOW);
       digitalWrite(OUTGPIO3, LOW);
+      // relays ON
+      digitalWrite(RELAYPIN1, HIGH); 
+      digitalWrite(RELAYPIN2, HIGH); 
       break;
 
+    // Background index 2?
     case 2:
       digitalWrite(OUTGPIO1, LOW);
       digitalWrite(OUTGPIO2, HIGH);
       digitalWrite(OUTGPIO3, LOW);
+      // relays ON
+      digitalWrite(RELAYPIN1, HIGH); 
+      digitalWrite(RELAYPIN2, HIGH); 
       break;
 
+    // range sensor triggered
     case 3:
       digitalWrite(OUTGPIO1, HIGH);
       digitalWrite(OUTGPIO2, HIGH);
       digitalWrite(OUTGPIO3, LOW);
+      // shut off relays
+      digitalWrite(RELAYPIN1, LOW); // shutting off RELAYS
+      digitalWrite(RELAYPIN2, LOW); // shutting off RELAYS
       break;
 
+    // key triggered
     case 4:
       digitalWrite(OUTGPIO1, LOW);
       digitalWrite(OUTGPIO2, LOW);
       digitalWrite(OUTGPIO3, HIGH);
+      // shutting off RELAYS
+      digitalWrite(RELAYPIN1, LOW); // shutting off RELAYS
+      digitalWrite(RELAYPIN2, LOW); // shutting off RELAYS
       break;
-
+    // unassigned state
     case 5:
       digitalWrite(OUTGPIO1, HIGH);
       digitalWrite(OUTGPIO2, LOW);
       digitalWrite(OUTGPIO3, HIGH);
       break;
-
+    // unassigned state
     case 6:
       digitalWrite(OUTGPIO1, LOW);
       digitalWrite(OUTGPIO2, HIGH);
       digitalWrite(OUTGPIO3, HIGH);
       break;
-
+    // unassigned state
     case 7:
       digitalWrite(OUTGPIO1, HIGH);
       digitalWrite(OUTGPIO2, HIGH);
@@ -128,9 +150,7 @@ void setup() {
 
   // Relay setup
   pinMode(RELAYPIN1, OUTPUT);
-  digitalWrite(RELAYPIN1, HIGH); // default state is on
   pinMode(RELAYPIN2, OUTPUT);
-  digitalWrite(RELAYPIN2, HIGH); // default state is on
   Serial.print("Relay pins set to: "); Serial.print(RELAYPIN1); Serial.print(" "); Serial.println(RELAYPIN2);
 
   // output GPIO setup
@@ -142,19 +162,33 @@ void setup() {
 }
 
 void loop() {
+
   // TOF sensor read when measurement data is available
-  if (lox.isRangeComplete() & rangeActive) {
+  if (lox.isRangeComplete()) {
     range = lox.readRangeResult();
-    // Serial.print(millis());Serial.print(" : Distance (mm): "); Serial.println(range);
-    if (range < 40) {
-      Serial.print("range sensor triggered at distance (mm): "); Serial.println(range);
-      digitalWrite(RELAYPIN1, LOW); // shutting off RELAYS
-      digitalWrite(RELAYPIN2, LOW); // shutting off RELAYS
-      sd_leds_player.load_file(FILE_TO_PLAY);
-      lastShowTime = millis();
-      rangeActive = false;
-      keyActive = false;
-      stateEncode(3);
+    // Serial.print(millis());Serial.print(" : Distance (mm): "); Serial.println(range); // WHY DOES IT NOT WORK WITHOUT THIS?????
+    rangeCnt++;
+    rangeAccum += range;
+    if (rangeCnt >= 3) { // number of measurements to average
+      range = rangeAccum / rangeCnt;
+      rangeAccum = 0;
+      rangeCnt = 0;
+      // Brightness by range
+      if (range > 220) { // starting from what range do we want to play with Brightness?
+        sd_leds_player.setBrightness(brightness); // default brightness, consider value
+      }
+      else if (range <= 200 && range > 40) {
+        sd_leds_player.setBrightness(brightness+200-range);
+      }
+      else if ((range < 40) && rangeActive) {
+        Serial.print("range sensor triggered at distance (mm): "); Serial.println(range);
+        sd_leds_player.load_file(FILE_TO_PLAY);
+        // sd_leds_player.setBrightness(255); // set brightness for song
+        rangeActive = false;
+        keyActive = false;
+        stateEncode(3);
+        frame_timestamp = sd_leds_player.load_next_frame();
+      }
     }
   }
 
@@ -169,16 +203,14 @@ void loop() {
   if ((millis() - lastDebounceTime) > debounceDelay) {
     if (reading != keyState) {
       keyState = reading;
-      // key switch turns off RELAYS
       if (keyState == HIGH) {
         Serial.println("key switch triggered! loading LEDS file");
         sd_leds_player.load_file(FILE_TO_PLAY);
         stateEncode(4);
-        lastShowTime = millis();
-        digitalWrite(RELAYPIN1, LOW);
-        digitalWrite(RELAYPIN2, LOW);
         rangeActive = false;
         keyActive = false;
+        songStartTime = millis();
+        frame_timestamp = sd_leds_player.load_next_frame();
       }
     }
   }
@@ -189,27 +221,18 @@ void loop() {
     sd_leds_player.load_file(files_iter_rr[curr_file_i]);
     stateEncode(curr_file_i+1);
     curr_file_i = (curr_file_i + 1) % (sizeof(files_iter_rr) / sizeof(files_iter_rr[0]));
-    lastShowTime = millis();
-    digitalWrite(RELAYPIN1, HIGH); // Turn RELAYS on when playing default file
-    digitalWrite(RELAYPIN2, HIGH); // Turn RELAYS on when playing default file
     rangeActive = true;
     keyActive = true;
+    songStartTime = millis();
+    frame_timestamp = sd_leds_player.load_next_frame();
   }
 
-  currFrameTime = millis() - lastShowTime;
-  if (currFrameTime >= (LEDS_FRAME_TIME-procTime)) {
-    procTime = 0;
-    // if (currFrameTime != LEDS_FRAME_TIME) {
-    //   Serial.println(currFrameTime);
+  currSongTime = millis() - songStartTime;
+  if (currSongTime >= frame_timestamp) {
+    // if ((currSongTime-frame_timestamp) != 0) {
+    //   Serial.println(currSongTime-frame_timestamp);
     // }
-    if (currFrameTime > LEDS_FRAME_TIME){
-      procTime = (currFrameTime)%LEDS_FRAME_TIME;
-    }
-    lastShowTime = millis();
-    sd_leds_bool = false;
-    sd_leds_bool = sd_leds_player.show_next_frame();
-    if (!sd_leds_bool) {
-      Serial.print("Show frame failed, flag is: ");Serial.println(sd_leds_bool);
-    }
+    sd_leds_player.show_next_frame();
+    frame_timestamp = sd_leds_player.load_next_frame();
   }
 }
