@@ -2,8 +2,9 @@ import socket
 import sacn
 import argparse
 import json
+from datetime import datetime
 
-version = "1.0.1"
+version = "1.0.3"
 
 def check_positive_int(value):
     ivalue = int(value)
@@ -71,7 +72,7 @@ with open(args.config_file) as json_file:
                 "pixel_in_string read from config on universe {} file is not in valid range."
                 "the value is {}, and after adding num_of_pixels which is {}, we receive {}, which is >= than "
                 "total number of pixels in string {}"
-                .format(uni, pixel_in_string, num_of_pixels, last_pixel_index, args.pixels_per_string))
+                    .format(uni, pixel_in_string, num_of_pixels, last_pixel_index, args.pixels_per_string))
 
         start_index = (string_id * args.pixels_per_string + pixel_in_string) * channels_per_pixel
 
@@ -91,6 +92,7 @@ recv_uni = set()
 total_frames = 0
 non_manged_uni = set()
 is_beginning = True
+empty_frames = 0
 
 while True:
     raw_data, _= sock.recvfrom(1144)  # 1144 because the longest possible packet
@@ -110,11 +112,20 @@ while True:
     arr_range = uni_to_range[current_uni]
     rgb_data[arr_range[0] : arr_range[0] + arr_range[1]] = bytearray(sacn_packet.dmxData[0 : arr_range[1]])
 
-    # don't recored empty bytearrays at beggining of recording.
+    # don't record empty byte arrays at beginning of file.
     if is_beginning and is_empty_bytearray(rgb_data):
+        empty_frames += 1
         continue
-    else:
+    elif is_beginning:
+        # The recording starts here
+        print("skipped {} empty frames, starting real capture".format(empty_frames))
         is_beginning = False
+        start_time = datetime.now()
+
+    # calculating the time delta to milliseconds
+    cur_time = datetime.now() - start_time
+    time_in_millisec = int(cur_time.total_seconds() * 1_000)
+    time_header = time_in_millisec.to_bytes(4, 'little')
 
     #try to find config errors (universe in config which is not reported on network)
     if current_uni in recv_uni:
@@ -126,7 +137,8 @@ while True:
     recv_uni.add(current_uni)
 
     if len(recv_uni) == len(uni_to_range):
-        f.write(rgb_data)
+        payload = time_header + rgb_data
+        f.write(payload)
         total_frames += 1
         if args.frames_to_capture and total_frames >= args.frames_to_capture:
             print("captured {} frames. that's it".format(args.frames_to_capture))
