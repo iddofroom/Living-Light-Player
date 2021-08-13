@@ -136,12 +136,13 @@ void loop() {
   if ((millis() - lastDebounceTime) > debounceDelay) {
     if (reading != state) {
       state = reading;
+      Serial.println(state);
       switch (state) {
         case 0:
-          playFile("sun.wav");  // filenames are always uppercase 8.3 format
+          playFile("under.wav");  // filenames are always uppercase 8.3 format
           break;
         case 1:
-          playFile("cave1.wav");
+          playFile("sun.wav");
           break;
         case 2:
           playFile("cave3.wav");
@@ -150,7 +151,7 @@ void loop() {
           // playFile("cave4.wav");
           break;
         default:
-          playFile("sun.wav");
+          playFile("under.wav");
       }
     }
   }

@@ -1,9 +1,8 @@
 #include "Adafruit_VL53L0X.h"
 #include "SdLedsPlayer.h"
 
-#define LEDS_PER_STRIP 11
-#define LEDS_FRAME_TIME 26
-#define FILE_TO_PLAY "time"
+#define LEDS_PER_STRIP 251
+#define FILE_TO_PLAY "under"
 #define TOF_MEAS_INTERVAL 40
 #define KEYPIN 22
 #define DEBOUNCE_TIME 50
@@ -14,7 +13,7 @@
 #define OUTGPIO3 16 // TODO check what IOs are available
 
 int curr_file_i = 0;
-const char *files_iter_rr[] = {"time", "time"};
+const char *files_iter_rr[] = {"under", "under"};
 
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
@@ -32,7 +31,7 @@ uint8_t brightness = 30; // range is 0 (off) to 255 (full brightness)
 Adafruit_VL53L0X lox = Adafruit_VL53L0X();
 int range = -1;
 int rangeAccum = -1;
-bool rangeActive = true;
+bool rangeActive = false; // temp change to disable range sensor activating song
 int rangeCnt = 0;
 
 int keyState = HIGH;
@@ -64,7 +63,7 @@ void stateEncode (uint8_t state) {
       digitalWrite(OUTGPIO3, LOW);
       // relays ON
       digitalWrite(RELAYPIN1, HIGH); 
-      digitalWrite(RELAYPIN2, HIGH); 
+      digitalWrite(RELAYPIN2, LOW); 
       break;
 
     // Background index 2?
@@ -73,7 +72,7 @@ void stateEncode (uint8_t state) {
       digitalWrite(OUTGPIO2, HIGH);
       digitalWrite(OUTGPIO3, LOW);
       // relays ON
-      digitalWrite(RELAYPIN1, HIGH); 
+      digitalWrite(RELAYPIN1, LOW); 
       digitalWrite(RELAYPIN2, HIGH); 
       break;
 
@@ -83,8 +82,8 @@ void stateEncode (uint8_t state) {
       digitalWrite(OUTGPIO2, HIGH);
       digitalWrite(OUTGPIO3, LOW);
       // shut off relays
-      digitalWrite(RELAYPIN1, LOW); // shutting off RELAYS
-      digitalWrite(RELAYPIN2, LOW); // shutting off RELAYS
+      digitalWrite(RELAYPIN1, HIGH); 
+      digitalWrite(RELAYPIN2, HIGH); 
       break;
 
     // key triggered
@@ -208,7 +207,7 @@ void loop() {
         sd_leds_player.load_file(FILE_TO_PLAY);
         stateEncode(4);
         rangeActive = false;
-        keyActive = false;
+        keyActive = true; // temp change for key to not disable more key presses
         songStartTime = millis();
         frame_timestamp = sd_leds_player.load_next_frame();
       }
@@ -221,7 +220,7 @@ void loop() {
     sd_leds_player.load_file(files_iter_rr[curr_file_i]);
     stateEncode(curr_file_i+1);
     curr_file_i = (curr_file_i + 1) % (sizeof(files_iter_rr) / sizeof(files_iter_rr[0]));
-    rangeActive = true;
+    rangeActive = false; // temp change for range sensor to not activate song
     keyActive = true;
     songStartTime = millis();
     frame_timestamp = sd_leds_player.load_next_frame();
