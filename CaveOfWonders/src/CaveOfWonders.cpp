@@ -8,9 +8,9 @@
 #define DEBOUNCE_TIME 50
 #define RELAYPIN1 1
 #define RELAYPIN2 23
-#define OUTGPIO1 0
-#define OUTGPIO2 17
-#define OUTGPIO3 16 // TODO check what IOs are available
+#define OUTGPIO1 30
+#define OUTGPIO2 31
+#define OUTGPIO3 32
 
 int curr_file_i = 0;
 const char *files_iter_rr[] = {"under", "under"};
