@@ -58,9 +58,10 @@ AudioControlSGTL5000     sgtl5000_1;
 //#define SDCARD_MOSI_PIN  11
 //#define SDCARD_SCK_PIN   13
 
-#define GPIO0 30
-#define GPIO1 31
-#define GPIO2 32
+#define GPIO0 29
+#define GPIO1 30
+#define GPIO2 31
+#define GPIO3 32
 #define DEBOUNCE_TIME 1
 
 u_int8_t state = 0;
@@ -71,6 +72,9 @@ u_int8_t reading;
 
 unsigned long lastPlayTime = 0;
 unsigned long quietDelay = 5000;
+
+unsigned long lastMonitorTime = 0;
+unsigned long MonitorDelay = 5000;
 
 void setup() {
   Serial.begin(115200);
@@ -96,11 +100,12 @@ void setup() {
   }
   Serial.println("Audio setup done.");
 
-  // Relay setup
+  // Teensies interface IOs setup
   pinMode(GPIO0, INPUT);
   pinMode(GPIO1, INPUT);
   pinMode(GPIO2, INPUT);
-  Serial.print("GPIO pins set to: "); Serial.print(GPIO2); Serial.print(" "); Serial.print(GPIO1); Serial.print(" "); Serial.println(GPIO0);
+  pinMode(GPIO3, INPUT);
+  Serial.print("GPIO pins set to: "); Serial.print(GPIO3); Serial.print(" "); Serial.print(GPIO2); Serial.print(" "); Serial.print(GPIO1); Serial.print(" "); Serial.println(GPIO0);
 }
 
 void playFile(const char *filename)
@@ -113,7 +118,7 @@ void playFile(const char *filename)
   playWav1.play(filename);
 
   // A brief delay for the library read WAV info
-  delay(25);
+  // delay(25);
 
   // Simply wait for the file to finish playing.
   // while (playWav1.isPlaying()) {
@@ -128,7 +133,7 @@ void playFile(const char *filename)
 
 void loop() {
   // Read state from GPIOs and encode
-  reading = (digitalRead(GPIO2) * 4) + (digitalRead(GPIO1) * 2) + digitalRead(GPIO0);
+  reading = (digitalRead(GPIO3) * 8) + (digitalRead(GPIO2) * 4) + (digitalRead(GPIO1) * 2) + digitalRead(GPIO0);
   if (reading != lastState) {
     // reset the debouncing timer
     lastDebounceTime = millis();
@@ -138,30 +143,43 @@ void loop() {
       state = reading;
       Serial.println(state);
       switch (state) {
-        case 0:
-          playFile("under.wav");  // filenames are always uppercase 8.3 format
+        case 0: // default state that does nothing is required, do not use
+          // playFile("cave1.wav");  // filenames are always uppercase 8.3 format
           break;
         case 1:
-          playFile("sun.wav");
+          playFile("cave1.wav");
           break;
         case 2:
+          playFile("cave2.wav");
+          break;
+        case 3: 
           playFile("cave3.wav");
           break;
-        case 3: // don't do anything for this state, its the default state
-          // playFile("cave4.wav");
+        case 4: 
+          playFile("cave4.wav");
           break;
-        default:
+        case 5:
+          playFile("sun.wav");
+          break;
+        case 6:
           playFile("under.wav");
+          break;
+        default: // state can go up to 15
+          playFile("cave4.wav");
       }
     }
   }
   lastState = reading;
 
-  // If no file is playing, play default background music
-  if (!playWav1.isPlaying()) {
-    if((millis() - lastPlayTime) > quietDelay) {
-      playFile("cave2.wav");
-      lastPlayTime = millis();
-    }
+  // If no file is playing, play default background music, removing for now so all plays are only triggered
+  // if (!playWav1.isPlaying()) {
+  //   if((millis() - lastPlayTime) > quietDelay) {
+  //     playFile("cave2.wav");
+  //     lastPlayTime = millis();
+  //   }
+  // }
+  if((millis() - lastMonitorTime) > MonitorDelay) {
+    Serial.println("Alive");
+    lastMonitorTime = millis();
   }
 }

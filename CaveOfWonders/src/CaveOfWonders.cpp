@@ -8,12 +8,13 @@
 #define DEBOUNCE_TIME 50
 #define RELAYPIN1 1
 #define RELAYPIN2 23
+#define OUTGPIO0 29
 #define OUTGPIO1 30
 #define OUTGPIO2 31
 #define OUTGPIO3 32
 
 int curr_file_i = 0;
-const char *files_iter_rr[] = {"under", "under"};
+const char *files_iter_rr[] = {"under", "under", "under", "under"};
 
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
@@ -31,7 +32,7 @@ uint8_t brightness = 30; // range is 0 (off) to 255 (full brightness)
 Adafruit_VL53L0X lox = Adafruit_VL53L0X();
 int range = -1;
 int rangeAccum = -1;
-bool rangeActive = false; // temp change to disable range sensor activating song
+bool rangeActive = true; 
 int rangeCnt = 0;
 
 int keyState = HIGH;
@@ -41,13 +42,16 @@ unsigned long debounceDelay = DEBOUNCE_TIME;
 bool keyActive = true;
 int reading;
 
+uint8_t state, prevState = 0;
+
 unsigned long currSongTime = 0, songStartTime = 0, lastRangeTime = 0, procTime = 0;
 
 void stateEncode (uint8_t state) {
-  // Serial.println(state);
+  Serial.print("Changing to state: "); Serial.println(state);
   switch (state) {
     // Background index 0
     case 0:
+      digitalWrite(OUTGPIO0, LOW);
       digitalWrite(OUTGPIO1, LOW);
       digitalWrite(OUTGPIO2, LOW);
       digitalWrite(OUTGPIO3, LOW);
@@ -58,7 +62,8 @@ void stateEncode (uint8_t state) {
 
     // Background index 1
     case 1:
-      digitalWrite(OUTGPIO1, HIGH);
+      digitalWrite(OUTGPIO0, HIGH);
+      digitalWrite(OUTGPIO1, LOW);
       digitalWrite(OUTGPIO2, LOW);
       digitalWrite(OUTGPIO3, LOW);
       // relays ON
@@ -66,10 +71,11 @@ void stateEncode (uint8_t state) {
       digitalWrite(RELAYPIN2, LOW); 
       break;
 
-    // Background index 2?
+    // Background index 2
     case 2:
-      digitalWrite(OUTGPIO1, LOW);
-      digitalWrite(OUTGPIO2, HIGH);
+      digitalWrite(OUTGPIO0, LOW);
+      digitalWrite(OUTGPIO1, HIGH);
+      digitalWrite(OUTGPIO2, LOW);
       digitalWrite(OUTGPIO3, LOW);
       // relays ON
       digitalWrite(RELAYPIN1, LOW); 
@@ -78,8 +84,9 @@ void stateEncode (uint8_t state) {
 
     // range sensor triggered
     case 3:
+      digitalWrite(OUTGPIO0, HIGH);
       digitalWrite(OUTGPIO1, HIGH);
-      digitalWrite(OUTGPIO2, HIGH);
+      digitalWrite(OUTGPIO2, LOW);
       digitalWrite(OUTGPIO3, LOW);
       // shut off relays
       digitalWrite(RELAYPIN1, HIGH); 
@@ -88,33 +95,38 @@ void stateEncode (uint8_t state) {
 
     // key triggered
     case 4:
+      digitalWrite(OUTGPIO0, LOW);
       digitalWrite(OUTGPIO1, LOW);
-      digitalWrite(OUTGPIO2, LOW);
-      digitalWrite(OUTGPIO3, HIGH);
+      digitalWrite(OUTGPIO2, HIGH);
+      digitalWrite(OUTGPIO3, LOW);
       // shutting off RELAYS
       digitalWrite(RELAYPIN1, LOW); // shutting off RELAYS
       digitalWrite(RELAYPIN2, LOW); // shutting off RELAYS
       break;
     // unassigned state
     case 5:
-      digitalWrite(OUTGPIO1, HIGH);
-      digitalWrite(OUTGPIO2, LOW);
-      digitalWrite(OUTGPIO3, HIGH);
+      digitalWrite(OUTGPIO0, HIGH);
+      digitalWrite(OUTGPIO1, LOW);
+      digitalWrite(OUTGPIO2, HIGH);
+      digitalWrite(OUTGPIO3, LOW);
       break;
     // unassigned state
     case 6:
-      digitalWrite(OUTGPIO1, LOW);
+      digitalWrite(OUTGPIO0, LOW);
+      digitalWrite(OUTGPIO1, HIGH);
       digitalWrite(OUTGPIO2, HIGH);
-      digitalWrite(OUTGPIO3, HIGH);
+      digitalWrite(OUTGPIO3, LOW);
       break;
     // unassigned state
     case 7:
+      digitalWrite(OUTGPIO0, HIGH);
       digitalWrite(OUTGPIO1, HIGH);
       digitalWrite(OUTGPIO2, HIGH);
-      digitalWrite(OUTGPIO3, HIGH);
+      digitalWrite(OUTGPIO3, LOW);
       break;
 
     default:
+      digitalWrite(OUTGPIO0, LOW);
       digitalWrite(OUTGPIO1, LOW);
       digitalWrite(OUTGPIO2, LOW);
       digitalWrite(OUTGPIO3, LOW);
@@ -153,11 +165,12 @@ void setup() {
   Serial.print("Relay pins set to: "); Serial.print(RELAYPIN1); Serial.print(" "); Serial.println(RELAYPIN2);
 
   // output GPIO setup
+  pinMode(OUTGPIO0, OUTPUT);
   pinMode(OUTGPIO1, OUTPUT);
   pinMode(OUTGPIO2, OUTPUT);
   pinMode(OUTGPIO3, OUTPUT);
-  stateEncode(0);
-  Serial.print("State output pins set to: "); Serial.print(OUTGPIO1); Serial.print(" "); Serial.print(OUTGPIO2); Serial.print(" "); Serial.println(OUTGPIO3);
+  stateEncode(state);
+  Serial.print("State output pins set to: "); Serial.print(OUTGPIO0); Serial.print(" "); Serial.print(OUTGPIO1); Serial.print(" "); Serial.print(OUTGPIO2); Serial.print(" "); Serial.println(OUTGPIO3);
 }
 
 void loop() {
@@ -184,8 +197,8 @@ void loop() {
         sd_leds_player.load_file(FILE_TO_PLAY);
         // sd_leds_player.setBrightness(255); // set brightness for song
         rangeActive = false;
-        keyActive = false;
-        stateEncode(3);
+        keyActive = true;
+        state = 5;
         frame_timestamp = sd_leds_player.load_next_frame();
       }
     }
@@ -205,7 +218,7 @@ void loop() {
       if (keyState == HIGH) {
         Serial.println("key switch triggered! loading LEDS file");
         sd_leds_player.load_file(FILE_TO_PLAY);
-        stateEncode(4);
+        state = 6;
         rangeActive = false;
         keyActive = true; // temp change for key to not disable more key presses
         songStartTime = millis();
@@ -216,11 +229,11 @@ void loop() {
   lastKeyState = reading;
 
   if(!sd_leds_player.is_file_playing()) {
-    Serial.println("No file is playing, loading new file");
+    Serial.print("No file is playing, loading new file: "); Serial.println(files_iter_rr[curr_file_i]);
     sd_leds_player.load_file(files_iter_rr[curr_file_i]);
-    stateEncode(curr_file_i+1);
+    state = curr_file_i+1;
     curr_file_i = (curr_file_i + 1) % (sizeof(files_iter_rr) / sizeof(files_iter_rr[0]));
-    rangeActive = false; // temp change for range sensor to not activate song
+    rangeActive = true; 
     keyActive = true;
     songStartTime = millis();
     frame_timestamp = sd_leds_player.load_next_frame();
@@ -234,4 +247,11 @@ void loop() {
     sd_leds_player.show_next_frame();
     frame_timestamp = sd_leds_player.load_next_frame();
   }
+
+  if (state != prevState) {
+    stateEncode(state);
+  }
+  prevState = state;
+  // restore state to default
+  state = 0;
 }
