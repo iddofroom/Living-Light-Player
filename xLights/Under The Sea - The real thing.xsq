@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsequence BaseChannel="0" ChanCtrlBasic="0" ChanCtrlColor="0" FixedPointTiming="1" ModelBlending="true">
+  <head>
+    <version>2021.26</version>
+    <author/>
+    <author-email/>
+    <author-website/>
+    <song/>
+    <artist/>
+    <album/>
+    <MusicURL/>
+    <comment/>
+    <sequenceTiming>25 ms</sequenceTiming>
+    <sequenceType>Media</sequenceType>
+    <mediaFile>/Users/guylevitsky/temp/under.wav</mediaFile>
+    <sequenceDuration>168.402</sequenceDuration>
+    <imageDir/>
+  </head>
+  <nextid>1</nextid>
+  <Jukebox/>
+  <ColorPalettes>
+    <ColorPalette>C_BUTTON_Palette1=#FFFFFF,C_BUTTON_Palette2=#FF0000,C_BUTTON_Palette3=#00FF00,C_BUTTON_Palette4=#0000FF,C_BUTTON_Palette5=#FFFF00,C_BUTTON_Palette6=#000000,C_BUTTON_Palette7=#00FFFF,C_BUTTON_Palette8=#FF00FF,C_CHECKBOX_Palette1=1,C_CHECKBOX_Palette2=1</ColorPalette>
+    <ColorPalette>C_BUTTON_Palette1=#FFFFFF,C_BUTTON_Palette2=#FF0000,C_BUTTON_Palette3=#00FF00,C_BUTTON_Palette4=#0000FF,C_BUTTON_Palette5=#FFFF00,C_BUTTON_Palette6=#000000,C_BUTTON_Palette7=#00FFFF,C_BUTTON_Palette8=#FF00FF,C_CHECKBOX_Palette1=1,C_CHECKBOX_Palette3=1,C_CHECKBOX_Palette5=1,C_CHECKBOX_Palette7=1</ColorPalette>
+    <ColorPalette>C_BUTTON_Palette1=#FFFFFF,C_BUTTON_Palette2=#FF0000,C_BUTTON_Palette3=#00FF00,C_BUTTON_Palette4=#0000FF,C_BUTTON_Palette5=#FFFF00,C_BUTTON_Palette6=#000000,C_BUTTON_Palette7=#00FFFF,C_BUTTON_Palette8=#FF00FF,C_CHECKBOX_Palette3=1,C_CHECKBOX_Palette5=1,C_CHECKBOX_Palette7=1</ColorPalette>
+    <ColorPalette>C_BUTTON_Palette1=#FFFFFF,C_BUTTON_Palette2=#FF0000,C_BUTTON_Palette3=#00FF00,C_BUTTON_Palette4=#0000FF,C_BUTTON_Palette5=#FFFF00,C_BUTTON_Palette6=#000000,C_BUTTON_Palette7=#00FFFF,C_BUTTON_Palette8=#FF00FF,C_CHECKBOX_Palette3=1,C_CHECKBOX_Palette4=1,C_CHECKBOX_Palette5=1,C_CHECKBOX_Palette7=1,C_CHECKBOX_Palette8=1</ColorPalette>
+  </ColorPalettes>
+  <EffectDB>
+    <Effect>E_CHECKBOX_PerNode=0,E_TEXTCTRL_Candle_FlameAgility=2,E_TEXTCTRL_Candle_WindBaseline=30,E_TEXTCTRL_Candle_WindCalmness=2,E_TEXTCTRL_Candle_WindVariability=5</Effect>
+    <Effect>E_CHECKBOX_Music_Fade=0,E_CHECKBOX_Music_LogarithmicX=0,E_CHECKBOX_Music_Scale=1,E_CHOICE_Music_Colour=Distinct,E_CHOICE_Music_Scaling=None,E_CHOICE_Music_Type=Bounce,E_SLIDER_Music_Bars=1,E_SLIDER_Music_EndNote=124,E_SLIDER_Music_Offset=0,E_SLIDER_Music_Sensitivity=0,E_SLIDER_Music_StartNote=107</Effect>
+    <Effect>E_CHECKBOX_Music_Fade=0,E_CHECKBOX_Music_LogarithmicX=0,E_CHECKBOX_Music_Scale=0,E_CHOICE_Music_Colour=Distinct,E_CHOICE_Music_Scaling=None,E_CHOICE_Music_Type=Bounce,E_SLIDER_Music_Bars=52,E_SLIDER_Music_EndNote=127,E_SLIDER_Music_Offset=0,E_SLIDER_Music_Sensitivity=8,E_SLIDER_Music_StartNote=0</Effect>
+    <Effect>E_CHOICE_Butterfly_Colors=Rainbow,E_CHOICE_Butterfly_Direction=Normal,E_SLIDER_Butterfly_Chunks=1,E_SLIDER_Butterfly_Skip=2,E_SLIDER_Butterfly_Speed=10,E_SLIDER_Butterfly_Style=1</Effect>
+    <Effect>E_CHOICE_Butterfly_Colors=Rainbow,E_CHOICE_Butterfly_Direction=Normal,E_SLIDER_Butterfly_Chunks=1,E_SLIDER_Butterfly_Skip=2,E_SLIDER_Butterfly_Speed=92,E_SLIDER_Butterfly_Style=1</Effect>
+    <Effect>E_CHOICE_Butterfly_Colors=Rainbow,E_CHOICE_Butterfly_Direction=Normal,E_SLIDER_Butterfly_Chunks=1,E_SLIDER_Butterfly_Skip=2,E_SLIDER_Butterfly_Speed=44,E_SLIDER_Butterfly_Style=1</Effect>
+    <Effect>E_CHECKBOX_Music_Fade=0,E_CHECKBOX_Music_LogarithmicX=0,E_CHECKBOX_Music_Scale=1,E_CHOICE_Music_Colour=Distinct,E_CHOICE_Music_Scaling=None,E_CHOICE_Music_Type=Bounce,E_SLIDER_Music_Bars=1,E_SLIDER_Music_EndNote=124,E_SLIDER_Music_Offset=0,E_SLIDER_Music_Sensitivity=11,E_SLIDER_Music_StartNote=107</Effect>
+    <Effect>E_CHECKBOX_Music_Fade=0,E_CHECKBOX_Music_LogarithmicX=0,E_CHECKBOX_Music_Scale=1,E_CHOICE_Music_Colour=Distinct,E_CHOICE_Music_Scaling=None,E_CHOICE_Music_Type=Bounce,E_SLIDER_Music_Bars=1,E_SLIDER_Music_EndNote=52,E_SLIDER_Music_Offset=0,E_SLIDER_Music_Sensitivity=25,E_SLIDER_Music_StartNote=0</Effect>
+    <Effect>E_CHOICE_Butterfly_Colors=Rainbow,E_CHOICE_Butterfly_Direction=Normal,E_SLIDER_Butterfly_Chunks=1,E_SLIDER_Butterfly_Skip=2,E_SLIDER_Butterfly_Speed=4,E_SLIDER_Butterfly_Style=1</Effect>
+    <Effect>E_CHOICE_Butterfly_Colors=Rainbow,E_CHOICE_Butterfly_Direction=Normal,E_SLIDER_Butterfly_Chunks=1,E_SLIDER_Butterfly_Skip=2,E_SLIDER_Butterfly_Speed=10,E_SLIDER_Butterfly_Style=3</Effect>
+    <Effect>E_CHECKBOX_Music_Fade=0,E_CHECKBOX_Music_LogarithmicX=0,E_CHECKBOX_Music_Scale=0,E_CHOICE_Music_Colour=Distinct,E_CHOICE_Music_Scaling=None,E_CHOICE_Music_Type=Separate,E_SLIDER_Music_Bars=52,E_SLIDER_Music_EndNote=127,E_SLIDER_Music_Offset=0,E_SLIDER_Music_Sensitivity=0,E_SLIDER_Music_StartNote=48</Effect>
+    <Effect>E_CHECKBOX_Music_Fade=0,E_CHECKBOX_Music_LogarithmicX=0,E_CHECKBOX_Music_Scale=1,E_CHOICE_Music_Colour=Distinct,E_CHOICE_Music_Scaling=None,E_CHOICE_Music_Type=Bounce,E_SLIDER_Music_Bars=1,E_SLIDER_Music_EndNote=124,E_SLIDER_Music_Offset=0,E_SLIDER_Music_Sensitivity=9,E_SLIDER_Music_StartNote=107</Effect>
+    <Effect>E_CHECKBOX_Music_Fade=0,E_CHECKBOX_Music_LogarithmicX=0,E_CHECKBOX_Music_Scale=0,E_CHOICE_Music_Colour=Distinct,E_CHOICE_Music_Scaling=None,E_CHOICE_Music_Type=Bounce,E_SLIDER_Music_Bars=65,E_SLIDER_Music_EndNote=52,E_SLIDER_Music_Offset=0,E_SLIDER_Music_Sensitivity=25,E_SLIDER_Music_StartNote=0</Effect>
+    <Effect>E_CHOICE_Butterfly_Colors=Rainbow,E_CHOICE_Butterfly_Direction=Normal,E_SLIDER_Butterfly_Chunks=1,E_SLIDER_Butterfly_Skip=2,E_SLIDER_Butterfly_Speed=15,E_SLIDER_Butterfly_Style=1</Effect>
+    <Effect>E_CHECKBOX_Music_Fade=0,E_CHECKBOX_Music_LogarithmicX=0,E_CHECKBOX_Music_Scale=0,E_CHOICE_Music_Colour=Distinct,E_CHOICE_Music_Scaling=None,E_CHOICE_Music_Type=Bounce,E_SLIDER_Music_Bars=91,E_SLIDER_Music_EndNote=127,E_SLIDER_Music_Offset=0,E_SLIDER_Music_Sensitivity=0,E_SLIDER_Music_StartNote=0</Effect>
+    <Effect>E_CHOICE_Butterfly_Colors=Rainbow,E_CHOICE_Butterfly_Direction=Normal,E_SLIDER_Butterfly_Chunks=1,E_SLIDER_Butterfly_Skip=2,E_SLIDER_Butterfly_Speed=11,E_SLIDER_Butterfly_Style=2</Effect>
+    <Effect>E_CHOICE_Butterfly_Colors=Rainbow,E_CHOICE_Butterfly_Direction=Normal,E_SLIDER_Butterfly_Chunks=1,E_SLIDER_Butterfly_Skip=2,E_SLIDER_Butterfly_Speed=11,E_SLIDER_Butterfly_Style=3</Effect>
+    <Effect>E_CHOICE_Butterfly_Colors=Rainbow,E_CHOICE_Butterfly_Direction=Reverse,E_SLIDER_Butterfly_Chunks=4,E_SLIDER_Butterfly_Skip=6,E_SLIDER_Butterfly_Speed=10,E_SLIDER_Butterfly_Style=3</Effect>
+    <Effect>E_CHECKBOX_Curtain_Repeat=0,E_CHOICE_Curtain_Edge=left,E_CHOICE_Curtain_Effect=close then open,E_SLIDER_Curtain_Swag=3,E_TEXTCTRL_Curtain_Speed=1.0</Effect>
+    <Effect>E_CHECKBOX_Curtain_Repeat=0,E_CHOICE_Curtain_Edge=left,E_CHOICE_Curtain_Effect=close then open,E_SLIDER_Curtain_Swag=3,E_TEXTCTRL_Curtain_Speed=1.7</Effect>
+    <Effect>E_CHOICE_Butterfly_Colors=Rainbow,E_CHOICE_Butterfly_Direction=Normal,E_SLIDER_Butterfly_Chunks=1,E_SLIDER_Butterfly_Skip=2,E_SLIDER_Butterfly_Speed=70,E_SLIDER_Butterfly_Style=1</Effect>
+  </EffectDB>
+  <DataLayers>
+    <DataLayer lor_params="487" channel_offset="0" num_channels="0" num_frames="0" data="&lt;rendered: erase-mode&gt;" source="&lt;auto-generated&gt;" name="Nutcracker"/>
+  </DataLayers>
+  <DisplayElements>
+    <Element collapsed="0" type="timing" name="New Timing" visible="1" views="Master View,models ordered by connection" active="1"/>
+    <Element collapsed="0" type="model" name="bats string 2" visible="1"/>
+    <Element collapsed="0" type="model" name="string1" visible="1"/>
+    <Element collapsed="0" type="model" name="string2" visible="1"/>
+    <Element collapsed="0" type="model" name="string3" visible="1"/>
+    <Element collapsed="0" type="model" name="string4" visible="1"/>
+    <Element collapsed="0" type="model" name="string5" visible="1"/>
+    <Element collapsed="0" type="model" name="string6" visible="1"/>
+    <Element collapsed="0" type="model" name="string7" visible="1"/>
+    <Element collapsed="0" type="model" name="string8" visible="1"/>
+    <Element collapsed="0" type="model" name="bats string 1" visible="1"/>
+    <Element collapsed="0" type="model" name="string 2 triple 1" visible="1"/>
+    <Element collapsed="0" type="model" name="string 3 - 5 group 1" visible="1"/>
+    <Element collapsed="0" type="model" name="string 3 - trio 1" visible="1"/>
+    <Element collapsed="0" type="model" name="bats string 3" visible="1"/>
+    <Element collapsed="0" type="model" name="bats string 4" visible="1"/>
+    <Element collapsed="0" type="model" name="MegaCrystal Left" visible="1"/>
+    <Element collapsed="0" type="model" name="MegaCrystal Right" visible="1"/>
+    <Element collapsed="0" type="model" name="MegaCrystal Left Familia" visible="1"/>
+    <Element collapsed="0" type="model" name="Mushrooms" visible="1"/>
+    <Element collapsed="0" type="model" name="Spiders" visible="1"/>
+    <Element collapsed="0" type="model" name="MegaCrystal Right Familia" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Center" visible="1"/>
+    <Element collapsed="0" type="model" name="Bats Left" visible="1"/>
+    <Element collapsed="0" type="model" name="Bats Right" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Right 1 - 5 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Right 2 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Right 3 - 2 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Right 4 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Right 5 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Right 6 - 4 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Right 7 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Right 8 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Right" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Left 1 - 2 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Left 3 - 2 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Left 2 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Left 4 - 5 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Left 5 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="crystal Left 6.1 - 3 combo" visible="1"/>
+    <Element collapsed="0" type="model" name="crystal Left 6.2 - 2 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Left 6 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="crystal Left 7.1 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="crystal Left 7.2 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Left 7 - 2 X 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Left" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Center C 1 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Center C 2 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Center C 3 - 4 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Center C 4 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Center C 6 - 3 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystal Center C 5 - 4 group" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Center C" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-105" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-106" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-107" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-102" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-101" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-100" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-96" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-87" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-86" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-85" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-84" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-83" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-82" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-80" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-81" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-78" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-77" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-73" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-72" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-71" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-70" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-68" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-67" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-66" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-65" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-64" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-63" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-62" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-61" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-60" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-59" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-56" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-55" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-54" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-53" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-52" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-49" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-48" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-45" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-44" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-43" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-42" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-41" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-40" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-39" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-38" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-37" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-36" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-35" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-34" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-33" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-32" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-18" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-31" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-30" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-29" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-28" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-27" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-26" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-25" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-24" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-23" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-22" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-21" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-20" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-19" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-17" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-16" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-15" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-14" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-13" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-12" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-11" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-10" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-9" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-8" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-7" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-6" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-5" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-4" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-2" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-3" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-46" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-47" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-50" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-51" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-57" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-58" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-69" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-74" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-75" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-76" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-79" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-88" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-89" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-90" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-97" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-98" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-99" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-103" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-104" visible="1"/>
+    <Element collapsed="0" type="model" name="Ground" visible="1"/>
+    <Element collapsed="0" type="model" name="Ceiling" visible="1"/>
+    <Element collapsed="0" type="model" name="Bats All" visible="1"/>
+    <Element collapsed="0" type="model" name="Matrix" visible="1"/>
+  </DisplayElements>
+  <ElementEffects>
+    <Element type="timing" name="New Timing">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="bats string 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="bats string 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string 2 triple 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string 3 - 5 group 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string 3 - trio 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="bats string 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="bats string 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="MegaCrystal Left">
+      <EffectLayer>
+        <Effect ref="0" name="Candle" startTime="3025" endTime="4025" palette="0"/>
+        <Effect ref="1" name="Music Effect" id="1" startTime="57525" endTime="88200" palette="1"/>
+        <Effect ref="2" name="Music Effect" id="2" startTime="103725" endTime="117425" palette="1"/>
+        <Effect ref="3" name="Butterfly" id="3" startTime="121050" endTime="124975" palette="2"/>
+        <Effect ref="4" name="Butterfly" id="4" startTime="124975" endTime="132500" palette="2"/>
+        <Effect ref="5" name="Butterfly" id="5" startTime="134275" endTime="164325" palette="2"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="MegaCrystal Right">
+      <EffectLayer>
+        <Effect ref="0" name="Candle" startTime="3025" endTime="4025" palette="0"/>
+        <Effect ref="1" name="Music Effect" id="1" startTime="57525" endTime="88200" palette="1"/>
+        <Effect ref="2" name="Music Effect" id="2" startTime="103725" endTime="117425" palette="1"/>
+        <Effect ref="3" name="Butterfly" id="3" startTime="117425" endTime="121050" palette="2"/>
+        <Effect ref="4" name="Butterfly" id="4" startTime="124975" endTime="132525" palette="2"/>
+        <Effect ref="5" name="Butterfly" id="5" startTime="134325" endTime="164350" palette="2"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="MegaCrystal Left Familia">
+      <EffectLayer>
+        <Effect ref="6" name="Music Effect" startTime="57525" endTime="88200" palette="1"/>
+        <Effect ref="2" name="Music Effect" id="1" startTime="103725" endTime="117425" palette="1"/>
+        <Effect ref="3" name="Butterfly" id="2" startTime="121050" endTime="124975" palette="2"/>
+        <Effect ref="4" name="Butterfly" id="3" startTime="124975" endTime="132525" palette="2"/>
+        <Effect ref="2" name="Music Effect" id="4" startTime="134300" endTime="149300" palette="1"/>
+        <Effect ref="7" name="Music Effect" id="5" startTime="149300" endTime="164325" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Mushrooms">
+      <EffectLayer>
+        <Effect ref="8" name="Butterfly" startTime="88300" endTime="103675" palette="1"/>
+        <Effect ref="5" name="Butterfly" id="1" startTime="128750" endTime="132475" palette="2"/>
+        <Effect ref="9" name="Butterfly" id="2" startTime="164375" endTime="166350" palette="2"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Spiders">
+      <EffectLayer>
+        <Effect ref="8" name="Butterfly" startTime="94025" endTime="95225" palette="1"/>
+        <Effect ref="8" name="Butterfly" id="1" startTime="96525" endTime="97075" palette="1"/>
+        <Effect ref="8" name="Butterfly" id="2" startTime="98625" endTime="99125" palette="1"/>
+        <Effect ref="8" name="Butterfly" id="3" startTime="99525" endTime="100025" palette="1"/>
+        <Effect ref="8" name="Butterfly" id="4" startTime="100400" endTime="100850" palette="1"/>
+        <Effect ref="3" name="Butterfly" id="5" startTime="101275" endTime="103675" palette="1"/>
+        <Effect ref="5" name="Butterfly" selected="1" id="6" startTime="128775" endTime="132500" palette="2"/>
+        <Effect ref="10" name="Music Effect" id="7" startTime="134275" endTime="149275" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="MegaCrystal Right Familia">
+      <EffectLayer>
+        <Effect ref="11" name="Music Effect" startTime="57525" endTime="88200" palette="1"/>
+        <Effect ref="2" name="Music Effect" id="1" startTime="103725" endTime="117425" palette="1"/>
+        <Effect ref="3" name="Butterfly" id="2" startTime="117425" endTime="121050" palette="2"/>
+        <Effect ref="4" name="Butterfly" id="3" startTime="125000" endTime="132525" palette="2"/>
+        <Effect ref="2" name="Music Effect" id="4" startTime="134300" endTime="149300" palette="1"/>
+        <Effect ref="12" name="Music Effect" id="5" startTime="149300" endTime="164350" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystals Center">
+      <EffectLayer>
+        <Effect ref="5" name="Butterfly" startTime="134325" endTime="164250" palette="2"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Bats Left">
+      <EffectLayer>
+        <Effect ref="3" name="Butterfly" startTime="0" endTime="1000" palette="0"/>
+        <Effect ref="13" name="Butterfly" id="1" startTime="21250" endTime="22250" palette="0"/>
+        <Effect ref="13" name="Butterfly" id="2" startTime="55550" endTime="57400" palette="0"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Bats Right">
+      <EffectLayer>
+        <Effect ref="3" name="Butterfly" startTime="0" endTime="1000" palette="0"/>
+        <Effect ref="13" name="Butterfly" id="1" startTime="19050" endTime="20400" palette="0"/>
+        <Effect ref="13" name="Butterfly" id="2" startTime="55550" endTime="57400" palette="0"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Right 1 - 5 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="33025" endTime="40575" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117425" endTime="132500" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Right 2 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="34025" endTime="40575" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117425" endTime="132500" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Right 3 - 2 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="34950" endTime="40575" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117425" endTime="132500" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Right 4 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="35900" endTime="40575" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117425" endTime="132500" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Right 5 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="36825" endTime="40575" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117450" endTime="132525" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Right 6 - 4 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="37750" endTime="40575" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117450" endTime="132525" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Right 7 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="38675" endTime="40575" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117450" endTime="132525" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Right 8 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="39650" endTime="40575" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117475" endTime="132550" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystals Right">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="4000" endTime="7650" palette="0"/>
+        <Effect ref="13" name="Butterfly" id="1" startTime="47925" endTime="55575" palette="0"/>
+        <Effect ref="15" name="Butterfly" id="2" startTime="61125" endTime="64675" palette="0"/>
+        <Effect ref="16" name="Butterfly" id="3" startTime="72475" endTime="76025" palette="0"/>
+        <Effect ref="17" name="Butterfly" id="4" startTime="83750" endTime="87925" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="5" startTime="117425" endTime="132500" palette="1"/>
+        <Effect ref="5" name="Butterfly" id="6" startTime="141775" endTime="145550" palette="2"/>
+        <Effect ref="5" name="Butterfly" id="7" startTime="149300" endTime="153075" palette="2"/>
+        <Effect ref="16" name="Butterfly" id="8" startTime="156825" endTime="164325" palette="2"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Left 1 - 2 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="33050" endTime="40525" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117425" endTime="132500" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Left 3 - 2 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="34950" endTime="40550" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117400" endTime="132475" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Left 2 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="34000" endTime="40525" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117425" endTime="132500" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Left 4 - 5 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="35875" endTime="40550" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117425" endTime="132500" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Left 5 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="36775" endTime="40525" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117425" endTime="132500" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="crystal Left 6.1 - 3 combo">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="crystal Left 6.2 - 2 group">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystal Left 6 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="37775" endTime="40550" palette="0"/>
+        <Effect ref="14" name="Music Effect" id="1" startTime="117425" endTime="132500" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="crystal Left 7.1 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="38700" endTime="40550" palette="0"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="crystal Left 7.2 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="39625" endTime="40550" palette="0"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Left 7 - 2 X 3 group">
+      <EffectLayer>
+        <Effect ref="14" name="Music Effect" startTime="117425" endTime="132500" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystals Left">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="7725" endTime="11375" palette="0"/>
+        <Effect ref="13" name="Butterfly" id="1" startTime="44250" endTime="55575" palette="0"/>
+        <Effect ref="15" name="Butterfly" id="2" startTime="57575" endTime="61125" palette="0"/>
+        <Effect ref="16" name="Butterfly" id="3" startTime="68300" endTime="71850" palette="0"/>
+        <Effect ref="17" name="Butterfly" id="4" startTime="79725" endTime="83275" palette="0"/>
+        <Effect ref="5" name="Butterfly" id="5" startTime="138000" endTime="141775" palette="2"/>
+        <Effect ref="5" name="Butterfly" id="6" startTime="145525" endTime="149300" palette="2"/>
+        <Effect ref="5" name="Butterfly" id="7" startTime="153050" endTime="156825" palette="2"/>
+        <Effect ref="9" name="Butterfly" id="8" startTime="160600" endTime="164300" palette="2"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Center C 1 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="11525" endTime="26275" palette="0"/>
+        <Effect ref="13" name="Butterfly" id="1" startTime="27450" endTime="33075" palette="0"/>
+        <Effect ref="3" name="Butterfly" id="2" startTime="104225" endTime="105450" palette="2"/>
+        <Effect ref="3" name="Butterfly" id="3" startTime="107000" endTime="110950" palette="2"/>
+        <Effect ref="14" name="Music Effect" id="4" startTime="128725" endTime="132425" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Center C 2 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="15375" endTime="26275" palette="0"/>
+        <Effect ref="13" name="Butterfly" id="1" startTime="28375" endTime="33050" palette="0"/>
+        <Effect ref="3" name="Butterfly" id="2" startTime="108375" endTime="110950" palette="2"/>
+        <Effect ref="3" name="Butterfly" id="3" startTime="116575" endTime="117400" palette="2"/>
+        <Effect ref="14" name="Music Effect" id="4" startTime="128700" endTime="132400" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Center C 3 - 4 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="15350" endTime="26250" palette="0"/>
+        <Effect ref="13" name="Butterfly" id="1" startTime="29350" endTime="33050" palette="0"/>
+        <Effect ref="3" name="Butterfly" id="2" startTime="109325" endTime="110950" palette="2"/>
+        <Effect ref="3" name="Butterfly" id="3" startTime="115700" endTime="117400" palette="2"/>
+        <Effect ref="14" name="Music Effect" id="4" startTime="128725" endTime="132425" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Center C 4 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="19000" endTime="26250" palette="0"/>
+        <Effect ref="13" name="Butterfly" id="1" startTime="30275" endTime="33050" palette="0"/>
+        <Effect ref="3" name="Butterfly" id="2" startTime="114650" endTime="117400" palette="2"/>
+        <Effect ref="14" name="Music Effect" id="3" startTime="128725" endTime="132425" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Center C 6 - 3 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="22625" endTime="26250" palette="0"/>
+        <Effect ref="13" name="Butterfly" id="1" startTime="32125" endTime="33050" palette="0"/>
+        <Effect ref="3" name="Butterfly" id="2" startTime="105800" endTime="107100" palette="2"/>
+        <Effect ref="3" name="Butterfly" id="3" startTime="111000" endTime="117375" palette="2"/>
+        <Effect ref="14" name="Music Effect" id="4" startTime="128725" endTime="132425" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystal Center C 5 - 4 group">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="19000" endTime="26250" palette="0"/>
+        <Effect ref="13" name="Butterfly" id="1" startTime="31200" endTime="33050" palette="0"/>
+        <Effect ref="3" name="Butterfly" id="2" startTime="113025" endTime="117400" palette="2"/>
+        <Effect ref="14" name="Music Effect" id="3" startTime="128725" endTime="132425" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystals Center C">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="33050" endTime="55600" palette="0"/>
+        <Effect ref="15" name="Butterfly" id="1" startTime="64725" endTime="68275" palette="0"/>
+        <Effect ref="16" name="Butterfly" id="2" startTime="76075" endTime="79625" palette="0"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Single Line-105">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-106">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-107">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-102">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-101">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-100">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-96">
+      <EffectLayer>
+        <Effect ref="18" name="Curtain" startTime="40400" endTime="48050" palette="3"/>
+        <Effect ref="19" name="Curtain" id="1" startTime="48050" endTime="55700" palette="3"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Single Line-87">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-86">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-85">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-84">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-83">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-82">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-80">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-81">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-78">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-77">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-73">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-72">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-71">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-70">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-68">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-67">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-66">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-65">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-64">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-63">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-62">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-61">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-60">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-59">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-56">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-55">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-54">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-53">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-52">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-49">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-48">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-45">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-44">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-43">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-42">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-41">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-40">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-39">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-38">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-37">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-36">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-35">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-34">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-33">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-32">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-18">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-31">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-30">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-29">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-28">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-27">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-26">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-25">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-24">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-23">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-22">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-21">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-20">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-19">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-17">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-16">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-15">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-14">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-13">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-12">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-11">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-10">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-9">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-46">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-47">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-50">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-51">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-57">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-58">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-69">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-74">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-75">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-76">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-79">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-88">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-89">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-90">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-97">
+      <EffectLayer>
+        <Effect ref="18" name="Curtain" startTime="48075" endTime="55725" palette="3"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Single Line-98">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-99">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-103">
+      <EffectLayer>
+        <Effect ref="18" name="Curtain" startTime="40350" endTime="48000" palette="3"/>
+        <Effect ref="19" name="Curtain" id="1" startTime="48000" endTime="55650" palette="3"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Single Line-104">
+      <EffectLayer>
+        <Effect ref="18" name="Curtain" startTime="48000" endTime="55650" palette="3"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Ground">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Ceiling">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Bats All">
+      <EffectLayer>
+        <Effect ref="13" name="Butterfly" startTime="23250" endTime="27050" palette="0"/>
+        <Effect ref="20" name="Butterfly" id="1" startTime="51750" endTime="57400" palette="3"/>
+        <Effect ref="4" name="Butterfly" id="2" startTime="132500" endTime="134300" palette="2"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Matrix">
+      <EffectLayer/>
+    </Element>
+  </ElementEffects>
+  <lastView>2</lastView>
+  <TimingTags>
+    <Tag number="0" position="-1"/>
+    <Tag number="1" position="-1"/>
+    <Tag number="2" position="-1"/>
+    <Tag number="3" position="-1"/>
+    <Tag number="4" position="-1"/>
+    <Tag number="5" position="-1"/>
+    <Tag number="6" position="-1"/>
+    <Tag number="7" position="-1"/>
+    <Tag number="8" position="-1"/>
+    <Tag number="9" position="-1"/>
+  </TimingTags>
+</xsequence>

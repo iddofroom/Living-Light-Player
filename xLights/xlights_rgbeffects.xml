@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xrgb>
+  <models>
+    <model StringType="RGB Nodes" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm2="50" parm3="1" name="Matrix" StartSide="T" DisplayAs="Horiz Matrix" parm1="16" LayoutGroup="Default" WorldPosX="-86.9590" WorldPosY="1098.5884" WorldPosZ="0.0000" ScaleX="13.9140" ScaleY="19.5965" ScaleZ="0.0000" RotateX="0.00000000" RotateY="0.00000000" RotateZ="0.00000000" versionNumber="5" StartChannel="&gt;Single Line-107:1">
+      <ControllerConnection Protocol="ws2811"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-105" LayoutGroup="Default" parm2="12" WorldPosX="598.6716" WorldPosY="111.0736" WorldPosZ="0.0000" X2="-1.488831" Y2="-48.174522" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-104:1">
+      <ControllerConnection channel="11" Protocol="dmx" Port="11"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-106" LayoutGroup="Default" parm2="35" WorldPosX="-156.7247" WorldPosY="94.3159" WorldPosZ="0.0000" X2="384.591675" Y2="-11.332642" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:12:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="12"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-107" LayoutGroup="Default" parm2="29" WorldPosX="-21.1081" WorldPosY="275.9453" WorldPosZ="0.0000" X2="833.176636" Y2="-15.393524" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:13:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="13"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="10" name="Single Line-102" WorldPosX="-355.4966" WorldPosY="128.9773" WorldPosZ="0.0000" X2="3.479019" Y2="-48.942123" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-101:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="9"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-101" parm2="12" WorldPosX="-387.8594" WorldPosY="125.1699" WorldPosZ="0.0000" X2="0.829910" Y2="-48.942123" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-100:1">
+      <ControllerConnection Port="1" Protocol="dmx" channel="9"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="5" name="Single Line-100" WorldPosX="-412.6074" WorldPosY="125.1699" WorldPosZ="0.0000" X2="2.635498" Y2="-37.231125" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-99:1">
+      <ControllerConnection Port="1" Protocol="dmx" channel="9"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-96" LayoutGroup="Default" parm2="88" WorldPosX="-487.1690" WorldPosY="251.0061" WorldPosZ="0.0000" X2="-2.144287" Y2="-168.240723" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:8:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="8"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-87" WorldPosX="-197.7700" WorldPosY="596.5912" WorldPosZ="0.0000" X2="1.130768" Y2="-32.791565" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-86:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-86" parm2="2" WorldPosX="-172.4570" WorldPosY="569.3124" WorldPosZ="0.0000" X2="1.369865" Y2="-38.944275" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-85:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-85" parm2="2" WorldPosX="-144.4346" WorldPosY="579.7577" WorldPosZ="0.0000" X2="1.902863" Y2="-39.871094" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-84:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-84" parm2="2" WorldPosX="-116.2506" WorldPosY="608.5748" WorldPosZ="0.0000" X2="0.370567" Y2="-42.036560" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-83:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-83" parm2="2" WorldPosX="-142.9731" WorldPosY="653.8478" WorldPosZ="0.0000" X2="2.345108" Y2="-34.006287" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-82:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-82" parm2="2" WorldPosX="-175.7526" WorldPosY="656.1266" WorldPosZ="0.0000" X2="-1.045578" Y2="-32.477722" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-81:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-80" parm2="10" WorldPosX="-302.8448" WorldPosY="621.9559" WorldPosZ="0.0000" X2="14.417572" Y2="-54.765930" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-79:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-81" parm2="8" WorldPosX="-292.5308" WorldPosY="638.7224" WorldPosZ="0.0000" X2="21.236801" Y2="-50.591858" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-80:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-78" parm2="12" WorldPosX="-486.0523" WorldPosY="510.9855" WorldPosZ="0.0000" X2="-28.639465" Y2="-41.260895" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-77:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-77" parm2="10" WorldPosX="-455.7818" WorldPosY="502.2889" WorldPosZ="0.0000" X2="17.237549" Y2="-42.082703" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-76:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-73" parm2="8" WorldPosX="-365.4785" WorldPosY="491.7021" WorldPosZ="0.0000" X2="-36.170105" Y2="-24.747986" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-72:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-72" parm2="12" WorldPosX="-339.1930" WorldPosY="484.8461" WorldPosZ="0.0000" X2="-31.996674" Y2="-23.603058" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-71:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-71" WorldPosX="-100.9025" WorldPosY="480.6806" WorldPosZ="0.0000" X2="-37.221420" Y2="-42.281769" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-70:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-70" WorldPosX="-76.2254" WorldPosY="460.8712" WorldPosZ="0.0000" X2="-20.017349" Y2="-47.220337" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-69:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-68" parm2="12" WorldPosX="-10.6479" WorldPosY="468.6491" WorldPosZ="0.0000" X2="13.397028" Y2="-53.094604" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-67:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-67" parm2="10" WorldPosX="81.2395" WorldPosY="491.3380" WorldPosZ="0.0000" X2="-29.144157" Y2="-42.710724" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-66:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-66" parm2="12" WorldPosX="110.3401" WorldPosY="407.9049" WorldPosZ="0.0000" X2="-16.363632" Y2="-54.462189" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-65:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-65" parm2="12" WorldPosX="121.3150" WorldPosY="482.6031" WorldPosZ="0.0000" X2="-15.916489" Y2="-43.494385" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-64:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-64" parm2="6" WorldPosX="140.9565" WorldPosY="451.1665" WorldPosZ="0.0000" X2="25.360123" Y2="-32.998260" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:6:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-63" parm2="16" WorldPosX="591.1647" WorldPosY="495.8574" WorldPosZ="0.0000" X2="-2.742249" Y2="-26.397766" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-62:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="5"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="10" name="Single Line-62" WorldPosX="572.8383" WorldPosY="530.0235" WorldPosZ="0.0000" X2="-7.254395" Y2="-24.229553" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:5:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="5"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-61" parm2="12" WorldPosX="600.4432" WorldPosY="537.1977" WorldPosZ="0.0000" X2="17.046814" Y2="-26.213562" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-60:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-60" parm2="10" WorldPosX="588.8060" WorldPosY="614.1622" WorldPosZ="0.0000" X2="0.844849" Y2="-46.424927" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-59:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-59" parm2="6" WorldPosX="610.6708" WorldPosY="622.9229" WorldPosZ="0.0000" X2="2.856812" Y2="-23.117798" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-58:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-56" WorldPosX="561.3179" WorldPosY="654.4825" WorldPosZ="0.0000" X2="6.533813" Y2="-20.419250" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-55:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-55" parm2="8" WorldPosX="523.6463" WorldPosY="667.0861" WorldPosZ="0.0000" X2="15.137329" Y2="6.425720" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-54:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-54" WorldPosX="475.8977" WorldPosY="683.7025" WorldPosZ="0.0000" X2="-5.562866" Y2="-16.533691" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-53:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-53" parm2="12" WorldPosX="501.7336" WorldPosY="654.5148" WorldPosZ="0.0000" X2="6.944275" Y2="-48.481079" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-52:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-52" parm2="2" WorldPosX="525.1558" WorldPosY="629.0721" WorldPosZ="0.0000" X2="7.932648" Y2="-25.228699" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-51:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-49" parm2="12" WorldPosX="412.7855" WorldPosY="564.7068" WorldPosZ="0.0000" X2="33.405823" Y2="-22.654907" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-48:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-48" WorldPosX="412.9716" WorldPosY="530.6328" WorldPosZ="0.0000" X2="36.334106" Y2="-7.266846" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-47:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-45" LayoutGroup="Default" parm2="12" WorldPosX="438.7077" WorldPosY="461.8520" WorldPosZ="0.0000" X2="46.360352" Y2="-15.524170" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-44:1">
+      <ControllerConnection channel="4" Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-44" parm2="12" WorldPosX="496.0734" WorldPosY="436.9453" WorldPosZ="0.0000" X2="33.633759" Y2="-19.685486" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-43:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-43" parm2="12" WorldPosX="458.3713" WorldPosY="430.7765" WorldPosZ="0.0000" X2="48.056305" Y2="-39.469391" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:4:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-42" parm2="7" WorldPosX="-571.3568" WorldPosY="517.6821" WorldPosZ="0.0000" X2="-4.114502" Y2="-38.067322" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-41:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-41" parm2="12" WorldPosX="-589.3575" WorldPosY="535.3502" WorldPosZ="0.0000" X2="-24.524048" Y2="-13.172607" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-40:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-40" parm2="11" WorldPosX="-588.4662" WorldPosY="514.5439" WorldPosZ="0.0000" X2="-20.224854" Y2="-23.509888" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-39:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-39" parm2="10" WorldPosX="-657.3326" WorldPosY="459.0896" WorldPosZ="0.0000" X2="8.858887" Y2="-33.611908" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-38:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-38" parm2="6" WorldPosX="-664.2830" WorldPosY="461.5362" WorldPosZ="0.0000" X2="-2.877014" Y2="-45.401581" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-37:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-37" parm2="6" WorldPosX="-670.5659" WorldPosY="459.2556" WorldPosZ="0.0000" X2="-13.203857" Y2="-32.739777" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-36:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-36" parm2="10" WorldPosX="-767.9254" WorldPosY="482.7617" WorldPosZ="0.0000" X2="-18.617920" Y2="-50.017181" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-35:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-35" parm2="12" WorldPosX="-746.0573" WorldPosY="492.8653" WorldPosZ="0.0000" X2="-11.418701" Y2="-43.510895" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-34:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-34" parm2="12" WorldPosX="-724.6812" WorldPosY="485.9692" WorldPosZ="0.0000" X2="-10.498901" Y2="-36.690979" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:3:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-33" parm2="12" WorldPosX="-635.7555" WorldPosY="599.5878" WorldPosZ="0.0000" X2="-15.574768" Y2="-51.333923" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-32:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-32" parm2="10" WorldPosX="-649.7935" WorldPosY="607.7717" WorldPosZ="0.0000" X2="-33.718323" Y2="-48.098511" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-31:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-18" LayoutGroup="Default" parm2="8" WorldPosX="701.4941" WorldPosY="387.7576" WorldPosZ="0.0000" X2="-26.288940" Y2="-26.638367" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:2:1">
+      <ControllerConnection channel="2" Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-31" parm2="10" WorldPosX="-705.6517" WorldPosY="698.0380" WorldPosZ="0.0000" X2="-7.326599" Y2="-53.620544" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-30:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-30" parm2="12" WorldPosX="-724.6607" WorldPosY="706.5743" WorldPosZ="0.0000" X2="-10.117981" Y2="-44.508667" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-29:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-29" parm2="8" WorldPosX="-741.0073" WorldPosY="700.4760" WorldPosZ="0.0000" X2="-29.067322" Y2="-46.715637" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-28:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-28" parm2="10" WorldPosX="687.5630" WorldPosY="728.0150" WorldPosZ="0.0000" X2="-2.404907" Y2="-26.474182" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-27:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-27" parm2="10" WorldPosX="681.8758" WorldPosY="761.7253" WorldPosZ="0.0000" X2="-30.975647" Y2="-6.202393" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-26:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-26" parm2="6" WorldPosX="667.7064" WorldPosY="743.6887" WorldPosZ="0.0000" X2="-24.240967" Y2="-22.450317" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-25:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-25" parm2="12" WorldPosX="664.3958" WorldPosY="715.0365" WorldPosZ="0.0000" X2="-8.304993" Y2="-31.143555" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-24:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-24" parm2="2" WorldPosX="705.2697" WorldPosY="674.7393" WorldPosZ="0.0000" X2="-5.577942" Y2="-19.913818" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-23:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-23" parm2="12" WorldPosX="746.6181" WorldPosY="538.1037" WorldPosZ="0.0000" X2="-52.944153" Y2="-16.609985" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-22:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-22" parm2="18" WorldPosX="752.7094" WorldPosY="501.4003" WorldPosZ="0.0000" X2="-7.129517" Y2="-40.117310" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-21:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-21" parm2="12" WorldPosX="720.2485" WorldPosY="497.9095" WorldPosZ="0.0000" X2="-9.964539" Y2="-22.092834" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-20:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-20" parm2="12" WorldPosX="743.0648" WorldPosY="390.5720" WorldPosZ="0.0000" X2="-4.534363" Y2="-39.833923" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-19:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-19" parm2="12" WorldPosX="713.5795" WorldPosY="361.7961" WorldPosZ="0.0000" X2="-10.345154" Y2="-31.820435" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-18:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-17" WorldPosX="205.6002" WorldPosY="622.9325" WorldPosZ="0.0000" X2="2.344635" Y2="-19.047791" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-16:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-16" WorldPosX="224.0759" WorldPosY="684.2197" WorldPosZ="0.0000" X2="-2.360107" Y2="-24.720642" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-15:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-15" parm2="6" WorldPosX="170.9399" WorldPosY="615.3408" WorldPosZ="0.0000" X2="23.627823" Y2="-22.917297" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-14:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-14" parm2="10" WorldPosX="157.0882" WorldPosY="670.7884" WorldPosZ="0.0000" X2="40.593872" Y2="-29.572571" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-13:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-13" parm2="2" WorldPosX="114.9862" WorldPosY="630.9724" WorldPosZ="0.0000" X2="-0.514587" Y2="-25.052795" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-12:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-12" parm2="10" WorldPosX="142.6617" WorldPosY="613.1865" WorldPosZ="0.0000" X2="27.745255" Y2="-33.963013" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-11:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-11" parm2="6" WorldPosX="211.0053" WorldPosY="549.9379" WorldPosZ="0.0000" X2="16.275284" Y2="4.838196" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-10:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-10" parm2="6" WorldPosX="230.5170" WorldPosY="531.5808" WorldPosZ="0.0000" X2="19.631363" Y2="6.424133" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-9:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-9" parm2="11" WorldPosX="265.8434" WorldPosY="519.4420" WorldPosZ="0.0000" X2="-3.199432" Y2="-17.219788" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-8:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-8" parm2="9" WorldPosX="211.0753" WorldPosY="497.4331" WorldPosZ="0.0000" X2="25.929443" Y2="-21.515991" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-7:1">
+      <ControllerConnection Port="1" Protocol="dmx"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-7" parm2="9" WorldPosX="299.5136" WorldPosY="513.4533" WorldPosZ="0.0000" X2="17.491150" Y2="-8.345764" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-6:1">
+      <ControllerConnection Port="1" Protocol="dmx"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-6" parm2="9" WorldPosX="277.1416" WorldPosY="484.1417" WorldPosZ="0.0000" X2="18.006729" Y2="-3.148193" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-5:1">
+      <ControllerConnection Port="1" Protocol="dmx"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-5" parm2="12" WorldPosX="331.3006" WorldPosY="481.9339" WorldPosZ="0.0000" X2="25.812073" Y2="22.364532" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-4:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-4" parm2="7" WorldPosX="348.6628" WorldPosY="458.1254" WorldPosZ="0.0000" X2="18.171753" Y2="-9.075958" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-3:1">
+      <ControllerConnection Port="1" Protocol="dmx"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-2" LayoutGroup="Default" parm2="11" WorldPosX="299.6237" WorldPosY="454.4169" WorldPosZ="0.0000" X2="11.811737" Y2="-34.206024" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-3" LayoutGroup="Default" parm2="9" WorldPosX="301.0458" WorldPosY="458.2672" WorldPosZ="0.0000" X2="19.732788" Y2="-18.332031" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-2:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line" LayoutGroup="Default" parm2="6" WorldPosX="296.2470" WorldPosY="452.2267" WorldPosZ="0.0000" X2="-10.764465" Y2="-23.710876" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:1:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-46" WorldPosX="460.9842" WorldPosY="494.5257" WorldPosZ="0.0000" X2="45.884369" Y2="-7.711548" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-45:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-47" parm2="10" WorldPosX="505.7112" WorldPosY="461.1783" WorldPosZ="0.0000" X2="33.338867" Y2="-23.155945" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-46:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-50" WorldPosX="443.6128" WorldPosY="569.3415" WorldPosZ="0.0000" X2="35.170471" Y2="-34.993652" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-49:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-51" parm2="2" WorldPosX="475.5255" WorldPosY="622.5297" WorldPosZ="0.0000" X2="-4.152557" Y2="-23.877197" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-50:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-57" WorldPosX="603.1469" WorldPosY="683.8931" WorldPosZ="0.0000" X2="7.266785" Y2="-12.457397" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-56:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-58" parm2="10" WorldPosX="606.0403" WorldPosY="650.3373" WorldPosZ="0.0000" X2="17.868835" Y2="-23.540894" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-57:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-69" LayoutGroup="Default" parm2="12" WorldPosX="-45.7709" WorldPosY="437.8124" WorldPosZ="0.0000" X2="-20.012894" Y2="-62.235352" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-68:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-74" WorldPosX="-451.3677" WorldPosY="395.2182" WorldPosZ="0.0000" X2="7.112427" Y2="-49.233368" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-73:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-75" WorldPosX="-473.8318" WorldPosY="410.7967" WorldPosZ="0.0000" X2="-4.689819" Y2="-61.004517" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-74:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-76" parm2="12" WorldPosX="-479.8782" WorldPosY="477.0018" WorldPosZ="0.0000" X2="-19.584106" Y2="-45.350952" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-75:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-79" parm2="7" WorldPosX="-323.8654" WorldPosY="628.0337" WorldPosZ="0.0000" X2="-17.865280" Y2="-49.421509" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-78:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-88" WorldPosX="-162.5712" WorldPosY="609.4236" WorldPosZ="0.0000" X2="1.130768" Y2="-32.791565" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-87:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-89" parm2="10" WorldPosX="-263.0682" WorldPosY="489.3161" WorldPosZ="0.0000" X2="-8.314087" Y2="-71.857880" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-88:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-90" parm2="12" WorldPosX="-232.9596" WorldPosY="480.9339" WorldPosZ="0.0000" X2="3.458557" Y2="-69.186768" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-89:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-97" LayoutGroup="Default" parm2="72" WorldPosX="-445.2878" WorldPosY="249.1024" WorldPosZ="0.0000" X2="-0.107529" Y2="-168.853058" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-96:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="8"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-98" LayoutGroup="Default" parm2="10" WorldPosX="-561.9845" WorldPosY="125.3626" WorldPosZ="0.0000" X2="-1.061707" Y2="-44.602898" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-97:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="8"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-99" LayoutGroup="Default" parm2="5" WorldPosX="-539.2960" WorldPosY="119.4589" WorldPosZ="0.0000" X2="0.091949" Y2="-33.691071" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-98:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="9"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-103" LayoutGroup="Default" parm2="79" WorldPosX="503.4870" WorldPosY="219.5839" WorldPosZ="0.0000" X2="0.680023" Y2="-160.247009" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:10:1">
+      <ControllerConnection channel="10" Protocol="dmx" Port="11"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-104" LayoutGroup="Default" parm2="86" WorldPosX="558.6941" WorldPosY="210.0655" WorldPosZ="0.0000" X2="4.354767" Y2="-153.122406" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-103:1">
+      <ControllerConnection Protocol="dmx" Port="11" channel="10"/>
+    </model>
+  </models>
+  <view_objects>
+    <view_object DisplayAs="Gridlines" LayoutGroup="Default" name="Gridlines" GridLineSpacing="50" GridWidth="2000.0" GridHeight="1000.0" Active="1" WorldPosX="0.0000" WorldPosY="0.0000" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" RotateX="-90.00000000" RotateY="-0.00000000" RotateZ="0.00000000" versionNumber="5"/>
+  </view_objects>
+  <effects version="0007"/>
+  <views>
+    <view name="models ordered by connection" models="String2,String3,String4,Single Line,Single Line-2,Single Line-3,Single Line-4,Single Line-5,Single Line-6,Single Line-7,Single Line-8,Single Line-9,Single Line-10,Single Line-11,Single Line-12,Single Line-13,Single Line-14,Single Line-15,Single Line-16,Single Line-17,Single Line-18,Single Line-19,Single Line-20,Single Line-21,Single Line-22,Single Line-23,Single Line-24,Single Line-25,Single Line-26,Single Line-27,Single Line-28,Single Line-29,Single Line-30,Single Line-31,Single Line-32,Single Line-33,Single Line-34,Single Line-35,Single Line-36,Single Line-37,Single Line-38,Single Line-39,Single Line-40,Single Line-41,Single Line-42,Single Line-43,Single Line-44,Single Line-45,Single Line-46,Single Line-47,Single Line-48,Single Line-49,Single Line-50,Single Line-51,Single Line-52,Single Line-53,Single Line-54,Single Line-55,Single Line-56,Single Line-57,Single Line-58,Single Line-59,Single Line-60,Single Line-61,Single Line-62,Single Line-63,Single Line-64,Single Line-65,Single Line-66,Single Line-67,Single Line-68,Single Line-69,Single Line-70,Single Line-71,Single Line-72,Single Line-73,Single Line-74,Single Line-75,Single Line-76,Single Line-77,Single Line-78,Single Line-79,Single Line-80,Single Line-81,Single Line-82,Single Line-83,Single Line-84,Single Line-85,Single Line-86,Single Line-87,Single Line-88,Single Line-89,Single Line-90,string1"/>
+    <view name="Groups View" models="Ground,Ceiling,Bats All,Bats Left,Bats Right,Crystals Center,Crystals Center C,Crystals Left,Crystals Right,MegaCrystal Left,MegaCrystal Left Familia,MegaCrystal Right,MegaCrystal Right Familia,Mushrooms,Spiders,Matrix"/>
+  </views>
+  <palettes/>
+  <modelGroups>
+    <modelGroup selected="0" name="bats string 2" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-24" WorldPosX="3.0000" WorldPosY="10.0000" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" RotateX="0.00000000" RotateY="0.00000000" RotateZ="0.00000000"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line,Single Line-2,Single Line-3,Single Line-4,Single Line-5,Single Line-6,Single Line-7,Single Line-8,Single Line-9,Single Line-10,Single Line-11,Single Line-12,Single Line-13,Single Line-14,Single Line-15,Single Line-16,Single Line-17" name="string1"/>
+    <modelGroup selected="0" name="string2" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-18,Single Line-19,Single Line-20,Single Line-21,Single Line-22,Single Line-23,Single Line-24,Single Line-25,Single Line-26,Single Line-27,Single Line-28,Single Line-29,Single Line-30,Single Line-31,Single Line-32,Single Line-33,Single Line-34,Single Line-35,Single Line-36,Single Line-37,Single Line-38,Single Line-39,Single Line-40,Single Line-41,Single Line-42"/>
+    <modelGroup selected="0" name="string3" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-43,Single Line-44,Single Line-45,Single Line-46,Single Line-47,Single Line-48,Single Line-49,Single Line-50,Single Line-51,Single Line-52,Single Line-53,Single Line-54,Single Line-55,Single Line-56,Single Line-57,Single Line-58,Single Line-59,Single Line-60,Single Line-61,Single Line-62,Single Line-63"/>
+    <modelGroup selected="0" name="string4" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-64,Single Line-65,Single Line-66,Single Line-67,Single Line-68,Single Line-69,Single Line-70,Single Line-71,Single Line-72,Single Line-73,Single Line-74,Single Line-75,Single Line-76,Single Line-77,Single Line-78,Single Line-79,Single Line-80,Single Line-81,Single Line-82,Single Line-83,Single Line-84,Single Line-85,Single Line-86,Single Line-87,Single Line-88,Single Line-89,Single Line-90"/>
+    <modelGroup selected="0" name="string5" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-96,Single Line-97,Single Line-98,Single Line-99,Single Line-100,Single Line-101,Single Line-102"/>
+    <modelGroup selected="0" name="string6" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-103,Single Line-104,Single Line-105"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-106" name="string7"/>
+    <modelGroup selected="0" name="string8" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-107"/>
+    <modelGroup selected="0" name="bats string 1" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-17,Single Line-13,Single Line-16"/>
+    <modelGroup selected="0" name="string 2 triple 1" models="" layout="minimalGrid" GridSize="400" LayoutGroup="Default"/>
+    <modelGroup selected="0" models="" layout="minimalGrid" GridSize="400" LayoutGroup="Default" name="string 3 - 5 group 1"/>
+    <modelGroup selected="0" name="string 3 - trio 1" models="" layout="minimalGrid" GridSize="400" LayoutGroup="Default"/>
+    <modelGroup selected="0" name="bats string 3" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-51,Single Line-54,Single Line-57,Single Line-52,Single Line-56"/>
+    <modelGroup selected="0" name="bats string 4" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-82,Single Line-83,Single Line-84,Single Line-85,Single Line-86,Single Line-87,Single Line-88"/>
+    <modelGroup selected="0" name="MegaCrystal Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-96,Single Line-97"/>
+    <modelGroup selected="0" name="MegaCrystal Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-103,Single Line-104"/>
+    <modelGroup selected="0" name="MegaCrystal Left Familia" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-98,Single Line-99,Single Line-100,Single Line-101,Single Line-102"/>
+    <modelGroup selected="0" name="Mushrooms" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-106"/>
+    <modelGroup selected="0" name="Spiders" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-107"/>
+    <modelGroup selected="0" name="MegaCrystal Right Familia" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-105"/>
+    <modelGroup selected="0" name="Crystals Center" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-64,Single Line-65,Single Line-66,Single Line-67,Single Line-68,Single Line-69,Single Line-70,Single Line-71,Single Line-12,Single Line-14,Single Line-15,Single Line,Single Line-2,Single Line-3,Single Line-4,Single Line-5,Single Line-6,Single Line-7,Single Line-8,Single Line-9,Single Line-10,Single Line-11"/>
+    <modelGroup selected="0" name="Bats Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="bats string 4"/>
+    <modelGroup selected="0" name="Bats Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="bats string 1,bats string 2,bats string 3"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-43,Single Line-44,Single Line-45,Single Line-46,Single Line-47" name="Crystal Right 1 - 5 group"/>
+    <modelGroup selected="0" name="Crystal Right 2 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-48,Single Line-49,Single Line-50"/>
+    <modelGroup selected="0" name="Crystal Right 3 - 2 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-53,Single Line-55"/>
+    <modelGroup selected="0" name="Crystal Right 4 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-58,Single Line-59,Single Line-60"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-61,Single Line-62,Single Line-63" name="Crystal Right 5 - 3 group"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-25,Single Line-26,Single Line-27,Single Line-28" name="Crystal Right 6 - 4 group"/>
+    <modelGroup selected="0" name="Crystal Right 7 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-21,Single Line-22,Single Line-23"/>
+    <modelGroup selected="0" name="Crystal Right 8 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-18,Single Line-19,Single Line-20"/>
+    <modelGroup selected="0" name="Crystals Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystal Right 1 - 5 group,Crystal Right 2 - 3 group,Crystal Right 3 - 2 group,Crystal Right 4 - 3 group,Crystal Right 5 - 3 group,Crystal Right 6 - 4 group,Crystal Right 7 - 3 group,Crystal Right 8 - 3 group"/>
+    <modelGroup selected="0" name="Crystal Left 1 - 2 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-89,Single Line-90"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-72,Single Line-73" name="Crystal Left 3 - 2 group"/>
+    <modelGroup selected="0" name="Crystal Left 2 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-79,Single Line-80,Single Line-81"/>
+    <modelGroup selected="0" name="Crystal Left 4 - 5 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-74,Single Line-75,Single Line-76,Single Line-77,Single Line-78"/>
+    <modelGroup selected="0" name="Crystal Left 5 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-40,Single Line-41,Single Line-42"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-37,Single Line-38,Single Line-39" name="crystal Left 6.1 - 3 combo"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-32,Single Line-33" name="crystal Left 6.2 - 2 group"/>
+    <modelGroup selected="0" name="Crystal Left 6 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="crystal Left 6.2 - 2 group,crystal Left 6.1 - 3 combo"/>
+    <modelGroup selected="0" name="crystal Left 7.1 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-34,Single Line-35,Single Line-36"/>
+    <modelGroup selected="0" name="crystal Left 7.2 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-29,Single Line-30,Single Line-31"/>
+    <modelGroup selected="0" name="Crystal Left 7 - 2 X 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="crystal Left 7.1 - 3 group,crystal Left 7.2 - 3 group"/>
+    <modelGroup selected="0" name="Crystals Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystal Left 1 - 2 group,Crystal Left 2 - 3 group,Crystal Left 3 - 2 group,Crystal Left 4 - 5 group,Crystal Left 5 - 3 group,Crystal Left 6 - 3 group,Crystal Left 7 - 2 X 3 group" WorldPosX="142.0000" WorldPosY="92.0000" WorldPosZ="0.0000" ScaleX="2.2332" ScaleY="2.2332" ScaleZ="2.2332" RotateX="0.00000000" RotateY="0.00000000" RotateZ="0.00000000">
+      <ControllerConnection/>
+    </modelGroup>
+    <modelGroup selected="0" name="Crystal Center C 1 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-12,Single Line-14,Single Line-15"/>
+    <modelGroup selected="0" name="Crystal Center C 2 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-8,Single Line-10,Single Line-11"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-64,Single Line-65,Single Line-66,Single Line-67" name="Crystal Center C 3 - 4 group"/>
+    <modelGroup selected="0" name="Crystal Center C 4 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-6,Single Line-7,Single Line-9"/>
+    <modelGroup selected="0" name="Crystal Center C 6 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line,Single Line-2,Single Line-3,Single Line-4,Single Line-5"/>
+    <modelGroup selected="0" name="Crystal Center C 5 - 4 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-68,Single Line-69,Single Line-70,Single Line-71"/>
+    <modelGroup selected="0" name="Crystals Center C" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystal Center C 1 - 3 group,Crystal Center C 2 - 3 group,Crystal Center C 3 - 4 group,Crystal Center C 4 - 3 group,Crystal Center C 5 - 4 group,Crystal Center C 6 - 3 group"/>
+    <modelGroup selected="0" name="Ground" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="MegaCrystal Left,MegaCrystal Left Familia,MegaCrystal Right,MegaCrystal Right Familia,Mushrooms,Spiders"/>
+    <modelGroup selected="0" name="Ceiling" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Bats Left,Bats Right,Crystals Center,Crystals Center C,Crystals Left,Crystals Right"/>
+    <modelGroup selected="0" name="Bats All" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Bats Left,Bats Right"/>
+  </modelGroups>
+  <layoutGroups/>
+  <perspectives current="Default Perspective">
+    <perspective name="Default Perspective" settings="layout2|name=ModelPreview;caption=Model Preview;state=6293500;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=250;besth=250;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=HousePreview;caption=House Preview;state=6293500;dir=4;layer=1;row=0;pos=1;prop=100000;bestw=250;besth=250;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=EffectAssist;caption=Effect Assist;state=2099198;dir=4;layer=1;row=0;pos=2;prop=100000;bestw=250;besth=250;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DisplayElements;caption=Display Elements;state=6293503;dir=4;layer=0;row=0;pos=0;prop=100000;bestw=600;besth=400;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=600;floath=400|name=Perspectives;caption=Perspectives;state=2099198;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=183;besth=150;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Effect;caption=Effect Settings;state=2099196;dir=4;layer=0;row=1;pos=0;prop=100000;bestw=460;besth=831;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=SelectEffect;caption=Select Effects;state=2099198;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=463;besth=316;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=EffectDropper;caption=Effects;state=2099198;dir=1;layer=0;row=0;pos=0;prop=100000;bestw=1044;besth=696;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ValueCurveDropper;caption=Value Curves;state=2099198;dir=1;layer=0;row=0;pos=0;prop=100000;bestw=40;besth=40;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ColourDropper;caption=Colours;state=2099198;dir=1;layer=0;row=0;pos=0;prop=100000;bestw=20;besth=20;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Jukebox;caption=Jukebox;state=2099198;dir=1;layer=0;row=0;pos=0;prop=100000;bestw=100;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Color;caption=Color;state=2099196;dir=1;layer=0;row=0;pos=0;prop=100000;bestw=404;besth=375;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayerTiming;caption=Layer Blending;state=2099196;dir=1;layer=0;row=0;pos=1;prop=100000;bestw=308;besth=285;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayerSettings;caption=Layer Settings;state=2099196;dir=1;layer=0;row=0;pos=2;prop=100000;bestw=317;besth=458;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=SequenceVideo;caption=Sequence Video;state=2099199;dir=4;layer=0;row=0;pos=0;prop=100000;bestw=320;besth=169;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=348;floaty=205;floatw=320;floath=185|name=Main Sequencer;caption=Main Sequencer;state=768;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=296;besth=221;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(4,1,0)=252|dock_size(4,0,1)=352|dock_size(1,0,0)=144|dock_size(5,0,0)=298|" version="2.0"/>
+  </perspectives>
+  <settings>
+    <previewWidth value="1280"/>
+    <previewHeight value="720"/>
+    <storedLayoutGroup value="Default"/>
+  </settings>
+  <colors>
+    <DisabledEffect Red="200" Green="200" Blue="0"/>
+    <EffectDefault Red="192" Green="192" Blue="192"/>
+    <EffectSelected Red="204" Green="102" Blue="255"/>
+    <EffectSelectedDisabled Red="200" Green="200" Blue="64"/>
+    <EffectSelectedFixed Red="255" Green="128" Blue="0"/>
+    <EffectSelectedLocked Red="200" Green="0" Blue="64"/>
+    <GridDashes Red="255" Green="255" Blue="0"/>
+    <Gridlines Red="40" Green="40" Blue="40"/>
+    <LabelOutline Red="103" Green="103" Blue="103"/>
+    <Labels Red="255" Green="255" Blue="204"/>
+    <LayoutDashes Red="255" Green="255" Blue="0"/>
+    <LockedEffect Red="200" Green="0" Blue="0"/>
+    <ModelDefault Red="211" Green="211" Blue="211"/>
+    <ModelOverlap Red="255" Green="0" Blue="0"/>
+    <ModelSelected Red="255" Green="255" Blue="0"/>
+    <Phonemes Red="255" Green="181" Blue="218"/>
+    <Phrases Red="153" Green="255" Blue="153"/>
+    <ReferenceEffect Red="255" Green="0" Blue="255"/>
+    <ReferenceEffectDisabled Red="255" Green="255" Blue="127"/>
+    <ReferenceEffectLocked Red="255" Green="0" Blue="127"/>
+    <RowHeaderSelected Red="130" Green="178" Blue="207"/>
+    <Timing1 Red="0" Green="255" Blue="255"/>
+    <Timing2 Red="255" Green="0" Blue="0"/>
+    <Timing3 Red="0" Green="255" Blue="0"/>
+    <Timing4 Red="0" Green="0" Blue="255"/>
+    <Timing5 Red="255" Green="255" Blue="0"/>
+    <TimingDefault Red="255" Green="255" Blue="255"/>
+    <Waveform Red="130" Green="178" Blue="207"/>
+    <WaveformSelected Red="0" Green="0" Blue="200"/>
+    <WaveformSelectedEffect Red="255" Green="128" Blue="0"/>
+    <Words Red="255" Green="218" Blue="145"/>
+  </colors>
+  <Viewpoints>
+    <DefaultCamera2D name="DEFAULT2D" posX="0.000000" posY="0.000000" posZ="0.000000" angleX="20.000000" angleY="5.000000" distance="-2000.000000" zoom="1.000000" panx="0.000000" pany="0.000000" panz="0.000000" zoom_corrx="0.000000" zoom_corry="0.000000" is_3d="0"/>
+  </Viewpoints>
+</xrgb>
