@@ -27,7 +27,7 @@ DMAMEM int display_memory[LEDS_PER_STRIP * 6];
 int drawing_memory[LEDS_PER_STRIP * 6];
 SdLedsPlayer sd_leds_player(LEDS_PER_STRIP, display_memory, drawing_memory);
 unsigned long frame_timestamp;
-uint8_t brightness = 30; // range is 0 (off) to 255 (full brightness)
+uint8_t brightness = 50; // range is 0 (off) to 255 (full brightness)
 
 Adafruit_VL53L0X lox = Adafruit_VL53L0X();
 int range = -1;

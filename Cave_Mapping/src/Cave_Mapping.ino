@@ -42,7 +42,7 @@
 
 #define KEYPIN 22
 
-const int ledsPerStrip = 350;
+const int ledsPerStrip = 300;
 const int stringNum = 8;
 const int numLeds = ledsPerStrip*stringNum;
 
@@ -104,7 +104,7 @@ unsigned long debounceDelay = 50;
 bool keyActive = true;
 int reading;
 int objNum = 1;
-const int maxObjNum = 28;
+const int maxObjNum = 27;
 
 void setup() {
   Serial.begin(115200);
@@ -131,6 +131,7 @@ void loop() {
         objNum++;
         if (objNum > maxObjNum) objNum = 1;
         Serial.print("key switch triggered, object number is now: "); Serial.println(objNum-1);
+        leds_clear(numLeds);
       }
     }
   }
@@ -138,7 +139,6 @@ void loop() {
   
   // int microsec = 2000000 / leds.numPixels();  // change them all in 2 seconds
 
-  leds_clear(numLeds);
   
   // string 1
   location = 0;
@@ -161,7 +161,7 @@ void loop() {
   if (objNum == 17) colorthem(RED,2);    else location += 2;     // 17
    
   // string 2
-  location=350;
+  location=ledsPerStrip;
   if (objNum == 1 ) colorthem(RED,8);     else location += 8;     // 1
   if (objNum == 2 ) colorthem(BLUE, 12);  else location += 12;    // 2
   if (objNum == 3 ) colorthem(GREEN, 12); else location += 12;    // 3
@@ -189,7 +189,7 @@ void loop() {
   if (objNum == 25) colorthem(RED,7);     else location += 7;     // 25
  
  // string 3
-  location = 700;
+  location = ledsPerStrip*2;
   if (objNum == 1 ) colorthem(GREEN, 12); else location += 12;    // 1
   if (objNum == 2 ) colorthem(BLUE, 12);  else location += 12;    // 2
   if (objNum == 3 ) colorthem(RED,12);    else location += 12;    // 3
@@ -213,7 +213,7 @@ void loop() {
   if (objNum == 21) colorthem(RED,16);    else location += 16;    // 21
   
   // string 4
-  location = 1050; 
+  location = ledsPerStrip*3; 
   if (objNum == 1 ) colorthem(RED,6);     else location += 6;     // 1
   if (objNum == 2 ) colorthem(BLUE, 12);  else location += 12;    // 2
   if (objNum == 3 ) colorthem(GREEN, 12); else location += 12;    // 3
@@ -226,8 +226,8 @@ void loop() {
   if (objNum == 10) colorthem(RED,8);     else location += 8;     // 10
   if (objNum == 11) colorthem(BLUE, 12);  else location += 12;    // 11
   if (objNum == 12) colorthem(GREEN, 12); else location += 12;    // 12
-  if (objNum == 13) colorthem(RED,11);    else location += 11;    // 13
-  if (objNum == 14) colorthem(BLUE, 11);  else location += 11;    // 14
+  if (objNum == 13) colorthem(RED,12);    else location += 12;    // 13
+  if (objNum == 14) colorthem(BLUE, 10);  else location += 10;    // 14
   if (objNum == 15) colorthem(GREEN, 12); else location += 12;    // 15
   if (objNum == 16) colorthem(RED,7);     else location += 7;     // 16
   if (objNum == 17) colorthem(BLUE, 10);  else location += 10;    // 17
@@ -243,7 +243,7 @@ void loop() {
   if (objNum == 27) colorthem(GREEN, 12); else location += 12;    // 27
  
   // string 5
-  location =1400; 
+  location =ledsPerStrip*4; 
   if (objNum == 1 ) colorthem(RED,88);    else location += 88;    // 1
   if (objNum == 2 ) colorthem(BLUE, 72);  else location += 72;    // 2
   if (objNum == 3 ) colorthem(GREEN, 10); else location += 10;    // 3
@@ -253,17 +253,17 @@ void loop() {
   if (objNum == 7 ) colorthem(RED,10);    else location += 10;    // 7
  
   // string 6
-  location =1750; 
-  if (objNum == 1 ) colorthem(RED,79);    else location += 88;    // 1
-  if (objNum == 2 ) colorthem(BLUE, 86);  else location += 72;    // 2
-  if (objNum == 3 ) colorthem(GREEN, 12); else location += 10;    // 3
+  location =ledsPerStrip*5; 
+  if (objNum == 1 ) colorthem(RED,79);    else location += 79;    // 1
+  if (objNum == 2 ) colorthem(BLUE, 86);  else location += 86;    // 2
+  if (objNum == 3 ) colorthem(GREEN, 12); else location += 12;    // 3
   
   // string 7
-  location =2100; 
+  location =ledsPerStrip*6; 
   colorthem(RED,35); 
   
   // string 8 
-  location = 2450; 
+  location = ledsPerStrip*7; 
   colorthem(RED,29); 
   
 //  colorthem(RED,3);
@@ -277,4 +277,5 @@ void loop() {
   // colorWipe(ORANGE, microsec);
   // colorWipe(WHITE, microsec);
   leds.show();
+  delay(20);
 }
