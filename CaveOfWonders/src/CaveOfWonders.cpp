@@ -1,7 +1,7 @@
 #include "Adafruit_VL53L0X.h"
 #include "SdLedsPlayer.h"
 
-#define LEDS_PER_STRIP 251
+#define LEDS_PER_STRIP 254
 #define FILE_TO_PLAY "under"
 #define TOF_MEAS_INTERVAL 40
 #define KEYPIN 22
