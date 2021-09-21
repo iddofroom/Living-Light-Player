@@ -76,8 +76,8 @@ u_int8_t reading;
 unsigned long lastMonitorTime = 0;
 unsigned long MonitorDelay = 5000;
 
-// const char *files_iter_rr[] = {"cave1.wav", "cave2.wav", "cave3.wav", "cave4.wav", "sun.wav", "under.wav"};
-const char *files_iter_rr[] = {"under.wav", "under.wav", "under.wav", "under.wav", "under.wav", "under.wav"};
+const char *files_iter_rr[] = {"cave1.wav", "cave2.wav", "cave3.wav", "cave4.wav", "under.wav", "under.wav"};
+// const char *files_iter_rr[] = {"under.wav", "under.wav", "under.wav", "under.wav", "under.wav", "under.wav"};
 
 void setup() {
   Serial.begin(115200);
@@ -97,7 +97,7 @@ void setup() {
   if (!(SD.begin(SDCARD_CS_PIN))) {
     // stop here, but print a message repetitively
     while (1) {
-      Serial.println("Unable to access the SD card");
+      Serial.println("Unable to access the SD card, fix and press reset button");
       delay(500);
     }
   }
@@ -168,7 +168,12 @@ void loop() {
   //   }
   // }
   if((millis() - lastMonitorTime) > MonitorDelay) {
-    Serial.println("Alive");
+    Serial.print("COW Audio: ");
+    if (playWav1.isPlaying()) {
+      Serial.println("playing audio file");
+    } else {
+      Serial.println("NO audio file playing");
+    }
     lastMonitorTime = millis();
   }
 }

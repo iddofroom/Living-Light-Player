@@ -1,314 +1,311 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xrgb>
   <models>
-    <model StringType="RGB Nodes" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm2="50" parm3="1" name="Matrix" StartSide="T" DisplayAs="Horiz Matrix" parm1="16" LayoutGroup="Default" WorldPosX="-86.9590" WorldPosY="1098.5884" WorldPosZ="0.0000" ScaleX="13.9140" ScaleY="19.5965" ScaleZ="0.0000" RotateX="0.00000000" RotateY="0.00000000" RotateZ="0.00000000" versionNumber="5" StartChannel="&gt;Single Line-107:1">
-      <ControllerConnection Protocol="ws2811"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-91" LayoutGroup="Default" parm2="88" WorldPosX="-401.9713" WorldPosY="85.4501" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,9.021149,194.366425,0.000000,22.142975,-4.100517,0.000000" cPointData="" versionNumber="5" StartChannel="#127.0.0.1:8:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="8"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-105" LayoutGroup="Default" parm2="12" WorldPosX="598.6716" WorldPosY="111.0736" WorldPosZ="0.0000" X2="-1.488831" Y2="-48.174522" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-104:1">
-      <ControllerConnection channel="11" Protocol="dmx" Port="11"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-71" WorldPosX="-80.5666" WorldPosY="841.8428" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-1.596703,6.027466,0.000000,24.251778,-38.926392,0.000000,4.022530,10.522827,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-70:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-106" LayoutGroup="Default" parm2="35" WorldPosX="-156.7247" WorldPosY="94.3159" WorldPosZ="0.0000" X2="384.591675" Y2="-11.332642" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:12:1">
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-90" WorldPosX="-97.3260" WorldPosY="794.7816" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,30.329597,-26.307739,0.000000,8.399361,7.584473,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-89:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="10" name="Poly Line-89" WorldPosX="-120.6234" WorldPosY="797.3665" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-0.201859,0.015442,0.000000,30.699875,-34.873657,0.000000,4.782272,8.986938,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-88:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Poly Line-88" WorldPosX="-105.3540" WorldPosY="683.2348" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="3.359352,0.764465,0.000000,23.545204,-25.073425,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-87:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Poly Line-87" WorldPosX="-24.4257" WorldPosY="748.9829" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="3.401554,-2.454712,0.000000,27.624546,-21.833130,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-86:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Poly Line-86" WorldPosX="-26.8857" WorldPosY="723.2614" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="0.672729,-6.321228,0.000000,34.974663,-34.825378,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-85:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Poly Line-85" WorldPosX="-59.8342" WorldPosY="737.2591" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="1.370899,-0.683105,0.000000,24.959951,-24.095398,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-84:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Poly Line-84" WorldPosX="-62.5165" WorldPosY="760.0107" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="0.000000,0.000000,0.000000,32.614693,-21.146545,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-83:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Poly Line-83" WorldPosX="-89.2075" WorldPosY="734.0955" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="0.000000,0.000000,0.000000,24.596725,-21.146179,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-82:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-82" LayoutGroup="Default" parm2="2" WorldPosX="-114.1933" WorldPosY="732.5606" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="0.000000,0.000000,0.000000,21.631645,-21.279907,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-81:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Poly Line-81" parm2="8" WorldPosX="-23.1310" WorldPosY="686.4852" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-0.611576,1.721680,0.000000,29.732296,-24.126831,0.000000,5.007656,10.712524,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-80:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Poly Line-80" parm2="10" WorldPosX="-36.9626" WorldPosY="680.3209" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="3.199089,1.219849,0.000000,26.799889,-23.504822,0.000000,9.942192,10.210632,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-79:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Poly Line-79" parm2="7" WorldPosX="-63.8283" WorldPosY="680.3015" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,39.600975,-23.504395,0.000000,10.380913,13.582581,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-78:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-78" WorldPosX="-271.4507" WorldPosY="609.4379" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-2.890625,6.919678,0.000000,43.187134,4.671997,0.000000,-1.766785,-3.194946,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-77:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Poly Line-77" parm2="10" WorldPosX="-301.2298" WorldPosY="642.6115" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-1.207733,10.833069,0.000000,47.117706,-4.900818,0.000000,-2.331573,-0.405396,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-76:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-76" WorldPosX="-271.3651" WorldPosY="648.7321" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="1.519196,11.455566,0.000000,48.720795,4.712463,0.000000,2.643036,-2.030579,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-75:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-75" WorldPosX="-301.6458" WorldPosY="586.3385" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="2.579865,6.418335,0.000000,48.657623,14.285217,0.000000,5.951324,-2.572510,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-74:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-74" WorldPosX="-337.0043" WorldPosY="613.2705" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="13.213684,14.325562,0.000000,55.919922,9.830200,0.000000,5.346741,-2.532104,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-73:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Poly Line-73" parm2="8" WorldPosX="-195.1931" WorldPosY="759.8722" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,35.484268,-21.015198,0.000000,6.264236,12.700256,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-72:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-72" WorldPosX="-165.5505" WorldPosY="759.4720" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,33.937897,-14.995728,0.000000,3.593933,13.100464,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-71:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-69" WorldPosX="-58.5354" WorldPosY="893.9507" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,19.078308,-49.451965,0.000000,10.087524,7.864258,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-68:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-68" WorldPosX="-32.9420" WorldPosY="866.8974" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-0.895861,2.325928,0.000000,20.457228,-38.132568,0.000000,14.837965,11.316711,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-67:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-66" WorldPosX="21.6159" WorldPosY="943.5911" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,2.986334,-37.280762,0.000000,9.984802,0.000000,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-65:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Poly Line-67" parm2="10" WorldPosX="44.1000" WorldPosY="857.5758" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,-0.392357,-40.049438,0.000000,9.984802,0.000000,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-66:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Poly Line-57" WorldPosX="168.7234" WorldPosY="556.9516" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="0.000000,0.000000,0.000000,-42.252228,1.852295,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-56:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Poly Line-52" WorldPosX="224.5099" WorldPosY="544.4543" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="0.249924,1.314331,0.000000,-41.584732,13.757446,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-51:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-51" LayoutGroup="Default" parm2="2" WorldPosX="237.8717" WorldPosY="641.8484" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="0.000000,0.000000,0.000000,-47.709579,1.794128,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-50:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Poly Line-47" parm2="10" WorldPosX="341.8302" WorldPosY="637.5085" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="7.590027,8.855042,0.000000,-27.727600,-0.179688,0.000000,7.590027,-4.286377,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-46:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-50" WorldPosX="290.3059" WorldPosY="614.0888" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="3.480347,8.783875,0.000000,-21.521179,17.586365,0.000000,5.147308,24.395386,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-49:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-49" WorldPosX="250.7154" WorldPosY="647.9728" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="4.451385,1.859680,0.000000,-15.408142,7.533813,0.000000,2.749146,13.775391,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-48:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-48" WorldPosX="277.7808" WorldPosY="654.9160" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="7.402771,4.427673,0.000000,-17.563477,8.399597,0.000000,9.672424,11.804077,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-47:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-37" LayoutGroup="Default" parm2="6" WorldPosX="-210.7743" WorldPosY="520.3091" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="11.266815,-0.420898,0.000000,31.234497,25.537048,0.000000,3.734833,9.236206,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-36:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="10" name="Poly Line-32" WorldPosX="-104.9212" WorldPosY="586.7384" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-1.954742,2.306030,0.000000,26.508087,8.343567,0.000000,1.495331,-4.593994,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-31:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-26" LayoutGroup="Default" parm2="6" WorldPosX="97.4206" WorldPosY="603.9952" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-1.054527,-6.357605,0.000000,-28.019653,12.310547,0.000000,3.785347,4.705017,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-25:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-23" WorldPosX="73.2145" WorldPosY="447.3895" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-14.115593,35.736267,0.000000,-28.337975,80.913177,0.000000,-4.033936,38.955811,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-22:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Poly Line-22" parm2="18" WorldPosX="104.6783" WorldPosY="418.6345" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-14.624832,38.556366,0.000000,-28.847214,77.877014,0.000000,-7.931992,41.902802,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-21:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-21" WorldPosX="65.3478" WorldPosY="400.1294" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-16.288231,32.799805,0.000000,-22.144493,76.303467,0.000000,-2.065849,35.309631,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-20:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-20" WorldPosX="141.0678" WorldPosY="363.8284" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-13.366928,33.963196,0.000000,-30.935715,76.630280,0.000000,-1.654404,40.656067,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-19:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-13" LayoutGroup="Default" parm2="2" WorldPosX="45.7942" WorldPosY="705.1683" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-10.809570,2.402283,0.000000,-1.153790,12.520630,0.000000,5.592670,16.456055,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-12:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-2" LayoutGroup="Default" parm2="11" WorldPosX="250.7930" WorldPosY="750.1951" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="1.232727,1.609680,0.000000,-11.632507,-15.828430,0.000000,11.442078,-2.594177,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-3" LayoutGroup="Default" parm2="9" WorldPosX="250.6198" WorldPosY="761.4274" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-0.600586,-1.200989,0.000000,-9.872223,-8.543213,0.000000,10.209351,-6.005432,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-2:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line" LayoutGroup="Default" parm2="6" WorldPosX="257.2912" WorldPosY="753.2990" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,-0.093414,-16.780640,0.000000,11.648621,-7.367249,0.000000" cPointData="" versionNumber="5" StartChannel="#127.0.0.1:1:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
+    </model>
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-106" LayoutGroup="Default" parm2="35" WorldPosX="-66.5633" WorldPosY="193.0216" WorldPosZ="0.0000" X2="344.926514" Y2="-5.059464" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:12:1">
       <ControllerConnection Protocol="dmx" Port="1" channel="12"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-107" LayoutGroup="Default" parm2="29" WorldPosX="-21.1081" WorldPosY="275.9453" WorldPosZ="0.0000" X2="833.176636" Y2="-15.393524" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:13:1">
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-107" LayoutGroup="Default" parm2="29" WorldPosX="62.6517" WorldPosY="302.7964" WorldPosZ="0.0000" X2="833.176636" Y2="-15.393524" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:13:1">
       <ControllerConnection Protocol="dmx" Port="1" channel="13"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="10" name="Single Line-102" WorldPosX="-355.4966" WorldPosY="128.9773" WorldPosZ="0.0000" X2="3.479019" Y2="-48.942123" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-101:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="9"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-4" LayoutGroup="Default" parm2="7" WorldPosX="269.6887" WorldPosY="722.3328" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="4.443939,12.823242,0.000000,-5.382233,-0.361816,0.000000,12.236572,3.833130,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-3:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-101" parm2="12" WorldPosX="-387.8594" WorldPosY="125.1699" WorldPosZ="0.0000" X2="0.829910" Y2="-48.942123" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-100:1">
-      <ControllerConnection Port="1" Protocol="dmx" channel="9"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-5" LayoutGroup="Default" parm2="12" WorldPosX="228.9724" WorldPosY="768.7256" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="7.187698,2.468872,0.000000,-3.074387,-10.024170,0.000000,12.702240,-2.128723,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-4:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="5" name="Single Line-100" WorldPosX="-412.6074" WorldPosY="125.1699" WorldPosZ="0.0000" X2="2.635498" Y2="-37.231125" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-99:1">
-      <ControllerConnection Port="1" Protocol="dmx" channel="9"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-6" LayoutGroup="Default" parm2="9" WorldPosX="174.2807" WorldPosY="788.7475" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,-7.961533,-22.077881,0.000000,9.608826,-0.600586,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-5:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-96" LayoutGroup="Default" parm2="88" WorldPosX="-487.1690" WorldPosY="251.0061" WorldPosZ="0.0000" X2="-2.144287" Y2="-168.240723" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:8:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="8"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-7" LayoutGroup="Default" parm2="9" WorldPosX="190.3772" WorldPosY="774.5479" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,-11.897491,-27.079163,0.000000,10.209351,-3.603271,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-6:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-87" WorldPosX="-197.7700" WorldPosY="596.5912" WorldPosZ="0.0000" X2="1.130768" Y2="-32.791565" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-86:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-8" LayoutGroup="Default" parm2="9" WorldPosX="127.2070" WorldPosY="795.6942" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,-15.232864,-24.716431,0.000000,11.410461,-1.801697,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-7:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-86" parm2="2" WorldPosX="-172.4570" WorldPosY="569.3124" WorldPosZ="0.0000" X2="1.369865" Y2="-38.944275" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-85:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-9" LayoutGroup="Default" parm2="11" WorldPosX="152.6531" WorldPosY="784.8177" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-3.944761,6.526367,0.000000,-24.287323,-28.561340,0.000000,7.151138,-2.008482,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-8:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-85" parm2="2" WorldPosX="-144.4346" WorldPosY="579.7577" WorldPosZ="0.0000" X2="1.902863" Y2="-39.871094" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-84:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-10" LayoutGroup="Default" parm2="6" WorldPosX="113.1780" WorldPosY="751.8310" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,-3.394920,-14.157288,0.000000,10.041382,-4.831299,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-9:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-84" parm2="2" WorldPosX="-116.2506" WorldPosY="608.5748" WorldPosZ="0.0000" X2="0.370567" Y2="-42.036560" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-83:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-11" LayoutGroup="Default" parm2="6" WorldPosX="93.3463" WorldPosY="747.5859" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="1.633644,8.652344,0.000000,-3.958183,-5.250427,0.000000,9.953987,0.971985,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-10:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-83" parm2="2" WorldPosX="-142.9731" WorldPosY="653.8478" WorldPosZ="0.0000" X2="2.345108" Y2="-34.006287" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-82:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-12" LayoutGroup="Default" parm2="10" WorldPosX="69.5076" WorldPosY="739.0722" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,-17.551308,-32.872070,0.000000,9.608948,-1.200989,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-11:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-82" parm2="2" WorldPosX="-175.7526" WorldPosY="656.1266" WorldPosZ="0.0000" X2="-1.045578" Y2="-32.477722" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-81:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-14" LayoutGroup="Default" parm2="10" WorldPosX="70.3049" WorldPosY="711.2702" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="1.698235,6.994263,0.000000,-21.834297,-26.343506,0.000000,9.608826,-1.201111,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-13:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-80" parm2="10" WorldPosX="-302.8448" WorldPosY="621.9559" WorldPosZ="0.0000" X2="14.417572" Y2="-54.765930" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-79:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-15" LayoutGroup="Default" parm2="6" WorldPosX="92.5949" WorldPosY="718.9260" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-2.624077,-4.560913,0.000000,-10.199333,-19.711426,0.000000,4.951187,-11.553467,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-14:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-81" parm2="8" WorldPosX="-292.5308" WorldPosY="638.7224" WorldPosZ="0.0000" X2="21.236801" Y2="-50.591858" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-80:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-16" LayoutGroup="Default" parm2="2" WorldPosX="130.1255" WorldPosY="692.5793" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="-11.699753,2.091431,0.000000,6.489914,28.365417,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-15:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-78" parm2="12" WorldPosX="-486.0523" WorldPosY="510.9855" WorldPosZ="0.0000" X2="-28.639465" Y2="-41.260895" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-77:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-17" LayoutGroup="Default" parm2="2" WorldPosX="92.4090" WorldPosY="683.6773" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="-0.512772,0.524170,0.000000,17.003189,20.734924,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-16:1">
+      <ControllerConnection Protocol="dmx" Port="1"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-77" parm2="10" WorldPosX="-455.7818" WorldPosY="502.2889" WorldPosZ="0.0000" X2="17.237549" Y2="-42.082703" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-76:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-18" LayoutGroup="Default" parm2="8" WorldPosX="63.3396" WorldPosY="391.7857" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="4.002594,-0.809814,0.000000,-0.180450,32.654602,0.000000,18.224945,0.863434,0.000000" cPointData="" versionNumber="5" StartChannel="#127.0.0.1:2:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-73" parm2="8" WorldPosX="-365.4785" WorldPosY="491.7021" WorldPosZ="0.0000" X2="-36.170105" Y2="-24.747986" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-72:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-19" LayoutGroup="Default" parm2="12" WorldPosX="104.3452" WorldPosY="379.7031" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,-10.945297,38.167114,0.000000,11.643143,2.192902,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-18:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-72" parm2="12" WorldPosX="-339.1930" WorldPosY="484.8461" WorldPosZ="0.0000" X2="-31.996674" Y2="-23.603058" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-71:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-24" LayoutGroup="Default" parm2="2" WorldPosX="206.9676" WorldPosY="658.9510" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="0.000000,0.000000,0.000000,-54.005081,-6.830139,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-23:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-71" WorldPosX="-100.9025" WorldPosY="480.6806" WorldPosZ="0.0000" X2="-37.221420" Y2="-42.281769" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-70:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-25" LayoutGroup="Default" parm2="12" WorldPosX="87.8066" WorldPosY="582.7219" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,-33.616745,23.212646,0.000000,5.102402,8.001526,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-24:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-70" WorldPosX="-76.2254" WorldPosY="460.8712" WorldPosZ="0.0000" X2="-20.017349" Y2="-47.220337" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-69:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-27" LayoutGroup="Default" parm2="10" WorldPosX="56.4941" WorldPosY="604.2028" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="3.918476,-2.416748,0.000000,-21.663803,11.411499,0.000000,7.375538,5.188782,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-26:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-68" parm2="12" WorldPosX="-10.6479" WorldPosY="468.6491" WorldPosZ="0.0000" X2="13.397028" Y2="-53.094604" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-67:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-28" LayoutGroup="Default" parm2="10" WorldPosX="69.2715" WorldPosY="563.3517" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="2.895073,-0.976135,0.000000,-14.390236,18.383423,0.000000,9.809196,5.246582,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-27:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-67" parm2="10" WorldPosX="81.2395" WorldPosY="491.3380" WorldPosZ="0.0000" X2="-29.144157" Y2="-42.710724" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-66:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-29" LayoutGroup="Default" parm2="8" WorldPosX="-43.1214" WorldPosY="593.6550" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.621613,4.111694,0.000000,23.469269,18.799438,0.000000,3.885590,-4.864197,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-28:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-66" parm2="12" WorldPosX="110.3401" WorldPosY="407.9049" WorldPosZ="0.0000" X2="-16.363632" Y2="-54.462189" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-65:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-30" LayoutGroup="Default" parm2="12" WorldPosX="-65.4850" WorldPosY="603.5335" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-4.758377,5.657043,0.000000,36.041000,15.448914,0.000000,0.953537,-2.502869,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-29:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-65" parm2="12" WorldPosX="121.3150" WorldPosY="482.6031" WorldPosZ="0.0000" X2="-15.916489" Y2="-43.494385" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-64:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-31" LayoutGroup="Default" parm2="10" WorldPosX="-78.9594" WorldPosY="623.3314" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="5.452042,8.706787,0.000000,52.779373,3.810852,0.000000,4.636063,-4.348999,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-30:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-64" parm2="6" WorldPosX="140.9565" WorldPosY="451.1665" WorldPosZ="0.0000" X2="25.360123" Y2="-32.998260" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:6:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-33" LayoutGroup="Default" parm2="12" WorldPosX="-125.4726" WorldPosY="595.5326" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="3.071571,5.586975,0.000000,34.984352,6.449463,0.000000,4.754150,0.792358,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-32:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-63" parm2="16" WorldPosX="591.1647" WorldPosY="495.8574" WorldPosZ="0.0000" X2="-2.742249" Y2="-26.397766" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-62:1">
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-34" LayoutGroup="Default" parm2="12" WorldPosX="-175.6635" WorldPosY="515.8687" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-5.557846,2.999512,0.000000,19.454849,29.737305,0.000000,0.479691,-3.900513,0.000000" cPointData="" versionNumber="5" StartChannel="#127.0.0.1:3:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-35" LayoutGroup="Default" parm2="12" WorldPosX="-152.6598" WorldPosY="512.5252" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-5.966599,2.401184,0.000000,30.258774,42.076538,0.000000,3.521011,-6.223907,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-34:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-36" LayoutGroup="Default" parm2="10" WorldPosX="-137.9765" WorldPosY="491.5029" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-9.007812,6.695587,0.000000,18.162933,25.953400,0.000000,6.701841,-5.509827,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-35:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-38" LayoutGroup="Default" parm2="6" WorldPosX="-210.5284" WorldPosY="541.7892" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="4.578568,-7.677429,0.000000,35.980469,25.023010,0.000000,-7.580490,3.265686,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-37:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-39" LayoutGroup="Default" parm2="10" WorldPosX="-216.2350" WorldPosY="541.2152" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-2.241791,11.619629,0.000000,16.727509,32.585693,0.000000,1.751770,-0.360962,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-38:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-40" LayoutGroup="Default" parm2="11" WorldPosX="-186.1549" WorldPosY="592.0214" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="2.641800,-4.047913,0.000000,42.745071,6.711548,0.000000,-3.227036,4.755249,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-39:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-41" LayoutGroup="Default" parm2="12" WorldPosX="-167.8125" WorldPosY="616.0139" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="1.368210,-8.427979,0.000000,46.899704,-2.609009,0.000000,-7.920639,0.473816,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-40:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-42" LayoutGroup="Default" parm2="7" WorldPosX="-213.2287" WorldPosY="614.0181" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-0.616989,6.824707,0.000000,35.573822,-2.956604,0.000000,-11.851440,-7.593323,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-41:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-43" LayoutGroup="Default" parm2="12" WorldPosX="530.6788" WorldPosY="561.3273" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-109.165222,93.423096,0.000000,-146.125519,101.636475,0.000000,-111.629211,109.849854,0.000000" cPointData="" versionNumber="5" StartChannel="#127.0.0.1:4:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-44" WorldPosX="390.6625" WorldPosY="635.1512" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.530884,-2.577026,0.000000,-31.501343,5.636353,0.000000,-0.290466,14.671082,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-43:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-45" WorldPosX="379.0010" WorldPosY="681.2260" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="3.979004,9.663330,0.000000,-37.087982,0.628540,0.000000,2.336365,-3.478149,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-44:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-46" WorldPosX="337.1223" WorldPosY="665.5277" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="8.897400,0.721436,0.000000,-32.169617,4.006775,0.000000,4.790710,10.577515,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-45:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-53" LayoutGroup="Default" parm2="12" WorldPosX="232.8067" WorldPosY="603.3832" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="4.115356,1.195190,0.000000,-39.668884,8.492554,0.000000,4.115356,13.136292,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-52:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-54" LayoutGroup="Default" parm2="2" WorldPosX="139.9477" WorldPosY="531.9296" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="0.000000,0.000000,0.000000,-32.003967,22.893860,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-53:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-55" LayoutGroup="Default" parm2="8" WorldPosX="187.4971" WorldPosY="588.5115" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="2.323715,-1.181458,0.000000,-26.202408,15.403503,0.000000,5.640717,11.423096,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-54:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-56" LayoutGroup="Default" parm2="2" WorldPosX="234.2536" WorldPosY="578.5211" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="2" PointData="0.000000,0.000000,0.000000,-48.710815,14.590027,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-55:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-58" LayoutGroup="Default" parm2="10" WorldPosX="175.2510" WorldPosY="474.2869" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="3.292038,-2.388153,0.000000,-17.936722,21.494171,0.000000,5.282211,6.236023,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-57:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-59" LayoutGroup="Default" parm2="6" WorldPosX="183.6214" WorldPosY="447.7373" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.228806,-3.037872,0.000000,-23.653519,22.171265,0.000000,4.872604,4.922913,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-58:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-60" LayoutGroup="Default" parm2="10" WorldPosX="204.9044" WorldPosY="463.9804" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,-17.073792,25.166687,0.000000,6.808548,3.937958,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-59:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-61" LayoutGroup="Default" parm2="12" WorldPosX="307.7986" WorldPosY="508.7495" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="6.741028,10.913879,0.000000,-37.043213,15.557678,0.000000,1.433838,0.299530,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-60:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-62" LayoutGroup="Default" parm2="10" WorldPosX="320.4709" WorldPosY="552.8552" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="3.356323,-1.348694,0.000000,-34.457367,17.889832,0.000000,4.683105,7.275452,0.000000" cPointData="" versionNumber="5" StartChannel="#127.0.0.1:5:1">
       <ControllerConnection Protocol="dmx" Port="1" channel="5"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="10" name="Single Line-62" WorldPosX="572.8383" WorldPosY="530.0235" WorldPosZ="0.0000" X2="-7.254395" Y2="-24.229553" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:5:1">
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-63" LayoutGroup="Default" parm2="16" WorldPosX="341.8957" WorldPosY="520.6840" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="-0.820160,0.306213,0.000000,-31.336456,13.574158,0.000000,2.496857,10.257141,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-62:1">
       <ControllerConnection Protocol="dmx" Port="1" channel="5"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-61" parm2="12" WorldPosX="600.4432" WorldPosY="537.1977" WorldPosZ="0.0000" X2="17.046814" Y2="-26.213562" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-60:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-60" parm2="10" WorldPosX="588.8060" WorldPosY="614.1622" WorldPosZ="0.0000" X2="0.844849" Y2="-46.424927" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-59:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-59" parm2="6" WorldPosX="610.6708" WorldPosY="622.9229" WorldPosZ="0.0000" X2="2.856812" Y2="-23.117798" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-58:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-56" WorldPosX="561.3179" WorldPosY="654.4825" WorldPosZ="0.0000" X2="6.533813" Y2="-20.419250" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-55:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-55" parm2="8" WorldPosX="523.6463" WorldPosY="667.0861" WorldPosZ="0.0000" X2="15.137329" Y2="6.425720" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-54:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-54" WorldPosX="475.8977" WorldPosY="683.7025" WorldPosZ="0.0000" X2="-5.562866" Y2="-16.533691" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-53:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-53" parm2="12" WorldPosX="501.7336" WorldPosY="654.5148" WorldPosZ="0.0000" X2="6.944275" Y2="-48.481079" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-52:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-52" parm2="2" WorldPosX="525.1558" WorldPosY="629.0721" WorldPosZ="0.0000" X2="7.932648" Y2="-25.228699" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-51:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-49" parm2="12" WorldPosX="412.7855" WorldPosY="564.7068" WorldPosZ="0.0000" X2="33.405823" Y2="-22.654907" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-48:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-48" WorldPosX="412.9716" WorldPosY="530.6328" WorldPosZ="0.0000" X2="36.334106" Y2="-7.266846" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-47:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-45" LayoutGroup="Default" parm2="12" WorldPosX="438.7077" WorldPosY="461.8520" WorldPosZ="0.0000" X2="46.360352" Y2="-15.524170" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-44:1">
-      <ControllerConnection channel="4" Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-44" parm2="12" WorldPosX="496.0734" WorldPosY="436.9453" WorldPosZ="0.0000" X2="33.633759" Y2="-19.685486" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-43:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-43" parm2="12" WorldPosX="458.3713" WorldPosY="430.7765" WorldPosZ="0.0000" X2="48.056305" Y2="-39.469391" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:4:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-42" parm2="7" WorldPosX="-571.3568" WorldPosY="517.6821" WorldPosZ="0.0000" X2="-4.114502" Y2="-38.067322" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-41:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-41" parm2="12" WorldPosX="-589.3575" WorldPosY="535.3502" WorldPosZ="0.0000" X2="-24.524048" Y2="-13.172607" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-40:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-40" parm2="11" WorldPosX="-588.4662" WorldPosY="514.5439" WorldPosZ="0.0000" X2="-20.224854" Y2="-23.509888" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-39:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-39" parm2="10" WorldPosX="-657.3326" WorldPosY="459.0896" WorldPosZ="0.0000" X2="8.858887" Y2="-33.611908" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-38:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-38" parm2="6" WorldPosX="-664.2830" WorldPosY="461.5362" WorldPosZ="0.0000" X2="-2.877014" Y2="-45.401581" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-37:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-37" parm2="6" WorldPosX="-670.5659" WorldPosY="459.2556" WorldPosZ="0.0000" X2="-13.203857" Y2="-32.739777" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-36:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-36" parm2="10" WorldPosX="-767.9254" WorldPosY="482.7617" WorldPosZ="0.0000" X2="-18.617920" Y2="-50.017181" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-35:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-35" parm2="12" WorldPosX="-746.0573" WorldPosY="492.8653" WorldPosZ="0.0000" X2="-11.418701" Y2="-43.510895" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-34:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-34" parm2="12" WorldPosX="-724.6812" WorldPosY="485.9692" WorldPosZ="0.0000" X2="-10.498901" Y2="-36.690979" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:3:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="3"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-33" parm2="12" WorldPosX="-635.7555" WorldPosY="599.5878" WorldPosZ="0.0000" X2="-15.574768" Y2="-51.333923" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-32:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-32" parm2="10" WorldPosX="-649.7935" WorldPosY="607.7717" WorldPosZ="0.0000" X2="-33.718323" Y2="-48.098511" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-31:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-18" LayoutGroup="Default" parm2="8" WorldPosX="701.4941" WorldPosY="387.7576" WorldPosZ="0.0000" X2="-26.288940" Y2="-26.638367" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:2:1">
-      <ControllerConnection channel="2" Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-31" parm2="10" WorldPosX="-705.6517" WorldPosY="698.0380" WorldPosZ="0.0000" X2="-7.326599" Y2="-53.620544" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-30:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-30" parm2="12" WorldPosX="-724.6607" WorldPosY="706.5743" WorldPosZ="0.0000" X2="-10.117981" Y2="-44.508667" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-29:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-29" parm2="8" WorldPosX="-741.0073" WorldPosY="700.4760" WorldPosZ="0.0000" X2="-29.067322" Y2="-46.715637" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-28:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-28" parm2="10" WorldPosX="687.5630" WorldPosY="728.0150" WorldPosZ="0.0000" X2="-2.404907" Y2="-26.474182" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-27:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-27" parm2="10" WorldPosX="681.8758" WorldPosY="761.7253" WorldPosZ="0.0000" X2="-30.975647" Y2="-6.202393" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-26:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-26" parm2="6" WorldPosX="667.7064" WorldPosY="743.6887" WorldPosZ="0.0000" X2="-24.240967" Y2="-22.450317" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-25:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-25" parm2="12" WorldPosX="664.3958" WorldPosY="715.0365" WorldPosZ="0.0000" X2="-8.304993" Y2="-31.143555" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-24:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-24" parm2="2" WorldPosX="705.2697" WorldPosY="674.7393" WorldPosZ="0.0000" X2="-5.577942" Y2="-19.913818" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-23:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-23" parm2="12" WorldPosX="746.6181" WorldPosY="538.1037" WorldPosZ="0.0000" X2="-52.944153" Y2="-16.609985" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-22:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-22" parm2="18" WorldPosX="752.7094" WorldPosY="501.4003" WorldPosZ="0.0000" X2="-7.129517" Y2="-40.117310" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-21:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-21" parm2="12" WorldPosX="720.2485" WorldPosY="497.9095" WorldPosZ="0.0000" X2="-9.964539" Y2="-22.092834" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-20:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-20" parm2="12" WorldPosX="743.0648" WorldPosY="390.5720" WorldPosZ="0.0000" X2="-4.534363" Y2="-39.833923" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-19:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-19" parm2="12" WorldPosX="713.5795" WorldPosY="361.7961" WorldPosZ="0.0000" X2="-10.345154" Y2="-31.820435" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-18:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="2"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-17" WorldPosX="205.6002" WorldPosY="622.9325" WorldPosZ="0.0000" X2="2.344635" Y2="-19.047791" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-16:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-16" WorldPosX="224.0759" WorldPosY="684.2197" WorldPosZ="0.0000" X2="-2.360107" Y2="-24.720642" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-15:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-15" parm2="6" WorldPosX="170.9399" WorldPosY="615.3408" WorldPosZ="0.0000" X2="23.627823" Y2="-22.917297" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-14:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-14" parm2="10" WorldPosX="157.0882" WorldPosY="670.7884" WorldPosZ="0.0000" X2="40.593872" Y2="-29.572571" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-13:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-13" parm2="2" WorldPosX="114.9862" WorldPosY="630.9724" WorldPosZ="0.0000" X2="-0.514587" Y2="-25.052795" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-12:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-12" parm2="10" WorldPosX="142.6617" WorldPosY="613.1865" WorldPosZ="0.0000" X2="27.745255" Y2="-33.963013" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-11:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-11" parm2="6" WorldPosX="211.0053" WorldPosY="549.9379" WorldPosZ="0.0000" X2="16.275284" Y2="4.838196" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-10:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-10" parm2="6" WorldPosX="230.5170" WorldPosY="531.5808" WorldPosZ="0.0000" X2="19.631363" Y2="6.424133" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-9:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-9" parm2="11" WorldPosX="265.8434" WorldPosY="519.4420" WorldPosZ="0.0000" X2="-3.199432" Y2="-17.219788" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-8:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-8" parm2="9" WorldPosX="211.0753" WorldPosY="497.4331" WorldPosZ="0.0000" X2="25.929443" Y2="-21.515991" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-7:1">
-      <ControllerConnection Port="1" Protocol="dmx"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-7" parm2="9" WorldPosX="299.5136" WorldPosY="513.4533" WorldPosZ="0.0000" X2="17.491150" Y2="-8.345764" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-6:1">
-      <ControllerConnection Port="1" Protocol="dmx"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-6" parm2="9" WorldPosX="277.1416" WorldPosY="484.1417" WorldPosZ="0.0000" X2="18.006729" Y2="-3.148193" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-5:1">
-      <ControllerConnection Port="1" Protocol="dmx"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-5" parm2="12" WorldPosX="331.3006" WorldPosY="481.9339" WorldPosZ="0.0000" X2="25.812073" Y2="22.364532" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-4:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-4" parm2="7" WorldPosX="348.6628" WorldPosY="458.1254" WorldPosZ="0.0000" X2="18.171753" Y2="-9.075958" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-3:1">
-      <ControllerConnection Port="1" Protocol="dmx"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-2" LayoutGroup="Default" parm2="11" WorldPosX="299.6237" WorldPosY="454.4169" WorldPosZ="0.0000" X2="11.811737" Y2="-34.206024" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-3" LayoutGroup="Default" parm2="9" WorldPosX="301.0458" WorldPosY="458.2672" WorldPosZ="0.0000" X2="19.732788" Y2="-18.332031" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-2:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line" LayoutGroup="Default" parm2="6" WorldPosX="296.2470" WorldPosY="452.2267" WorldPosZ="0.0000" X2="-10.764465" Y2="-23.710876" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:1:1">
-      <ControllerConnection Protocol="dmx" Port="1"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-46" WorldPosX="460.9842" WorldPosY="494.5257" WorldPosZ="0.0000" X2="45.884369" Y2="-7.711548" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-45:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-47" parm2="10" WorldPosX="505.7112" WorldPosY="461.1783" WorldPosZ="0.0000" X2="33.338867" Y2="-23.155945" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-46:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-50" WorldPosX="443.6128" WorldPosY="569.3415" WorldPosZ="0.0000" X2="35.170471" Y2="-34.993652" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-49:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-51" parm2="2" WorldPosX="475.5255" WorldPosY="622.5297" WorldPosZ="0.0000" X2="-4.152557" Y2="-23.877197" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-50:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-57" WorldPosX="603.1469" WorldPosY="683.8931" WorldPosZ="0.0000" X2="7.266785" Y2="-12.457397" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-56:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-58" parm2="10" WorldPosX="606.0403" WorldPosY="650.3373" WorldPosZ="0.0000" X2="17.868835" Y2="-23.540894" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-57:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="4"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-69" LayoutGroup="Default" parm2="12" WorldPosX="-45.7709" WorldPosY="437.8124" WorldPosZ="0.0000" X2="-20.012894" Y2="-62.235352" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-68:1">
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-64" LayoutGroup="Default" parm2="6" WorldPosX="66.7278" WorldPosY="877.3811" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,-1.624741,-34.006226,0.000000,8.986389,-0.998535,0.000000" cPointData="" versionNumber="5" StartChannel="#127.0.0.1:6:1">
       <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-74" WorldPosX="-451.3677" WorldPosY="395.2182" WorldPosZ="0.0000" X2="7.112427" Y2="-49.233368" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-73:1">
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-65" LayoutGroup="Default" parm2="12" WorldPosX="29.8404" WorldPosY="889.0015" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,3.752586,-34.388184,0.000000,9.984802,0.000000,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-64:1">
       <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Single Line-75" WorldPosX="-473.8318" WorldPosY="410.7967" WorldPosZ="0.0000" X2="-4.689819" Y2="-61.004517" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-74:1">
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="12" name="Poly Line-70" WorldPosX="-68.7136" WorldPosY="866.4763" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,18.018013,-28.720703,0.000000,9.984802,0.000000,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-69:1">
       <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-76" parm2="12" WorldPosX="-479.8782" WorldPosY="477.0018" WorldPosZ="0.0000" X2="-19.584106" Y2="-45.350952" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-75:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="6"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-79" parm2="7" WorldPosX="-323.8654" WorldPosY="628.0337" WorldPosZ="0.0000" X2="-17.865280" Y2="-49.421509" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-78:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" parm2="2" name="Single Line-88" WorldPosX="-162.5712" WorldPosY="609.4236" WorldPosZ="0.0000" X2="1.130768" Y2="-32.791565" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-87:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-89" parm2="10" WorldPosX="-263.0682" WorldPosY="489.3161" WorldPosZ="0.0000" X2="-8.314087" Y2="-71.857880" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-88:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" LayoutGroup="Default" name="Single Line-90" parm2="12" WorldPosX="-232.9596" WorldPosY="480.9339" WorldPosZ="0.0000" X2="3.458557" Y2="-69.186768" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-89:1">
-      <ControllerConnection Protocol="dmx" Port="1" channel="7"/>
-    </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-97" LayoutGroup="Default" parm2="72" WorldPosX="-445.2878" WorldPosY="249.1024" WorldPosZ="0.0000" X2="-0.107529" Y2="-168.853058" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-96:1">
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-92" LayoutGroup="Default" parm2="72" WorldPosX="-357.8158" WorldPosY="81.0865" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,6.999847,194.245682,0.000000,18.082916,-0.000031,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-91:1">
       <ControllerConnection Protocol="dmx" Port="1" channel="8"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-98" LayoutGroup="Default" parm2="10" WorldPosX="-561.9845" WorldPosY="125.3626" WorldPosZ="0.0000" X2="-1.061707" Y2="-44.602898" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-97:1">
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-93" LayoutGroup="Default" parm2="10" WorldPosX="-472.0959" WorldPosY="81.5448" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,5.474731,46.745438,0.000000,10.528259,-2.105598,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-92:1">
       <ControllerConnection Protocol="dmx" Port="1" channel="8"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-99" LayoutGroup="Default" parm2="5" WorldPosX="-539.2960" WorldPosY="119.4589" WorldPosZ="0.0000" X2="0.091949" Y2="-33.691071" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-98:1">
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-94" LayoutGroup="Default" parm2="5" WorldPosX="-445.9436" WorldPosY="85.2552" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,2.513428,35.367439,0.000000,7.181213,-0.897629,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-93:1">
       <ControllerConnection Protocol="dmx" Port="1" channel="9"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-103" LayoutGroup="Default" parm2="79" WorldPosX="503.4870" WorldPosY="219.5839" WorldPosZ="0.0000" X2="0.680023" Y2="-160.247009" Z2="0.000000" versionNumber="5" StartChannel="#127.0.0.1:10:1">
-      <ControllerConnection channel="10" Protocol="dmx" Port="11"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-95" LayoutGroup="Default" parm2="5" WorldPosX="-320.1141" WorldPosY="87.1930" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,4.341614,39.943344,0.000000,12.590790,-1.302475,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-94:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="9"/>
     </model>
-    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Single Line-104" LayoutGroup="Default" parm2="86" WorldPosX="558.6941" WorldPosY="210.0655" WorldPosZ="0.0000" X2="4.354767" Y2="-153.122406" Z2="0.000000" versionNumber="5" StartChannel="&gt;Single Line-103:1">
-      <ControllerConnection Protocol="dmx" Port="11" channel="10"/>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-96" LayoutGroup="Default" parm2="12" WorldPosX="-297.1033" WorldPosY="76.7730" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,4.341644,52.968346,0.000000,13.459167,-2.170807,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-95:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="9"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-97" LayoutGroup="Default" parm2="10" WorldPosX="-262.8042" WorldPosY="80.2464" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,3.473389,52.534119,0.000000,14.761719,-0.868370,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-96:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="9"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-98" LayoutGroup="Default" parm2="79" WorldPosX="489.9761" WorldPosY="59.8975" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,12.638458,162.970001,0.000000,27.272552,-3.991135,0.000000" cPointData="" versionNumber="5" StartChannel="#127.0.0.1:10:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="10"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-99" LayoutGroup="Default" parm2="86" WorldPosX="551.1730" WorldPosY="57.9019" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,5.986694,159.644150,0.000000,22.616272,-1.995537,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-98:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="10"/>
+    </model>
+    <model DisplayAs="Poly Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0" parm1="1" parm3="1" name="Poly Line-100" LayoutGroup="Default" parm2="12" WorldPosX="590.4188" WorldPosY="61.8930" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" NumPoints="3" PointData="0.000000,0.000000,0.000000,5.986633,51.219181,0.000000,12.638489,-2.660702,0.000000" cPointData="" versionNumber="5" StartChannel="&gt;Poly Line-99:1">
+      <ControllerConnection Protocol="dmx" Port="1" channel="11"/>
     </model>
   </models>
   <view_objects>
@@ -317,76 +314,60 @@
   <effects version="0007"/>
   <views>
     <view name="models ordered by connection" models="String2,String3,String4,Single Line,Single Line-2,Single Line-3,Single Line-4,Single Line-5,Single Line-6,Single Line-7,Single Line-8,Single Line-9,Single Line-10,Single Line-11,Single Line-12,Single Line-13,Single Line-14,Single Line-15,Single Line-16,Single Line-17,Single Line-18,Single Line-19,Single Line-20,Single Line-21,Single Line-22,Single Line-23,Single Line-24,Single Line-25,Single Line-26,Single Line-27,Single Line-28,Single Line-29,Single Line-30,Single Line-31,Single Line-32,Single Line-33,Single Line-34,Single Line-35,Single Line-36,Single Line-37,Single Line-38,Single Line-39,Single Line-40,Single Line-41,Single Line-42,Single Line-43,Single Line-44,Single Line-45,Single Line-46,Single Line-47,Single Line-48,Single Line-49,Single Line-50,Single Line-51,Single Line-52,Single Line-53,Single Line-54,Single Line-55,Single Line-56,Single Line-57,Single Line-58,Single Line-59,Single Line-60,Single Line-61,Single Line-62,Single Line-63,Single Line-64,Single Line-65,Single Line-66,Single Line-67,Single Line-68,Single Line-69,Single Line-70,Single Line-71,Single Line-72,Single Line-73,Single Line-74,Single Line-75,Single Line-76,Single Line-77,Single Line-78,Single Line-79,Single Line-80,Single Line-81,Single Line-82,Single Line-83,Single Line-84,Single Line-85,Single Line-86,Single Line-87,Single Line-88,Single Line-89,Single Line-90,string1"/>
-    <view name="Groups View" models="Ground,Ceiling,Bats All,Bats Left,Bats Right,Crystals Center,Crystals Center C,Crystals Left,Crystals Right,MegaCrystal Left,MegaCrystal Left Familia,MegaCrystal Right,MegaCrystal Right Familia,Mushrooms,Spiders,Matrix"/>
+    <view name="Groups View" models="Ceiling,Ground"/>
   </views>
   <palettes/>
   <modelGroups>
-    <modelGroup selected="0" name="bats string 2" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-24" WorldPosX="3.0000" WorldPosY="10.0000" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" RotateX="0.00000000" RotateY="0.00000000" RotateZ="0.00000000"/>
-    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line,Single Line-2,Single Line-3,Single Line-4,Single Line-5,Single Line-6,Single Line-7,Single Line-8,Single Line-9,Single Line-10,Single Line-11,Single Line-12,Single Line-13,Single Line-14,Single Line-15,Single Line-16,Single Line-17" name="string1"/>
-    <modelGroup selected="0" name="string2" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-18,Single Line-19,Single Line-20,Single Line-21,Single Line-22,Single Line-23,Single Line-24,Single Line-25,Single Line-26,Single Line-27,Single Line-28,Single Line-29,Single Line-30,Single Line-31,Single Line-32,Single Line-33,Single Line-34,Single Line-35,Single Line-36,Single Line-37,Single Line-38,Single Line-39,Single Line-40,Single Line-41,Single Line-42"/>
-    <modelGroup selected="0" name="string3" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-43,Single Line-44,Single Line-45,Single Line-46,Single Line-47,Single Line-48,Single Line-49,Single Line-50,Single Line-51,Single Line-52,Single Line-53,Single Line-54,Single Line-55,Single Line-56,Single Line-57,Single Line-58,Single Line-59,Single Line-60,Single Line-61,Single Line-62,Single Line-63"/>
-    <modelGroup selected="0" name="string4" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-64,Single Line-65,Single Line-66,Single Line-67,Single Line-68,Single Line-69,Single Line-70,Single Line-71,Single Line-72,Single Line-73,Single Line-74,Single Line-75,Single Line-76,Single Line-77,Single Line-78,Single Line-79,Single Line-80,Single Line-81,Single Line-82,Single Line-83,Single Line-84,Single Line-85,Single Line-86,Single Line-87,Single Line-88,Single Line-89,Single Line-90"/>
-    <modelGroup selected="0" name="string5" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-96,Single Line-97,Single Line-98,Single Line-99,Single Line-100,Single Line-101,Single Line-102"/>
-    <modelGroup selected="0" name="string6" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-103,Single Line-104,Single Line-105"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" name="string1" models=""/>
+    <modelGroup selected="0" name="string2" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models=""/>
+    <modelGroup selected="0" name="string3" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models=""/>
+    <modelGroup selected="0" name="string4" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models=""/>
+    <modelGroup selected="0" name="string5" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-91,Poly Line-92,Poly Line-93,Poly Line-94,Poly Line-95,Poly Line-96,Poly Line-97"/>
+    <modelGroup selected="0" name="string6" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-98,Poly Line-99,Poly Line-100"/>
     <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-106" name="string7"/>
     <modelGroup selected="0" name="string8" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-107"/>
-    <modelGroup selected="0" name="bats string 1" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-17,Single Line-13,Single Line-16"/>
-    <modelGroup selected="0" name="string 2 triple 1" models="" layout="minimalGrid" GridSize="400" LayoutGroup="Default"/>
-    <modelGroup selected="0" models="" layout="minimalGrid" GridSize="400" LayoutGroup="Default" name="string 3 - 5 group 1"/>
-    <modelGroup selected="0" name="string 3 - trio 1" models="" layout="minimalGrid" GridSize="400" LayoutGroup="Default"/>
-    <modelGroup selected="0" name="bats string 3" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-51,Single Line-54,Single Line-57,Single Line-52,Single Line-56"/>
-    <modelGroup selected="0" name="bats string 4" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-82,Single Line-83,Single Line-84,Single Line-85,Single Line-86,Single Line-87,Single Line-88"/>
-    <modelGroup selected="0" name="MegaCrystal Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-96,Single Line-97"/>
-    <modelGroup selected="0" name="MegaCrystal Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-103,Single Line-104"/>
-    <modelGroup selected="0" name="MegaCrystal Left Familia" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-98,Single Line-99,Single Line-100,Single Line-101,Single Line-102"/>
     <modelGroup selected="0" name="Mushrooms" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-106"/>
     <modelGroup selected="0" name="Spiders" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-107"/>
-    <modelGroup selected="0" name="MegaCrystal Right Familia" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-105"/>
-    <modelGroup selected="0" name="Crystals Center" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-64,Single Line-65,Single Line-66,Single Line-67,Single Line-68,Single Line-69,Single Line-70,Single Line-71,Single Line-12,Single Line-14,Single Line-15,Single Line,Single Line-2,Single Line-3,Single Line-4,Single Line-5,Single Line-6,Single Line-7,Single Line-8,Single Line-9,Single Line-10,Single Line-11"/>
-    <modelGroup selected="0" name="Bats Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="bats string 4"/>
-    <modelGroup selected="0" name="Bats Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="bats string 1,bats string 2,bats string 3"/>
-    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-43,Single Line-44,Single Line-45,Single Line-46,Single Line-47" name="Crystal Right 1 - 5 group"/>
-    <modelGroup selected="0" name="Crystal Right 2 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-48,Single Line-49,Single Line-50"/>
-    <modelGroup selected="0" name="Crystal Right 3 - 2 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-53,Single Line-55"/>
-    <modelGroup selected="0" name="Crystal Right 4 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-58,Single Line-59,Single Line-60"/>
-    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-61,Single Line-62,Single Line-63" name="Crystal Right 5 - 3 group"/>
-    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-25,Single Line-26,Single Line-27,Single Line-28" name="Crystal Right 6 - 4 group"/>
-    <modelGroup selected="0" name="Crystal Right 7 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-21,Single Line-22,Single Line-23"/>
-    <modelGroup selected="0" name="Crystal Right 8 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-18,Single Line-19,Single Line-20"/>
-    <modelGroup selected="0" name="Crystals Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystal Right 1 - 5 group,Crystal Right 2 - 3 group,Crystal Right 3 - 2 group,Crystal Right 4 - 3 group,Crystal Right 5 - 3 group,Crystal Right 6 - 4 group,Crystal Right 7 - 3 group,Crystal Right 8 - 3 group"/>
-    <modelGroup selected="0" name="Crystal Left 1 - 2 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-89,Single Line-90"/>
-    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-72,Single Line-73" name="Crystal Left 3 - 2 group"/>
-    <modelGroup selected="0" name="Crystal Left 2 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-79,Single Line-80,Single Line-81"/>
-    <modelGroup selected="0" name="Crystal Left 4 - 5 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-74,Single Line-75,Single Line-76,Single Line-77,Single Line-78"/>
-    <modelGroup selected="0" name="Crystal Left 5 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-40,Single Line-41,Single Line-42"/>
-    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-37,Single Line-38,Single Line-39" name="crystal Left 6.1 - 3 combo"/>
-    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-32,Single Line-33" name="crystal Left 6.2 - 2 group"/>
-    <modelGroup selected="0" name="Crystal Left 6 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="crystal Left 6.2 - 2 group,crystal Left 6.1 - 3 combo"/>
-    <modelGroup selected="0" name="crystal Left 7.1 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-34,Single Line-35,Single Line-36"/>
-    <modelGroup selected="0" name="crystal Left 7.2 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-29,Single Line-30,Single Line-31"/>
-    <modelGroup selected="0" name="Crystal Left 7 - 2 X 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="crystal Left 7.1 - 3 group,crystal Left 7.2 - 3 group"/>
-    <modelGroup selected="0" name="Crystals Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystal Left 1 - 2 group,Crystal Left 2 - 3 group,Crystal Left 3 - 2 group,Crystal Left 4 - 5 group,Crystal Left 5 - 3 group,Crystal Left 6 - 3 group,Crystal Left 7 - 2 X 3 group" WorldPosX="142.0000" WorldPosY="92.0000" WorldPosZ="0.0000" ScaleX="2.2332" ScaleY="2.2332" ScaleZ="2.2332" RotateX="0.00000000" RotateY="0.00000000" RotateZ="0.00000000">
-      <ControllerConnection/>
-    </modelGroup>
-    <modelGroup selected="0" name="Crystal Center C 1 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-12,Single Line-14,Single Line-15"/>
-    <modelGroup selected="0" name="Crystal Center C 2 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-8,Single Line-10,Single Line-11"/>
-    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-64,Single Line-65,Single Line-66,Single Line-67" name="Crystal Center C 3 - 4 group"/>
-    <modelGroup selected="0" name="Crystal Center C 4 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-6,Single Line-7,Single Line-9"/>
-    <modelGroup selected="0" name="Crystal Center C 6 - 3 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line,Single Line-2,Single Line-3,Single Line-4,Single Line-5"/>
-    <modelGroup selected="0" name="Crystal Center C 5 - 4 group" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Single Line-68,Single Line-69,Single Line-70,Single Line-71"/>
-    <modelGroup selected="0" name="Crystals Center C" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystal Center C 1 - 3 group,Crystal Center C 2 - 3 group,Crystal Center C 3 - 4 group,Crystal Center C 4 - 3 group,Crystal Center C 5 - 4 group,Crystal Center C 6 - 3 group"/>
-    <modelGroup selected="0" name="Ground" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="MegaCrystal Left,MegaCrystal Left Familia,MegaCrystal Right,MegaCrystal Right Familia,Mushrooms,Spiders"/>
-    <modelGroup selected="0" name="Ceiling" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Bats Left,Bats Right,Crystals Center,Crystals Center C,Crystals Left,Crystals Right"/>
+    <modelGroup selected="0" name="Bats Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-13,Poly Line-82,Poly Line-83,Poly Line-84,Poly Line-85,Poly Line-86,Poly Line-87,Poly Line-88"/>
+    <modelGroup selected="0" name="Bats Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-52,Poly Line-54,Poly Line-57,Poly Line-56,Poly Line-51,Poly Line-24,Poly Line-17,Poly Line-16"/>
+    <modelGroup selected="0" name="Ground" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models=",Mushrooms,Spiders,Floor Right Crystals,Floor Left Crystals"/>
     <modelGroup selected="0" name="Bats All" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Bats Left,Bats Right"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystals Center,Crystals Left,Crystals Right" WorldPosX="199.0000" WorldPosY="151.5000" WorldPosZ="0.0000" ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000" RotateX="0.00000000" RotateY="0.00000000" RotateZ="0.00000000" versionNumber="5" StartChannel="" name="Crystals All"/>
+    <modelGroup selected="0" name="Ceiling" LayoutGroup="Default" models="Crystals All,Bats All" GridSize="400" XCentreOffset="-100" YCentreOffset="-85" layout="minimalGrid"/>
+    <modelGroup selected="0" name="Crystals Right - Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-43,Poly Line-44,Poly Line-45,Poly Line-46,Poly Line-47,Poly Line-48,Poly Line-49,Poly Line-50"/>
+    <modelGroup selected="0" name="Crystals Right - Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-18,Poly Line-19,Poly Line-20,Poly Line-21,Poly Line-22,Poly Line-23"/>
+    <modelGroup selected="0" name="Crystals Right - Lower Center" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-58,Poly Line-59,Poly Line-60,Poly Line-61,Poly Line-62,Poly Line-63"/>
+    <modelGroup selected="0" name="Crystals Right - Upper Center" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-25,Poly Line-26,Poly Line-27,Poly Line-28,Poly Line-53,Poly Line-55"/>
+    <modelGroup selected="0" name="Crystals Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystals Right - Left,Crystals Right - Lower Center,Crystals Right - Right,Crystals Right - Upper Center"/>
+    <modelGroup selected="0" name="Crystals Center - Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line,Poly Line-2,Poly Line-3,Poly Line-4,Poly Line-5,Poly Line-6,Poly Line-7"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-8,Poly Line-9,Poly Line-64,Poly Line-65,Poly Line-66,Poly Line-67" name="Crystals Center - Lower Center"/>
+    <modelGroup selected="0" name="Crystals Center - Upper Center" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-10,Poly Line-11,Poly Line-12,Poly Line-15,Poly Line-14"/>
+    <modelGroup selected="0" name="Crystals Center - Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-68,Poly Line-69,Poly Line-70,Poly Line-71"/>
+    <modelGroup selected="0" name="Crystals Left - Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-72,Poly Line-73,Poly Line-89,Poly Line-90,Poly Line-79,Poly Line-80,Poly Line-81"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-40,Poly Line-41,Poly Line-42,Poly Line-74,Poly Line-75,Poly Line-76,Poly Line-77,Poly Line-78" name="Crystals Left - Lower Center"/>
+    <modelGroup selected="0" name="Crystals Left - Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-34,Poly Line-35,Poly Line-36,Poly Line-37,Poly Line-38,Poly Line-39"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-29,Poly Line-30,Poly Line-31,Poly Line-32,Poly Line-33" name="Crystals Left - Upper Center"/>
+    <modelGroup selected="0" name="Crystals Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystals Left - Left,Crystals Left - Lower Center,Crystals Left - Right,Crystals Left - Upper Center"/>
+    <modelGroup selected="0" name="Crystals Center" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystals Center - Left,Crystals Center - Lower Center,Crystals Center - Right,Crystals Center - Upper Center"/>
+    <modelGroup selected="0" name="Crystals Screen - Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystals Right - Left,Crystals Left - Left,Crystals Center - Left"/>
+    <modelGroup selected="0" name="Crystals Screen - Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystals Center - Right,Crystals Left - Right,Crystals Right - Right"/>
+    <modelGroup selected="0" name="Crystals Screen - Center" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystals Right - Upper Center,Crystals Right - Lower Center,Crystals Left - Upper Center,Crystals Left - Lower Center,Crystals Center - Lower Center,Crystals Center - Upper Center"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Crystals Screen - Center,Crystals Screen - Left,Crystals Screen - Right" name="Crystals All Screen Layout"/>
+    <modelGroup selected="0" name="Floor MegaCrystal Left" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-91,Poly Line-92"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-93,Poly Line-94,Poly Line-95,Poly Line-96,Poly Line-97" name="Floor MegaCrystal Left Familia"/>
+    <modelGroup selected="0" name="Floor MegaCrystal Right" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-98,Poly Line-99"/>
+    <modelGroup selected="0" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Poly Line-100" name="Floor MegaCrystal Right Friend"/>
+    <modelGroup selected="0" name="Floor Left Crystals" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Floor MegaCrystal Left,Floor MegaCrystal Left Familia"/>
+    <modelGroup selected="0" name="Floor Right Crystals" layout="minimalGrid" GridSize="400" LayoutGroup="Default" models="Floor MegaCrystal Right,Floor MegaCrystal Right Friend"/>
   </modelGroups>
   <layoutGroups/>
   <perspectives current="Default Perspective">
     <perspective name="Default Perspective" settings="layout2|name=ModelPreview;caption=Model Preview;state=6293500;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=250;besth=250;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=HousePreview;caption=House Preview;state=6293500;dir=4;layer=1;row=0;pos=1;prop=100000;bestw=250;besth=250;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=EffectAssist;caption=Effect Assist;state=2099198;dir=4;layer=1;row=0;pos=2;prop=100000;bestw=250;besth=250;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DisplayElements;caption=Display Elements;state=6293503;dir=4;layer=0;row=0;pos=0;prop=100000;bestw=600;besth=400;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=600;floath=400|name=Perspectives;caption=Perspectives;state=2099198;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=183;besth=150;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Effect;caption=Effect Settings;state=2099196;dir=4;layer=0;row=1;pos=0;prop=100000;bestw=460;besth=831;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=SelectEffect;caption=Select Effects;state=2099198;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=463;besth=316;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=EffectDropper;caption=Effects;state=2099198;dir=1;layer=0;row=0;pos=0;prop=100000;bestw=1044;besth=696;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ValueCurveDropper;caption=Value Curves;state=2099198;dir=1;layer=0;row=0;pos=0;prop=100000;bestw=40;besth=40;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ColourDropper;caption=Colours;state=2099198;dir=1;layer=0;row=0;pos=0;prop=100000;bestw=20;besth=20;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Jukebox;caption=Jukebox;state=2099198;dir=1;layer=0;row=0;pos=0;prop=100000;bestw=100;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Color;caption=Color;state=2099196;dir=1;layer=0;row=0;pos=0;prop=100000;bestw=404;besth=375;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayerTiming;caption=Layer Blending;state=2099196;dir=1;layer=0;row=0;pos=1;prop=100000;bestw=308;besth=285;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayerSettings;caption=Layer Settings;state=2099196;dir=1;layer=0;row=0;pos=2;prop=100000;bestw=317;besth=458;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=SequenceVideo;caption=Sequence Video;state=2099199;dir=4;layer=0;row=0;pos=0;prop=100000;bestw=320;besth=169;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=348;floaty=205;floatw=320;floath=185|name=Main Sequencer;caption=Main Sequencer;state=768;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=296;besth=221;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(4,1,0)=252|dock_size(4,0,1)=352|dock_size(1,0,0)=144|dock_size(5,0,0)=298|" version="2.0"/>
   </perspectives>
   <settings>
+    <storedLayoutGroup value="Default"/>
     <previewWidth value="1280"/>
     <previewHeight value="720"/>
-    <storedLayoutGroup value="Default"/>
   </settings>
   <colors>
     <DisabledEffect Red="200" Green="200" Blue="0"/>
