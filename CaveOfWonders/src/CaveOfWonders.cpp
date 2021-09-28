@@ -1,5 +1,12 @@
 #include "Adafruit_VL53L0X.h"
 #include "SdLedsPlayer.h"
+#include "state.h"
+#include "rfid.h"
+
+#define SS_PIN 10
+#define RST_PIN 9
+#define IRQ_PIN 1   // Configurable, depends on hardware
+
 
 #define LEDS_PER_STRIP 254
 #define FILE_TO_PLAY "under"
@@ -7,15 +14,18 @@
 #define TOF_MEAS_INTERVAL 40
 #define KEYPIN 22
 #define DEBOUNCE_TIME 50
-#define RELAYPIN1 1
-#define RELAYPIN2 23
-#define OUTGPIO0 29
-#define OUTGPIO1 30
-#define OUTGPIO2 31
-#define OUTGPIO3 32
+#define ERRORLED1 23
+// #define ERRORLED2 23
+
 
 int curr_file_i = 0;
-const char *files_iter_rr[] = {"cave1", "cave2", "cave3", "cave4"};
+enum State back_states[] = {BACK0, BACK1, BACK2, BACK3};
+enum State rfid_states[] = {RFID_QUEEN, RFID_UNDER, RFID_COME, RFID_KIVSEE};
+const char *files_iter_rr[] = {"cave1", "cave2", "cave3", "cave4", "under", "under", "queen", "under", "come", "kivsee"};
+// Song tracking
+enum State state, prevState = IDLE;
+unsigned long currSongTime = 0, songStartTime = 0, lastRangeTime = 0, procTime = 0;
+
 
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
@@ -36,7 +46,7 @@ bool rangeBooted = false;
 int rangeBootCnt = 0;
 int range = -1;
 int rangeAccum = -1;
-bool rangeActive = true; 
+bool rangeActive = false; 
 int rangeCnt = 0;
 
 // Key Switch
@@ -47,102 +57,24 @@ unsigned long debounceDelay = DEBOUNCE_TIME;
 bool keyActive = true;
 int reading;
 
-// Song tracking
-uint8_t state, prevState = 0;
-unsigned long currSongTime = 0, songStartTime = 0, lastRangeTime = 0, procTime = 0;
-
 // Monitoring vars
 unsigned long lastMonitorTime = 0;
 unsigned long MonitorDelay = 5000;
 
-void stateEncode (uint8_t state) {
-  Serial.print("Changing to state: "); Serial.println(state);
-  switch (state) {
-    // default state that does nothing is required, do not use
-    case 0:
-      digitalWrite(OUTGPIO0, LOW);
-      digitalWrite(OUTGPIO1, LOW);
-      digitalWrite(OUTGPIO2, LOW);
-      digitalWrite(OUTGPIO3, LOW);
-      // relays ON
-      digitalWrite(RELAYPIN1, HIGH); 
-      digitalWrite(RELAYPIN2, HIGH); 
-      break;
+// RFID
+MFRC522 rfid(SS_PIN, RST_PIN); // Instance of the class
+// Init array that will store new NUID 
+byte nuidPICC[4] = {0x0, 0x0, 0x0, 0x0};
+byte *p_nuidPICC = nuidPICC;
+volatile bool bNewInt = false;
+byte regVal = 0x7F;
+bool rfidBooted = false;
 
-    // Background index 0
-    case 1:
-      digitalWrite(OUTGPIO0, HIGH);
-      digitalWrite(OUTGPIO1, LOW);
-      digitalWrite(OUTGPIO2, LOW);
-      digitalWrite(OUTGPIO3, LOW);
-      // relays ON
-      digitalWrite(RELAYPIN1, HIGH); 
-      digitalWrite(RELAYPIN2, LOW); 
-      break;
-
-    // Background index 1
-    case 2:
-      digitalWrite(OUTGPIO0, LOW);
-      digitalWrite(OUTGPIO1, HIGH);
-      digitalWrite(OUTGPIO2, LOW);
-      digitalWrite(OUTGPIO3, LOW);
-      // relays ON
-      digitalWrite(RELAYPIN1, LOW); 
-      digitalWrite(RELAYPIN2, HIGH); 
-      break;
-
-    // Background index 2
-    case 3:
-      digitalWrite(OUTGPIO0, HIGH);
-      digitalWrite(OUTGPIO1, HIGH);
-      digitalWrite(OUTGPIO2, LOW);
-      digitalWrite(OUTGPIO3, LOW);
-      // shut off relays
-      digitalWrite(RELAYPIN1, HIGH); 
-      digitalWrite(RELAYPIN2, HIGH); 
-      break;
-
-    // Background index 3
-    case 4:
-      digitalWrite(OUTGPIO0, LOW);
-      digitalWrite(OUTGPIO1, LOW);
-      digitalWrite(OUTGPIO2, HIGH);
-      digitalWrite(OUTGPIO3, LOW);
-      // shutting off RELAYS
-      digitalWrite(RELAYPIN1, LOW); // shutting off RELAYS
-      digitalWrite(RELAYPIN2, LOW); // shutting off RELAYS
-      break;
-
-    // range sensor triggered
-    case 5:
-      digitalWrite(OUTGPIO0, HIGH);
-      digitalWrite(OUTGPIO1, LOW);
-      digitalWrite(OUTGPIO2, HIGH);
-      digitalWrite(OUTGPIO3, LOW);
-      break;
-
-    // key triggered
-    case 6:
-      digitalWrite(OUTGPIO0, LOW);
-      digitalWrite(OUTGPIO1, HIGH);
-      digitalWrite(OUTGPIO2, HIGH);
-      digitalWrite(OUTGPIO3, LOW);
-      break;
-
-    // unassigned state
-    case 7:
-      digitalWrite(OUTGPIO0, HIGH);
-      digitalWrite(OUTGPIO1, HIGH);
-      digitalWrite(OUTGPIO2, HIGH);
-      digitalWrite(OUTGPIO3, LOW);
-      break;
-
-    default:
-      digitalWrite(OUTGPIO0, LOW);
-      digitalWrite(OUTGPIO1, LOW);
-      digitalWrite(OUTGPIO2, LOW);
-      digitalWrite(OUTGPIO3, LOW);
-  }
+/**
+ * MFRC522 interrupt serving routine
+ */
+void readCard() {
+  bNewInt = true;
 }
 
 void setup() {
@@ -159,18 +91,14 @@ void setup() {
   pinMode(KEYPIN, INPUT_PULLUP);
   Serial.print("GPIO pin for key switch set to: "); Serial.println(KEYPIN);
 
-  // Relay setup
-  pinMode(RELAYPIN1, OUTPUT);
-  pinMode(RELAYPIN2, OUTPUT);
-  Serial.print("Relay pins set to: "); Serial.print(RELAYPIN1); Serial.print(" "); Serial.println(RELAYPIN2);
+  // Error LEDs setup
+  pinMode(ERRORLED1, OUTPUT);
+  // pinMode(ERRORLED2, OUTPUT);
+  digitalWrite(ERRORLED1, LOW);
+  Serial.print("Error LEDs pins set to: "); Serial.print(ERRORLED1); Serial.print(" "); //Serial.println(ERRORLED2);
 
-  // output GPIO setup
-  pinMode(OUTGPIO0, OUTPUT);
-  pinMode(OUTGPIO1, OUTPUT);
-  pinMode(OUTGPIO2, OUTPUT);
-  pinMode(OUTGPIO3, OUTPUT);
-  stateEncode(state);
-  Serial.print("State output pins set to: "); Serial.print(OUTGPIO0); Serial.print(" "); Serial.print(OUTGPIO1); Serial.print(" "); Serial.print(OUTGPIO2); Serial.print(" "); Serial.println(OUTGPIO3);
+  // Teensies State setup
+  stateInit();
 
   // TOF sensor setup
   Serial.println("Starting VL53L0X boot");
@@ -188,16 +116,37 @@ void setup() {
   if (rangeBooted) {
     if (!lox.startRangeContinuous(TOF_MEAS_INTERVAL)){
       Serial.println(F("Failed to start VL53L0X continuous ranging\n"));
+      digitalWrite(ERRORLED1, HIGH);
+    } else {
+      Serial.println(F("VL53L0X sensor started in continuous ranging mode.\n"));
     }
-    Serial.println(F("VL53L0X sensor started in continuous ranging mode.\n"));
+  } else {
+    Serial.println(F("Failed to boot VL53L0X, continuing without range sensor, restart teensy to retry."));
+    digitalWrite(ERRORLED1, HIGH);
   }
 
   // RFID reader setup
-
+  rfidBooted = rfidInit(rfid);
+  if (rfidBooted) {
+    Serial.println(F("RFID Card reader initialized successfully."));
+  } else {
+    Serial.println(F("RFID initialization failed, continuing without it and turning on ERROR LED"));
+    digitalWrite(ERRORLED1, HIGH);
+  }
+  // interrupt section
+  /* setup IRQ pin */
+  pinMode(IRQ_PIN, INPUT_PULLUP);
+  /* Allow selected irq to be propagated to IRQ pin */
+  regVal = 0xA0; // select rx irq
+  rfid.PCD_WriteRegister(rfid.ComIEnReg, regVal);
+  /* Activate interrupt in teensy */
+  attachInterrupt(digitalPinToInterrupt(IRQ_PIN), readCard, FALLING);
+  // set interrupt flag
+  bNewInt = false;
 }
 
 void loop() {
-
+  // unsigned long tic = millis();
   if (rangeBooted) {
     if (lox.isRangeComplete()) {   // TOF sensor read when measurement data is available
       range = lox.readRangeResult();
@@ -223,8 +172,7 @@ void loop() {
           // sd_leds_player.setBrightness(255); // set brightness for song
           rangeActive = false;
           keyActive = true; // using the keyActive to make sure the range sensor can't trigger during its own song until next background song
-          state = 5;
-          songStartTime = millis();
+          state = RANGE;
           frame_timestamp = sd_leds_player.load_next_frame();
         }
       }
@@ -241,47 +189,69 @@ void loop() {
     if (reading != keyState) {
       keyState = reading;
       if (keyState == HIGH) {
-        Serial.println("key switch triggered! loading LEDS file");
+        Serial.println("key switch triggered! loading LEDs file");
         sd_leds_player.load_file(FILE_TO_PLAY);
-        state = 6;
+        state = KEY;
         keyActive = true;
-        songStartTime = millis();
         frame_timestamp = sd_leds_player.load_next_frame();
       }
     }
   }
   lastKeyState = reading;
 
+  // RFID reading using interrupts
+  if (rfidBooted) {
+    if (bNewInt) { //new read interrupt
+      Serial.print(F("RFID reader interrupt triggered. "));
+      if (rfidReadNuidInt(rfid, p_nuidPICC, sizeof(nuidPICC))) {
+        state = checkUidTable(nuidPICC);
+        sd_leds_player.load_file(files_iter_rr[state]);
+        frame_timestamp = sd_leds_player.load_next_frame();
+        Serial.print(F("RFID card detection set state to: ")); Serial.println(state);
+      }
+      clearInt(rfid);
+      // rfid.PICC_HaltA(); // not Halting PICC as we are a single PICC so can stay active, saves alot of time
+      bNewInt = false;
+      // Serial.println(millis() - tic);
+    }
+    activateRec(rfid);
+  }
+
+  // Background LED file loading
   if(!sd_leds_player.is_file_playing()) {
     Serial.print("No file is playing, loading new file: "); Serial.println(files_iter_rr[curr_file_i]);
     sd_leds_player.load_file(files_iter_rr[curr_file_i]);
-    state = curr_file_i+1;
-    curr_file_i = (curr_file_i + 1) % (sizeof(files_iter_rr) / sizeof(files_iter_rr[0]));
+    state = back_states[curr_file_i];
+    curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
     keyActive = false;
+    nuidPICC[0] = 0x0; nuidPICC[1] = 0x0; nuidPICC[2] = 0x0; nuidPICC[3] = 0x0;
+    frame_timestamp = sd_leds_player.load_next_frame();
+  }
+
+  // State tracking between two teensies
+  if (state != IDLE) {
     songStartTime = millis();
-    frame_timestamp = sd_leds_player.load_next_frame();
-  }
-
-  currSongTime = millis() - songStartTime;
-  if (currSongTime >= frame_timestamp) {
-    // if ((currSongTime-frame_timestamp) != 0) {
-    //   Serial.println(currSongTime-frame_timestamp);
-    // }
-    sd_leds_player.show_next_frame();
-    frame_timestamp = sd_leds_player.load_next_frame();
-  }
-
+  } 
   if (state != prevState) {
     stateEncode(state);
   }
   prevState = state;
-  // restore state to default
-  state = 0;
+  state = IDLE;
 
-  if((millis() - lastMonitorTime) > MonitorDelay) {
-    Serial.println("COW Leds Alive");
-    Serial.print("rangeActive: "); Serial.println(rangeActive ? "true" : "false");
-    Serial.print("keyActive: "); Serial.println(keyActive ? "true" : "false");
-    lastMonitorTime = millis();
+  // Current song frame tracking
+  currSongTime = millis() - songStartTime;
+  if (currSongTime >= frame_timestamp) {
+    sd_leds_player.show_next_frame();
+    frame_timestamp = sd_leds_player.load_next_frame();
   }
+
+  // Monitor printing, not really needed
+  // if((millis() - lastMonitorTime) > MonitorDelay) {
+  //   Serial.println(F("COW Leds Alive"));
+  //   Serial.print(F("rangeActive: ")); Serial.println(rangeActive ? "true" : "false");
+  //   Serial.print(F("keyActive: ")); Serial.println(keyActive ? "true" : "false");
+  //   lastMonitorTime = millis();
+  // }
+  
+  // Serial.println(millis() - tic);
 }
