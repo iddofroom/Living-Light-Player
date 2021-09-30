@@ -6,9 +6,16 @@
 #include <MFRC522.h>
 #include "state.h"
 
-static const enum State RFID_STATE_MAP[] = {RFID_QUEEN, RFID_UNDER, RFID_COME};
-static const byte UID_TABLE[] = {0x46, 0xDF, 0x39, 0x46,        // Card 9
-                                 0x56, 0xE5, 0x74, 0x45,        // Card 1
+static const enum State RFID_STATE_MAP[] = {RFID_QUEEN, RFID_QUEEN, RFID_QUEEN, RFID_UNDER, RFID_UNDER, RFID_UNDER, RFID_COME, RFID_COME, RFID_COME, RFID_COME};
+static const byte UID_TABLE[] = {0x56, 0xE5, 0x74, 0x45,        // Card group 1
+                                 0xD6, 0xBF, 0x5A, 0x46,        // Card group 1
+                                 0xF6, 0x3A, 0x77, 0x45,        // Card group 1
+                                 0x16, 0x32, 0x35, 0x46,        // Card group 2
+                                 0xE6, 0xC7, 0xDE, 0x45,        // Card group 2
+                                 0x96, 0x05, 0x3A, 0x46,        // Card group 2
+                                 0x46, 0xDF, 0x39, 0x46,        // Card group 3
+                                 0xB6, 0xD6, 0x43, 0x46,        // Card group 3
+                                 0xF5, 0x89, 0xDE, 0x5E,        // Card group 3
                                  0x79, 0xA0, 0x29, 0x52};       // KivSee chain
 
 /**
@@ -28,17 +35,10 @@ void printDec(byte *buffer, byte bufferSize);
 
 /**
  * Check for RFID card presence and read its UID, 
- * return true for new card read, NUID written to nuidPICC[],
- * return false if no card present or no new UID detected
+ * return true if the UID read is new, NUID are written to nuidPICC[],
+ * return false if no card present or UID detected is not new
  */
 bool rfidReadNuid(MFRC522 rfid, byte *nuidPICC, byte nuidSize);
-
-/**
- * Read RFID card UID after recieving an iterrupt from the reader that a card is present, 
- * return true for new UID read vs nuidPICC[] stored, read UID overwrites current nuidPICC[],
- * return false if UID read is not new, can't be read or not of supported type
- */
-bool rfidReadNuidInt(MFRC522 rfid, byte *nuidPICC, byte nuidSize);
 
 /**
  * Check for the given UID in the UID_TABLE, if found returns the corresponding State from the RFID_STATE_MAP
@@ -47,6 +47,9 @@ bool rfidReadNuidInt(MFRC522 rfid, byte *nuidPICC, byte nuidSize);
 enum State checkUidTable(byte UID[]);
 
 void activateRec(MFRC522 rfid);
+
 void clearInt(MFRC522 rfid);
+
+uint8_t random(uint8_t min, uint8_t max);
 
 #endif // __RFID_H__

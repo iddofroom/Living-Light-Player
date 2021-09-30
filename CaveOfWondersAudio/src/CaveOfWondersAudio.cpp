@@ -62,12 +62,12 @@ AudioControlSGTL5000     sgtl5000_1;
 #define GPIO1 30
 #define GPIO2 31
 #define GPIO3 32
-// #define DEBOUNCE_TIME 1
+#define DEBOUNCE_TIME 1
 
-u_int8_t state = 0;
-// u_int8_t lastState = 0;
-// unsigned long lastDebounceTime = 0;
-// unsigned long debounceDelay = DEBOUNCE_TIME;
+u_int8_t state, prevState = 0;
+u_int8_t lastState = 0;
+unsigned long lastDebounceTime = 0;
+unsigned long debounceDelay = DEBOUNCE_TIME;
 u_int8_t reading;
 
 // unsigned long lastPlayTime = 0;
@@ -76,7 +76,8 @@ u_int8_t reading;
 unsigned long lastMonitorTime = 0;
 unsigned long MonitorDelay = 5000;
 
-const char *files_iter_rr[] = {"cave1.wav", "cave2.wav", "cave3.wav", "cave4.wav", "under.wav", "under.wav"};
+const char *files_iter_rr[] = {"cave1.wav", "cave2.wav", "cave3.wav", "cave4.wav", "under.wav", "under.wav", "under.wav", "under.wav", "under.wav", "under.wav"};
+// const char *files_iter_rr[] = {"cave1.wav", "cave2.wav", "cave3.wav", "cave4.wav", "under.wav", "under.wav", "queen.wav", "under.wav", "come.wav", "kivsee.wav"};
 // const char *files_iter_rr[] = {"under.wav", "under.wav", "under.wav", "under.wav", "under.wav", "under.wav"};
 
 void setup() {
@@ -137,19 +138,20 @@ void playFile(const char *filename)
 void loop() {
   // Read state from GPIOs and encode
   reading = (digitalRead(GPIO3) * 8) + (digitalRead(GPIO2) * 4) + (digitalRead(GPIO1) * 2) + digitalRead(GPIO0);
-  // if (reading != lastState) {
-  //   // reset the debouncing timer
-  //   lastDebounceTime = millis();
-  // }
-  // if ((millis() - lastDebounceTime) > debounceDelay) {
+  if (reading != lastState) {
+    // reset the debouncing timer
+    lastDebounceTime = millis();
+  }
+  if ((millis() - lastDebounceTime) > debounceDelay) {
     if (reading != state) {
+      prevState = state;
       state = reading;
-      Serial.println(state);
+      Serial.print("New state recieved: "); Serial.println(state);
       switch (state) {
         case 0: // default state that does nothing is required, do not use
           // playFile("cave1.wav");  // filenames are always uppercase 8.3 format
           break;
-        case 1 ... 6:
+        case 1 ... (sizeof(files_iter_rr) / sizeof(files_iter_rr[0])):
           playFile(files_iter_rr[state-1]);
           break;
         default: // state can go up to 15
@@ -157,8 +159,8 @@ void loop() {
           break;
       }
     }
-  // }
-  // lastState = reading;
+  }
+  lastState = reading;
 
   // If no file is playing, play default background music, removing for now so all plays are only triggered
   // if (!playWav1.isPlaying()) {
@@ -170,7 +172,7 @@ void loop() {
   if((millis() - lastMonitorTime) > MonitorDelay) {
     Serial.print("COW Audio: ");
     if (playWav1.isPlaying()) {
-      Serial.println("playing audio file");
+      Serial.print("Current playing audio file is: "); Serial.println(files_iter_rr[prevState-1]);
     } else {
       Serial.println("NO audio file playing");
     }

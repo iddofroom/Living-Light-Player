@@ -9,22 +9,23 @@
 
 
 #define LEDS_PER_STRIP 254
-#define FILE_TO_PLAY "under"
 #define RANGE_BOOT_RETRIES 10
 #define TOF_MEAS_INTERVAL 40
 #define KEYPIN 22
-#define DEBOUNCE_TIME 50
+#define KEY_DEBOUNCE_TIME 50
+#define STATE_DEBOUNCE_TIME 2
 #define ERRORLED1 23
 // #define ERRORLED2 23
 
 
 int curr_file_i = 0;
 enum State back_states[] = {BACK0, BACK1, BACK2, BACK3};
-enum State rfid_states[] = {RFID_QUEEN, RFID_UNDER, RFID_COME, RFID_KIVSEE};
-const char *files_iter_rr[] = {"cave1", "cave2", "cave3", "cave4", "under", "under", "queen", "under", "come", "kivsee"};
+enum State rfid_states[] = {RFID_QUEEN, RFID_UNDER, RFID_COME};
+const char *files_iter_rr[] = {"cave1", "cave2", "cave3", "cave4", "under", "under", "under", "under", "under", "under"};
 // Song tracking
 enum State state, prevState = IDLE;
 unsigned long currSongTime = 0, songStartTime = 0, lastRangeTime = 0, procTime = 0;
+unsigned long stateDebounceDelay = STATE_DEBOUNCE_TIME;
 
 
 /*
@@ -53,7 +54,7 @@ int rangeCnt = 0;
 int keyState = HIGH;
 int lastKeyState = HIGH;
 unsigned long lastDebounceTime = 0;
-unsigned long debounceDelay = DEBOUNCE_TIME;
+unsigned long debounceDelay = KEY_DEBOUNCE_TIME;
 bool keyActive = true;
 int reading;
 
@@ -69,6 +70,7 @@ byte *p_nuidPICC = nuidPICC;
 volatile bool bNewInt = false;
 byte regVal = 0x7F;
 bool rfidBooted = false;
+bool rfidKivseeFlag = false;
 
 /**
  * MFRC522 interrupt serving routine
@@ -95,7 +97,7 @@ void setup() {
   pinMode(ERRORLED1, OUTPUT);
   // pinMode(ERRORLED2, OUTPUT);
   digitalWrite(ERRORLED1, LOW);
-  Serial.print("Error LEDs pins set to: "); Serial.print(ERRORLED1); Serial.print(" "); //Serial.println(ERRORLED2);
+  Serial.print("Error LEDs pins set to: "); Serial.print(ERRORLED1); Serial.println(" "); //Serial.println(ERRORLED2);
 
   // Teensies State setup
   stateInit();
@@ -168,11 +170,11 @@ void loop() {
         }
         else if ((range < 40) && rangeActive && !keyActive) { // don't allow range sensor song triggering from long distance or key switch triggered
           Serial.print("range sensor triggered at distance (mm): "); Serial.println(range);
-          sd_leds_player.load_file(FILE_TO_PLAY);
+          state = RANGE;
+          sd_leds_player.load_file(files_iter_rr[state-1]);
           // sd_leds_player.setBrightness(255); // set brightness for song
           rangeActive = false;
           keyActive = true; // using the keyActive to make sure the range sensor can't trigger during its own song until next background song
-          state = RANGE;
           frame_timestamp = sd_leds_player.load_next_frame();
         }
       }
@@ -190,8 +192,8 @@ void loop() {
       keyState = reading;
       if (keyState == HIGH) {
         Serial.println("key switch triggered! loading LEDs file");
-        sd_leds_player.load_file(FILE_TO_PLAY);
         state = KEY;
+        sd_leds_player.load_file(files_iter_rr[state-1]);
         keyActive = true;
         frame_timestamp = sd_leds_player.load_next_frame();
       }
@@ -202,41 +204,60 @@ void loop() {
   // RFID reading using interrupts
   if (rfidBooted) {
     if (bNewInt) { //new read interrupt
-      Serial.print(F("RFID reader interrupt triggered. "));
-      if (rfidReadNuidInt(rfid, p_nuidPICC, sizeof(nuidPICC))) {
+      Serial.println(F("RFID reader interrupt triggered. "));
+      if (rfidReadNuid(rfid, p_nuidPICC, sizeof(nuidPICC))) {
         state = checkUidTable(nuidPICC);
-        sd_leds_player.load_file(files_iter_rr[state]);
+        if (state == RFID_KIVSEE) rfidKivseeFlag = true;
+        sd_leds_player.load_file(files_iter_rr[state-1]);
+        keyActive = true; // using the keyActive to make sure the range sensor can't trigger until next background song
         frame_timestamp = sd_leds_player.load_next_frame();
         Serial.print(F("RFID card detection set state to: ")); Serial.println(state);
       }
       clearInt(rfid);
-      // rfid.PICC_HaltA(); // not Halting PICC as we are a single PICC so can stay active, saves alot of time
+      rfid.PICC_HaltA(); // Halting the PICC takes relatively alot of time but it doesn't matter as we change the track anyways
       bNewInt = false;
       // Serial.println(millis() - tic);
     }
     activateRec(rfid);
   }
 
+  // if (rfidReadNuid(rfid, p_nuidPICC, sizeof(nuidPICC))) {}
+
   // Background LED file loading
   if(!sd_leds_player.is_file_playing()) {
-    Serial.print("No file is playing, loading new file: "); Serial.println(files_iter_rr[curr_file_i]);
-    sd_leds_player.load_file(files_iter_rr[curr_file_i]);
-    state = back_states[curr_file_i];
-    curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
-    keyActive = false;
-    nuidPICC[0] = 0x0; nuidPICC[1] = 0x0; nuidPICC[2] = 0x0; nuidPICC[3] = 0x0;
-    frame_timestamp = sd_leds_player.load_next_frame();
+    if (rfidKivseeFlag) {
+      uint8_t rand_num = random((uint8_t) 0, (uint8_t) (sizeof(rfid_states) / sizeof(rfid_states[0])));
+      Serial.print("Kivsee flag detected, playing random RFID file number: "); Serial.println(rand_num);
+      state = rfid_states[rand_num];
+      sd_leds_player.load_file(files_iter_rr[state-1]); // minus 1 to translate state to filename because IDLE state is 0
+      keyActive = true; // using the keyActive to make sure the range sensor can't trigger until next background song
+      frame_timestamp = sd_leds_player.load_next_frame();
+      rfidKivseeFlag = false;
+    } 
+    else {
+      state = back_states[curr_file_i];
+      Serial.print("No file is playing, loading new file number: "); Serial.println(files_iter_rr[state-1]);
+      sd_leds_player.load_file(files_iter_rr[state-1]); // minus 1 to translate state to filename because IDLE state is 0
+      curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
+      keyActive = false;
+      nuidPICC[0] = 0x0; nuidPICC[1] = 0x0; nuidPICC[2] = 0x0; nuidPICC[3] = 0x0;
+      frame_timestamp = sd_leds_player.load_next_frame();
+    }
   }
 
   // State tracking between two teensies
-  if (state != IDLE) {
-    songStartTime = millis();
-  } 
   if (state != prevState) {
+    songStartTime = millis();
     stateEncode(state);
   }
   prevState = state;
-  state = IDLE;
+  // Holding non IDLE state for a short while so we can use debouce on second teensy to capture state safely
+  if (state != IDLE) {
+    if ((millis() - songStartTime) > stateDebounceDelay) {
+      state = IDLE;
+      songStartTime = millis();
+    }
+  } 
 
   // Current song frame tracking
   currSongTime = millis() - songStartTime;
