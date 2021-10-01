@@ -10,6 +10,9 @@
 		},
 		{
 			"path": "Cave_Mapping"
+		},
+		{
+			"path": "..\\ll-sacn-recorder"
 		}
 	],
 	"settings": {}

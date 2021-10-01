@@ -76,9 +76,7 @@ u_int8_t reading;
 unsigned long lastMonitorTime = 0;
 unsigned long MonitorDelay = 5000;
 
-const char *files_iter_rr[] = {"cave1.wav", "cave2.wav", "cave3.wav", "cave4.wav", "under.wav", "under.wav", "under.wav", "under.wav", "under.wav", "under.wav"};
-// const char *files_iter_rr[] = {"cave1.wav", "cave2.wav", "cave3.wav", "cave4.wav", "under.wav", "under.wav", "queen.wav", "under.wav", "come.wav", "kivsee.wav"};
-// const char *files_iter_rr[] = {"under.wav", "under.wav", "under.wav", "under.wav", "under.wav", "under.wav"};
+const char *files_iter_rr[] = {"cave1.wav", "cave2.wav", "cave3.wav", "cave4.wav", "under.wav", "under.wav", "queen.wav", "under.wav", "come.wav", "kivsee.wav"};
 
 void setup() {
   Serial.begin(115200);

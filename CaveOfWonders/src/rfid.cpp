@@ -50,8 +50,10 @@ void printDec(byte *buffer, byte bufferSize)
 bool rfidReadNuid(MFRC522 rfid, byte *nuidPICC, byte nuidSize)
 {
   // Skip RFID if no new card present on the sensor/reader. This saves the entire process when idle.
-  if (!rfid.PICC_IsNewCardPresent())
-    return false;
+  // if (!rfid.PICC_IsNewCardPresent()) {
+  //   Serial.println(F("No card presence detected."));
+  //   return false;
+  // }
 
   // Verify if the NUID has been read
   if (!rfid.PICC_ReadCardSerial()) {

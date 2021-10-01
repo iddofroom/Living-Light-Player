@@ -21,7 +21,7 @@
 int curr_file_i = 0;
 enum State back_states[] = {BACK0, BACK1, BACK2, BACK3};
 enum State rfid_states[] = {RFID_QUEEN, RFID_UNDER, RFID_COME};
-const char *files_iter_rr[] = {"cave1", "cave2", "cave3", "cave4", "under", "under", "under", "under", "under", "under"};
+const char *files_iter_rr[] = {"cave1", "cave2", "cave3", "cave4", "under", "under", "queen", "under", "come", "kivsee"};
 // Song tracking
 enum State state, prevState = IDLE;
 unsigned long currSongTime = 0, songStartTime = 0, lastRangeTime = 0, procTime = 0;
@@ -35,8 +35,8 @@ unsigned long stateDebounceDelay = STATE_DEBOUNCE_TIME;
  * of the file written to SD card).
  * It also needs to recive the leds buffer for OctoWS2811, should be initialized as follows
  */
-DMAMEM int display_memory[LEDS_PER_STRIP * 6]; 
-int drawing_memory[LEDS_PER_STRIP * 6];
+DMAMEM int display_memory[LEDS_PER_STRIP * 8]; 
+int drawing_memory[LEDS_PER_STRIP * 8];
 SdLedsPlayer sd_leds_player(LEDS_PER_STRIP, display_memory, drawing_memory);
 unsigned long frame_timestamp;
 uint8_t brightness = 50; // range is 0 (off) to 255 (full brightness)
