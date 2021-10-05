@@ -9,6 +9,8 @@
 
 
 #define LEDS_PER_STRIP 254
+#define MAX_BRIGHTNESS 255
+#define DEFAULT_BRIGHTNESS 50  // range is 0 (off) to 255 (max brightness)
 #define RANGE_BOOT_RETRIES 10
 #define TOF_MEAS_INTERVAL 40
 #define KEYPIN 22
@@ -31,15 +33,15 @@ unsigned long stateDebounceDelay = STATE_DEBOUNCE_TIME;
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
  * and writing it to the leds.
- * It needs to be initialized with LEDS_PER_STRIP (must match the leds per strips
+ * It needs to be initialized with LEDS_PER_STRIP (must match the leds per strips used in the generation
  * of the file written to SD card).
- * It also needs to recive the leds buffer for OctoWS2811, should be initialized as follows
+ * It also needs to receive the leds buffer for OctoWS2811, should be initialized as follows
  */
-DMAMEM int display_memory[LEDS_PER_STRIP * 8]; 
-int drawing_memory[LEDS_PER_STRIP * 8];
+DMAMEM int display_memory[LEDS_PER_STRIP * 6]; 
+int drawing_memory[LEDS_PER_STRIP * 6];
 SdLedsPlayer sd_leds_player(LEDS_PER_STRIP, display_memory, drawing_memory);
 unsigned long frame_timestamp;
-uint8_t brightness = 50; // range is 0 (off) to 255 (full brightness)
+uint8_t brightness = DEFAULT_BRIGHTNESS; 
 
 // Range sensor
 Adafruit_VL53L0X lox = Adafruit_VL53L0X();
@@ -47,7 +49,7 @@ bool rangeBooted = false;
 int rangeBootCnt = 0;
 int range = -1;
 int rangeAccum = -1;
-bool rangeActive = false; 
+// bool rangeActive = false; 
 int rangeCnt = 0;
 
 // Key Switch
@@ -160,23 +162,24 @@ void loop() {
         rangeAccum = 0;
         rangeCnt = 0;
         // Brightness by range
-        if (range > 200) { // starting from what range do we want to play with Brightness?
-          sd_leds_player.setBrightness(brightness); // default brightness, consider value
-          rangeActive = false; // disabling activation of song by range sensor by jumping from long distance
+        if (range > (MAX_BRIGHTNESS - DEFAULT_BRIGHTNESS)) { 
+          brightness = DEFAULT_BRIGHTNESS;
+          sd_leds_player.setBrightness(brightness);
+          // rangeActive = false; // disabling activation of song by range sensor by jumping from long distance
         }
-        else if (range <= 200 && range > 40) {
-          sd_leds_player.setBrightness(brightness+200-range);
-          rangeActive = true; // enabling activation of song by range sensor from short distance
+        else if ((range <= (MAX_BRIGHTNESS - DEFAULT_BRIGHTNESS)) && range > 0) {
+          brightness = MAX_BRIGHTNESS - range;
+          sd_leds_player.setBrightness(brightness);
+          // rangeActive = true; // enabling activation of song by range sensor from short distance
         }
-        else if ((range < 40) && rangeActive && !keyActive) { // don't allow range sensor song triggering from long distance or key switch triggered
-          Serial.print("range sensor triggered at distance (mm): "); Serial.println(range);
-          state = RANGE;
-          sd_leds_player.load_file(files_iter_rr[state-1]);
-          // sd_leds_player.setBrightness(255); // set brightness for song
-          rangeActive = false;
-          keyActive = true; // using the keyActive to make sure the range sensor can't trigger during its own song until next background song
-          frame_timestamp = sd_leds_player.load_next_frame();
-        }
+        // else if ((range < 40) && rangeActive && !keyActive) { // don't allow range sensor song triggering from long distance or key switch triggered
+        //   Serial.print("range sensor triggered at distance (mm): "); Serial.println(range);
+        //   state = RANGE;
+        //   sd_leds_player.load_file(files_iter_rr[state-1]);
+        //   rangeActive = false;
+        //   keyActive = true; // using the keyActive to make sure the range sensor can't trigger during its own song until next background song
+        //   frame_timestamp = sd_leds_player.load_next_frame();
+        // }
       }
     }
   }
@@ -220,8 +223,6 @@ void loop() {
     }
     activateRec(rfid);
   }
-
-  // if (rfidReadNuid(rfid, p_nuidPICC, sizeof(nuidPICC))) {}
 
   // Background LED file loading
   if(!sd_leds_player.is_file_playing()) {
