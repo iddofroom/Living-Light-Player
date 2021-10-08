@@ -23,7 +23,7 @@
 int curr_file_i = 0;
 enum State back_states[] = {BACK0, BACK1, BACK2, BACK3};
 enum State rfid_states[] = {RFID_QUEEN, RFID_UNDER, RFID_COME};
-const char *files_iter_rr[] = {"cave1", "cave2", "cave3", "cave4", "under", "under", "queen", "under", "come", "kivsee"};
+const char *files_iter_rr[] = {"cave2", "cave1", "cave2", "cave1", "queen", "queen", "queen", "come", "come", "kivsee"};
 // Song tracking
 enum State state, prevState = IDLE;
 unsigned long currSongTime = 0, songStartTime = 0, lastRangeTime = 0, procTime = 0;
@@ -57,7 +57,7 @@ int keyState = HIGH;
 int lastKeyState = HIGH;
 unsigned long lastDebounceTime = 0;
 unsigned long debounceDelay = KEY_DEBOUNCE_TIME;
-bool keyActive = true;
+// bool keyActive = true;
 int reading;
 
 // Monitoring vars
@@ -147,6 +147,9 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(IRQ_PIN), readCard, FALLING);
   // set interrupt flag
   bNewInt = false;
+  
+  // Some delay to allow the audio teensy to wake up first
+  delay(1000);
 }
 
 void loop() {
@@ -197,7 +200,7 @@ void loop() {
         Serial.println("key switch triggered! loading LEDs file");
         state = KEY;
         sd_leds_player.load_file(files_iter_rr[state-1]);
-        keyActive = true;
+        // keyActive = true;
         frame_timestamp = sd_leds_player.load_next_frame();
       }
     }
@@ -212,7 +215,7 @@ void loop() {
         state = checkUidTable(nuidPICC);
         if (state == RFID_KIVSEE) rfidKivseeFlag = true;
         sd_leds_player.load_file(files_iter_rr[state-1]);
-        keyActive = true; // using the keyActive to make sure the range sensor can't trigger until next background song
+        // keyActive = true; // using the keyActive to make sure the range sensor can't trigger until next background song
         frame_timestamp = sd_leds_player.load_next_frame();
         Serial.print(F("RFID card detection set state to: ")); Serial.println(state);
       }
@@ -231,7 +234,7 @@ void loop() {
       Serial.print("Kivsee flag detected, playing random RFID file number: "); Serial.println(rand_num);
       state = rfid_states[rand_num];
       sd_leds_player.load_file(files_iter_rr[state-1]); // minus 1 to translate state to filename because IDLE state is 0
-      keyActive = true; // using the keyActive to make sure the range sensor can't trigger until next background song
+      // keyActive = true; // using the keyActive to make sure the range sensor can't trigger until next background song
       frame_timestamp = sd_leds_player.load_next_frame();
       rfidKivseeFlag = false;
     } 
@@ -240,7 +243,7 @@ void loop() {
       Serial.print("No file is playing, loading new file number: "); Serial.println(files_iter_rr[state-1]);
       sd_leds_player.load_file(files_iter_rr[state-1]); // minus 1 to translate state to filename because IDLE state is 0
       curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
-      keyActive = false;
+      // keyActive = false;
       nuidPICC[0] = 0x0; nuidPICC[1] = 0x0; nuidPICC[2] = 0x0; nuidPICC[3] = 0x0;
       frame_timestamp = sd_leds_player.load_next_frame();
     }
