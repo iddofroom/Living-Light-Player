@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsequence BaseChannel="0" ChanCtrlBasic="0" ChanCtrlColor="0" FixedPointTiming="1" ModelBlending="true">
+  <head>
+    <version>2021.32</version>
+    <author/>
+    <author-email/>
+    <author-website/>
+    <song/>
+    <artist/>
+    <album/>
+    <MusicURL/>
+    <comment/>
+    <sequenceTiming>25 ms</sequenceTiming>
+    <sequenceType>Media</sequenceType>
+    <mediaFile>C:\repos\kivsee.wav</mediaFile>
+    <sequenceDuration>21.511</sequenceDuration>
+    <imageDir/>
+  </head>
+  <nextid>1</nextid>
+  <Jukebox/>
+  <ColorPalettes>
+    <ColorPalette>C_BUTTON_Palette1=#FFFFFF,C_BUTTON_Palette2=#FF0000,C_BUTTON_Palette3=#00FF00,C_BUTTON_Palette4=#0000FF,C_BUTTON_Palette5=#FFFF00,C_BUTTON_Palette6=#000000,C_BUTTON_Palette7=#00FFFF,C_BUTTON_Palette8=#FF00FF,C_CHECKBOX_Palette4=1,C_CHECKBOX_Palette7=1,C_CHECKBOX_Palette8=1,C_SLIDER_Brightness=30</ColorPalette>
+    <ColorPalette>C_BUTTON_Palette1=#FFFFFF,C_BUTTON_Palette2=#FF0000,C_BUTTON_Palette3=#00FF00,C_BUTTON_Palette4=#0000FF,C_BUTTON_Palette5=#FFFF00,C_BUTTON_Palette6=#000000,C_BUTTON_Palette7=#00FFFF,C_BUTTON_Palette8=#FF00FF,C_CHECKBOX_Palette2=1,C_CHECKBOX_Palette3=1,C_CHECKBOX_Palette4=1,C_CHECKBOX_Palette5=1,C_CHECKBOX_Palette7=1,C_CHECKBOX_Palette8=1,C_SLIDER_Brightness=50</ColorPalette>
+  </ColorPalettes>
+  <EffectDB>
+    <Effect>E_CHOICE_Plasma_Color=Normal,E_SLIDER_Plasma_Line_Density=1,E_SLIDER_Plasma_Speed=21,E_SLIDER_Plasma_Style=3,T_TEXTCTRL_Fadein=0.5,T_TEXTCTRL_Fadeout=1</Effect>
+    <Effect>E_CHOICE_Plasma_Color=Normal,E_SLIDER_Plasma_Line_Density=1,E_SLIDER_Plasma_Speed=20,E_SLIDER_Plasma_Style=1,T_CHECKBOX_Canvas=1,T_TEXTCTRL_Fadein=0.5,T_TEXTCTRL_Fadeout=1</Effect>
+    <Effect></Effect>
+  </EffectDB>
+  <DataLayers>
+    <DataLayer lor_params="11958" channel_offset="0" num_channels="0" num_frames="0" data="&lt;rendered: erase-mode&gt;" source="&lt;auto-generated&gt;" name="Nutcracker"/>
+  </DataLayers>
+  <DisplayElements>
+    <Element collapsed="0" type="timing" name="New Timing" visible="1" views="Master View,models ordered by connection,Groups View" active="1"/>
+    <Element collapsed="0" type="model" name="string1" visible="1"/>
+    <Element collapsed="0" type="model" name="string2" visible="1"/>
+    <Element collapsed="0" type="model" name="string3" visible="1"/>
+    <Element collapsed="0" type="model" name="string4" visible="1"/>
+    <Element collapsed="0" type="model" name="string5" visible="1"/>
+    <Element collapsed="0" type="model" name="string6" visible="1"/>
+    <Element collapsed="0" type="model" name="string7" visible="1"/>
+    <Element collapsed="0" type="model" name="string8" visible="1"/>
+    <Element collapsed="0" type="model" name="Mushrooms" visible="1"/>
+    <Element collapsed="0" type="model" name="Spiders" visible="1"/>
+    <Element collapsed="0" type="model" name="Bats Left" visible="1"/>
+    <Element collapsed="0" type="model" name="Bats Right" visible="1"/>
+    <Element collapsed="0" type="model" name="Ground" visible="1"/>
+    <Element collapsed="0" type="model" name="Bats All" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals All" visible="1"/>
+    <Element collapsed="0" type="model" name="Ceiling" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Right - Left" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Right - Right" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Right - Lower Center" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Right - Upper Center" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Right" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Center - Right" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Center - Lower Center" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Center - Upper Center" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Center - Left" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Left - Right" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Left - Lower Center" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Left - Left" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Left - Upper Center" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Left" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Center" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Screen - Left" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Screen - Right" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals Screen - Center" visible="1"/>
+    <Element collapsed="0" type="model" name="Crystals All Screen Layout" visible="1"/>
+    <Element collapsed="0" type="model" name="Floor MegaCrystal Left" visible="1"/>
+    <Element collapsed="0" type="model" name="Floor MegaCrystal Left Familia" visible="1"/>
+    <Element collapsed="0" type="model" name="Floor MegaCrystal Right" visible="1"/>
+    <Element collapsed="0" type="model" name="Floor MegaCrystal Right Friend" visible="1"/>
+    <Element collapsed="0" type="model" name="Floor Left Crystals" visible="1"/>
+    <Element collapsed="0" type="model" name="Floor Right Crystals" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-91" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-71" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-90" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-89" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-88" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-87" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-86" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-85" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-84" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-83" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-82" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-81" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-80" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-79" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-78" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-77" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-76" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-75" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-74" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-73" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-72" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-69" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-68" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-66" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-67" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-57" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-52" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-51" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-47" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-50" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-49" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-48" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-37" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-32" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-26" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-23" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-22" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-21" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-20" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-13" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-2" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-3" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-106" visible="1"/>
+    <Element collapsed="0" type="model" name="Single Line-107" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-4" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-5" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-6" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-7" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-8" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-9" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-10" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-11" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-12" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-14" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-15" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-16" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-17" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-18" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-19" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-24" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-25" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-27" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-28" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-29" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-30" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-31" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-33" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-34" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-35" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-36" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-38" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-39" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-40" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-41" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-42" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-43" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-44" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-45" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-46" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-53" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-54" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-55" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-56" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-58" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-59" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-60" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-61" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-62" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-63" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-64" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-65" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-70" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-92" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-93" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-94" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-95" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-96" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-97" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-98" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-99" visible="1"/>
+    <Element collapsed="0" type="model" name="Poly Line-100" visible="1"/>
+  </DisplayElements>
+  <ElementEffects>
+    <Element type="timing" name="New Timing">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="string8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Mushrooms">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Spiders">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Bats Left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Bats Right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Ground">
+      <EffectLayer>
+        <Effect ref="0" name="Plasma" startTime="775" endTime="21000" palette="0"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Bats All">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals All">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Ceiling">
+      <EffectLayer>
+        <Effect ref="1" name="Plasma" startTime="775" endTime="21000" palette="0"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Crystals Right - Left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Right - Right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Right - Lower Center">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Right - Upper Center">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Center - Right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Center - Lower Center">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Center - Upper Center">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Center - Left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Left - Right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Left - Lower Center">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Left - Left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Left - Upper Center">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Center">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Screen - Left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Screen - Right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals Screen - Center">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Crystals All Screen Layout">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Floor MegaCrystal Left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Floor MegaCrystal Left Familia">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Floor MegaCrystal Right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Floor MegaCrystal Right Friend">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Floor Left Crystals">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Floor Right Crystals">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-91">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-71">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-90">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-89">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-88">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-87">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-86">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-85">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-84">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-83">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-82">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-81">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-80">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-79">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-78">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-77">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-76">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-75">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-74">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-73">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-72">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-69">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-68">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-66">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-67">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-57">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-52">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-51">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-47">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-50">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-49">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-48">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-37">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-32">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-26">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-23">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-22">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-21">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-20">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-13">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-106">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Single Line-107">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-9">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-10">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-11">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-12">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-14">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-15">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-16">
+      <EffectLayer>
+        <Effect ref="2" name="On" selected="1" startTime="0" endTime="350" palette="1"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="Poly Line-17">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-18">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-19">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-24">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-25">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-27">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-28">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-29">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-30">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-31">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-33">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-34">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-35">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-36">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-38">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-39">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-40">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-41">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-42">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-43">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-44">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-45">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-46">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-53">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-54">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-55">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-56">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-58">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-59">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-60">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-61">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-62">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-63">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-64">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-65">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-70">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-92">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-93">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-94">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-95">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-96">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-97">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-98">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-99">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Poly Line-100">
+      <EffectLayer/>
+    </Element>
+  </ElementEffects>
+  <lastView>2</lastView>
+  <TimingTags>
+    <Tag number="0" position="-1"/>
+    <Tag number="1" position="-1"/>
+    <Tag number="2" position="-1"/>
+    <Tag number="3" position="-1"/>
+    <Tag number="4" position="-1"/>
+    <Tag number="5" position="-1"/>
+    <Tag number="6" position="-1"/>
+    <Tag number="7" position="-1"/>
+    <Tag number="8" position="-1"/>
+    <Tag number="9" position="-1"/>
+  </TimingTags>
+</xsequence>

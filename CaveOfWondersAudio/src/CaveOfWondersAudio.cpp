@@ -76,7 +76,7 @@ u_int8_t reading;
 unsigned long lastMonitorTime = 0;
 unsigned long MonitorDelay = 5000;
 
-const char *files_iter_rr[] = {"cave2.wav", "cave1.wav", "cave2.wav", "cave1.wav", "queen.wav", "queen.wav", "queen.wav", "come.wav", "come.wav", "kivsee.wav"};
+const char *files_iter_rr[] = {"amir.wav", "cave2.wav", "cave1.wav", "cave2.wav", "come.wav", "queen.wav", "queen.wav", "come.wav", "come.wav", "kivsee.wav"};
 
 void setup() {
   Serial.begin(115200);
@@ -153,7 +153,7 @@ void loop() {
           playFile(files_iter_rr[state-1]);
           break;
         default: // state can go up to 15
-          playFile("sun.wav");
+          playFile("amir.wav");
           break;
       }
     }

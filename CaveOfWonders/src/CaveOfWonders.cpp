@@ -21,9 +21,9 @@
 
 
 int curr_file_i = 0;
-enum State back_states[] = {BACK0, BACK1, BACK2, BACK3};
+enum State back_states[] = {BACK0, BACK1, BACK2};
 enum State rfid_states[] = {RFID_QUEEN, RFID_UNDER, RFID_COME};
-const char *files_iter_rr[] = {"cave2", "cave1", "cave2", "cave1", "queen", "queen", "queen", "come", "come", "kivsee"};
+const char *files_iter_rr[] = {"amir", "cave2", "cave1", "cave2", "come", "queen", "queen", "come", "come", "kivsee"};
 // Song tracking
 enum State state, prevState = IDLE;
 unsigned long currSongTime = 0, songStartTime = 0, lastRangeTime = 0, procTime = 0;
