@@ -76,7 +76,7 @@ u_int8_t reading;
 unsigned long lastMonitorTime = 0;
 unsigned long MonitorDelay = 5000;
 
-const char *files_iter_rr[] = {"amir.wav", "cave2.wav", "cave1.wav", "cave2.wav", "come.wav", "queen.wav", "queen.wav", "come.wav", "come.wav", "kivsee.wav"};
+const char *files_iter_rr[] = {"cave1.wav", "cave2.wav", "cave3.wav", "cave4.wav", "cave5.wav", "cave6.wav", "cave7.wav", "cave8.wav", "cave9.wav", "cave10.wav"};
 
 void setup() {
   Serial.begin(115200);
@@ -144,7 +144,7 @@ void loop() {
     if (reading != state) {
       prevState = state;
       state = reading;
-      Serial.print("New state recieved: "); Serial.println(state);
+      Serial.print("New state received: "); Serial.println(state);
       switch (state) {
         case 0: // default state that does nothing is required, do not use
           // playFile("cave1.wav");  // filenames are always uppercase 8.3 format

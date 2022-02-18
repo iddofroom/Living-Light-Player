@@ -13,6 +13,9 @@
 		},
 		{
 			"path": "..\\ll-sacn-recorder"
+		},
+		{
+			"path": "CaveWithoutWonders"
 		}
 	],
 	"settings": {}
