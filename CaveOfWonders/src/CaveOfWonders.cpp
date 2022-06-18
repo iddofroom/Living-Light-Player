@@ -1,5 +1,5 @@
-#include "Adafruit_VL53L0X.h"
 #include "SdLedsPlayer.h"
+#include "Adafruit_VL53L0X.h"
 #include "state.h"
 #include "rfid.h"
 
@@ -11,7 +11,7 @@
 #define LEDS_PER_STRIP 254
 #define MAX_BRIGHTNESS 255
 #define DEFAULT_BRIGHTNESS 50  // range is 0 (off) to 255 (max brightness)
-#define RANGE_BOOT_RETRIES 10
+#define RANGE_BOOT_RETRIES 3
 #define TOF_MEAS_INTERVAL 40
 #define KEYPIN 22
 #define KEY_DEBOUNCE_TIME 50
@@ -40,6 +40,7 @@ unsigned long stateDebounceDelay = STATE_DEBOUNCE_TIME;
 DMAMEM int display_memory[LEDS_PER_STRIP * 6]; 
 int drawing_memory[LEDS_PER_STRIP * 6];
 SdLedsPlayer sd_leds_player(LEDS_PER_STRIP, display_memory, drawing_memory);
+bool status; // general use status variable
 unsigned long frame_timestamp;
 uint8_t brightness = DEFAULT_BRIGHTNESS; 
 
@@ -88,7 +89,11 @@ void setup() {
   //   delay(1);
   // }
   Serial.println("Serial Port Started.");
-  sd_leds_player.setup();
+  while (! sd_leds_player.setup()) {
+    Serial.println("SD card setup failed, fix and reset to continue");
+    delay(1000);
+  }
+  Serial.println("SD card started.");
   sd_leds_player.setBrightness(brightness);
   
   // Key switch setup
@@ -199,7 +204,11 @@ void loop() {
       if (keyState == HIGH) {
         Serial.println("key switch triggered! loading LEDs file");
         state = KEY;
-        sd_leds_player.load_file(files_iter_rr[state-1]);
+        status = sd_leds_player.load_file(files_iter_rr[state-1]);
+        if (!status) {
+          Serial.println("file load from SD failed");
+          delay(1000);
+        }
         // keyActive = true;
         frame_timestamp = sd_leds_player.load_next_frame();
       }
@@ -214,7 +223,11 @@ void loop() {
       if (rfidReadNuid(rfid, p_nuidPICC, sizeof(nuidPICC))) {
         state = checkUidTable(nuidPICC);
         if (state == RFID_KIVSEE) rfidKivseeFlag = true;
-        sd_leds_player.load_file(files_iter_rr[state-1]);
+        status = sd_leds_player.load_file(files_iter_rr[state-1]);
+        if (!status) {
+          Serial.println("file load from SD failed");
+          delay(1000);
+        }
         // keyActive = true; // using the keyActive to make sure the range sensor can't trigger until next background song
         frame_timestamp = sd_leds_player.load_next_frame();
         Serial.print(F("RFID card detection set state to: ")); Serial.println(state);
@@ -233,7 +246,11 @@ void loop() {
       uint8_t rand_num = random((uint8_t) 0, (uint8_t) (sizeof(rfid_states) / sizeof(rfid_states[0])));
       Serial.print("Kivsee flag detected, playing random RFID file number: "); Serial.println(rand_num);
       state = rfid_states[rand_num];
-      sd_leds_player.load_file(files_iter_rr[state-1]); // minus 1 to translate state to filename because IDLE state is 0
+      status = sd_leds_player.load_file(files_iter_rr[state-1]); // minus 1 to translate state to filename because IDLE state is 0
+      if (!status) {
+        Serial.println("file load from SD failed");
+        delay(1000);
+      }
       // keyActive = true; // using the keyActive to make sure the range sensor can't trigger until next background song
       frame_timestamp = sd_leds_player.load_next_frame();
       rfidKivseeFlag = false;
@@ -241,7 +258,11 @@ void loop() {
     else {
       state = back_states[curr_file_i];
       Serial.print("No file is playing, loading new file number: "); Serial.println(files_iter_rr[state-1]);
-      sd_leds_player.load_file(files_iter_rr[state-1]); // minus 1 to translate state to filename because IDLE state is 0
+      status = sd_leds_player.load_file(files_iter_rr[state-1]); // minus 1 to translate state to filename because IDLE state is 0
+      if (!status) {
+        Serial.println("file load from SD failed");
+        delay(1000);
+      }
       curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
       // keyActive = false;
       nuidPICC[0] = 0x0; nuidPICC[1] = 0x0; nuidPICC[2] = 0x0; nuidPICC[3] = 0x0;
@@ -255,7 +276,7 @@ void loop() {
     stateEncode(state);
   }
   prevState = state;
-  // Holding non IDLE state for a short while so we can use debouce on second teensy to capture state safely
+  // Holding non IDLE state for a short while so we can use debounce on second teensy to capture state safely
   if (state != IDLE) {
     if ((millis() - songStartTime) > stateDebounceDelay) {
       state = IDLE;
