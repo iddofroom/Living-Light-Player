@@ -132,6 +132,11 @@ void playFile(const char *filename)
   // }
 }
 
+void stopFile()
+{
+  Serial.println("Stopping file");
+  playWav1.stop();
+}
 
 void loop() {
   // Read state from GPIOs and encode
@@ -151,6 +156,9 @@ void loop() {
           break;
         case 1 ... (sizeof(files_iter_rr) / sizeof(files_iter_rr[0])):
           playFile(files_iter_rr[state-1]);
+          break;
+        case 15:
+          stopFile();
           break;
         default: // state can go up to 15
           playFile("amir.wav");

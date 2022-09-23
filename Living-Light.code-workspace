@@ -19,6 +19,9 @@
 		},
 		{
 			"path": "..\\ll-teensy-player"
+		},
+		{
+			"path": "Elsewhere"
 		}
 	],
 	"settings": {
