@@ -3,6 +3,23 @@
 #include "state.h"
 #include "rfid.h"
 
+/*
+--------------------------
+|      RFID WIRING       |
+--------------------------
+|Teensy 4.1 ->    RFID   |
+--------------------------
+|    G      |      G     |
+|    3.3V   |     3.3V   |
+|    1      |     IRQ    |
+|    9      |     RST    |
+|    10     |     SDA    |
+|    11     |     MOSI   |
+|    12     |     MISO   |
+|    13     |     SCK    |
+--------------------------
+*/
+
 #define SS_PIN 10
 #define RST_PIN 9
 #define IRQ_PIN 1   // Configurable, depends on hardware
