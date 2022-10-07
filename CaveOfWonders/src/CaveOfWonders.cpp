@@ -25,22 +25,18 @@
 #define IRQ_PIN 1   // Configurable, depends on hardware
 
 
-#define LEDS_PER_STRIP 254
+#define LEDS_PER_STRIP 105
 #define MAX_BRIGHTNESS 255
-#define DEFAULT_BRIGHTNESS 50  // range is 0 (off) to 255 (max brightness)
-#define RANGE_BOOT_RETRIES 3
-#define TOF_MEAS_INTERVAL 40
-#define KEYPIN 22
-#define KEY_DEBOUNCE_TIME 50
+#define DEFAULT_BRIGHTNESS 255  // range is 0 (off) to 255 (max brightness)
 #define STATE_DEBOUNCE_TIME 2
 #define ERRORLED1 23
 // #define ERRORLED2 23
 
 
 int curr_file_i = 0;
-enum State back_states[] = {BACK0, BACK1, BACK2};
-enum State rfid_states[] = {RFID_QUEEN, RFID_UNDER, RFID_COME};
-const char *files_iter_rr[] = {"amir", "cave2", "cave1", "cave2", "come", "queen", "queen", "come", "come", "kivsee"};
+enum State back_states[] = {BACK0, BACK1, BACK2, BACK3, BACK4, BACK5, BACK6, BACK7, BACK8, BACK9};
+enum State rfid_states[] = {RFID_CHIP};
+const char *files_iter_rr[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "chip"};
 // Song tracking
 enum State state, prevState = IDLE;
 unsigned long currSongTime = 0, songStartTime = 0, lastRangeTime = 0, procTime = 0;
@@ -60,23 +56,6 @@ SdLedsPlayer sd_leds_player(LEDS_PER_STRIP, display_memory, drawing_memory);
 bool status; // general use status variable
 unsigned long frame_timestamp;
 uint8_t brightness = DEFAULT_BRIGHTNESS; 
-
-// Range sensor
-Adafruit_VL53L0X lox = Adafruit_VL53L0X();
-bool rangeBooted = false;
-int rangeBootCnt = 0;
-int range = -1;
-int rangeAccum = -1;
-// bool rangeActive = false; 
-int rangeCnt = 0;
-
-// Key Switch
-int keyState = HIGH;
-int lastKeyState = HIGH;
-unsigned long lastDebounceTime = 0;
-unsigned long debounceDelay = KEY_DEBOUNCE_TIME;
-// bool keyActive = true;
-int reading;
 
 // Monitoring vars
 unsigned long lastMonitorTime = 0;
@@ -113,10 +92,6 @@ void setup() {
   Serial.println("SD card started.");
   sd_leds_player.setBrightness(brightness);
   
-  // Key switch setup
-  pinMode(KEYPIN, INPUT_PULLUP);
-  Serial.print("GPIO pin for key switch set to: "); Serial.println(KEYPIN);
-
   // Error LEDs setup
   pinMode(ERRORLED1, OUTPUT);
   // pinMode(ERRORLED2, OUTPUT);
@@ -125,31 +100,6 @@ void setup() {
 
   // Teensies State setup
   stateInit();
-
-  // TOF sensor setup
-  Serial.println("Starting VL53L0X boot");
-  while ((!rangeBooted) && (rangeBootCnt < RANGE_BOOT_RETRIES)) {
-    if (lox.begin()) {
-      Serial.print(F("VL53L0X sensor boot done successfully after ")); Serial.print(rangeBootCnt); Serial.println(" attempts.");
-      rangeBooted = true;
-    }
-    else {
-      Serial.print(F("Failed to boot VL53L0X, retrying.. ")); Serial.println(rangeBootCnt);
-      rangeBootCnt++;
-      delay(1000);
-    }
-  }
-  if (rangeBooted) {
-    if (!lox.startRangeContinuous(TOF_MEAS_INTERVAL)){
-      Serial.println(F("Failed to start VL53L0X continuous ranging\n"));
-      digitalWrite(ERRORLED1, HIGH);
-    } else {
-      Serial.println(F("VL53L0X sensor started in continuous ranging mode.\n"));
-    }
-  } else {
-    Serial.println(F("Failed to boot VL53L0X, continuing without range sensor, restart teensy to retry."));
-    digitalWrite(ERRORLED1, HIGH);
-  }
 
   // RFID reader setup
   rfidBooted = rfidInit(rfid);
@@ -169,83 +119,26 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(IRQ_PIN), readCard, FALLING);
   // set interrupt flag
   bNewInt = false;
-  
+
   // Some delay to allow the audio teensy to wake up first
   delay(1000);
 }
 
 void loop() {
   // unsigned long tic = millis();
-  if (rangeBooted) {
-    if (lox.isRangeComplete()) {   // TOF sensor read when measurement data is available
-      range = lox.readRangeResult();
-      // Serial.print(millis());Serial.print(" : Distance (mm): "); Serial.println(range);
-      rangeCnt++;
-      rangeAccum += range;
-      if (rangeCnt >= 3) { // number of measurements to average
-        range = rangeAccum / rangeCnt;
-        rangeAccum = 0;
-        rangeCnt = 0;
-        // Brightness by range
-        if (range > (MAX_BRIGHTNESS - DEFAULT_BRIGHTNESS)) { 
-          brightness = DEFAULT_BRIGHTNESS;
-          sd_leds_player.setBrightness(brightness);
-          // rangeActive = false; // disabling activation of song by range sensor by jumping from long distance
-        }
-        else if ((range <= (MAX_BRIGHTNESS - DEFAULT_BRIGHTNESS)) && range > 0) {
-          brightness = MAX_BRIGHTNESS - range;
-          sd_leds_player.setBrightness(brightness);
-          // rangeActive = true; // enabling activation of song by range sensor from short distance
-        }
-        // else if ((range < 40) && rangeActive && !keyActive) { // don't allow range sensor song triggering from long distance or key switch triggered
-        //   Serial.print("range sensor triggered at distance (mm): "); Serial.println(range);
-        //   state = RANGE;
-        //   sd_leds_player.load_file(files_iter_rr[state-1]);
-        //   rangeActive = false;
-        //   keyActive = true; // using the keyActive to make sure the range sensor can't trigger during its own song until next background song
-        //   frame_timestamp = sd_leds_player.load_next_frame();
-        // }
-      }
-    }
-  }
-
-  // Key switch reading with debounce
-  reading = digitalRead(KEYPIN);
-  if (reading != lastKeyState) {
-    // reset the debouncing timer
-    lastDebounceTime = millis();
-  }
-  if ((millis() - lastDebounceTime) > debounceDelay) {
-    if (reading != keyState) {
-      keyState = reading;
-      if (keyState == HIGH) {
-        Serial.println("key switch triggered! loading LEDs file");
-        state = KEY;
-        status = sd_leds_player.load_file(files_iter_rr[state-1]);
-        if (!status) {
-          Serial.println("file load from SD failed");
-          delay(1000);
-        }
-        // keyActive = true;
-        frame_timestamp = sd_leds_player.load_next_frame();
-      }
-    }
-  }
-  lastKeyState = reading;
 
   // RFID reading using interrupts
   if (rfidBooted) {
     if (bNewInt) { //new read interrupt
       Serial.println(F("RFID reader interrupt triggered. "));
       if (rfidReadNuid(rfid, p_nuidPICC, sizeof(nuidPICC))) {
-        state = checkUidTable(nuidPICC);
-        if (state == RFID_KIVSEE) rfidKivseeFlag = true;
+        state = RFID_CHIP; // checkUidTable(nuidPICC);
+        if (state == RFID_CHIP) rfidKivseeFlag = true;
         status = sd_leds_player.load_file(files_iter_rr[state-1]);
         if (!status) {
           Serial.println("file load from SD failed");
           delay(1000);
         }
-        // keyActive = true; // using the keyActive to make sure the range sensor can't trigger until next background song
         frame_timestamp = sd_leds_player.load_next_frame();
         Serial.print(F("RFID card detection set state to: ")); Serial.println(state);
       }
@@ -268,7 +161,6 @@ void loop() {
         Serial.println("file load from SD failed");
         delay(1000);
       }
-      // keyActive = true; // using the keyActive to make sure the range sensor can't trigger until next background song
       frame_timestamp = sd_leds_player.load_next_frame();
       rfidKivseeFlag = false;
     } 
@@ -281,7 +173,6 @@ void loop() {
         delay(1000);
       }
       curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
-      // keyActive = false;
       nuidPICC[0] = 0x0; nuidPICC[1] = 0x0; nuidPICC[2] = 0x0; nuidPICC[3] = 0x0;
       frame_timestamp = sd_leds_player.load_next_frame();
     }

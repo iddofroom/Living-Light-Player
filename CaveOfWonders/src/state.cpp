@@ -56,49 +56,57 @@ void stateEncode (enum State state) {
       digitalWriteFast(OUTGPIO3, LOW);
       break;
 
-    // range sensor triggered
-    case RANGE:
+    // Background index 4
+    case BACK4:
       digitalWriteFast(OUTGPIO0, HIGH);
       digitalWriteFast(OUTGPIO1, LOW);
       digitalWriteFast(OUTGPIO2, HIGH);
       digitalWriteFast(OUTGPIO3, LOW);
       break;
 
-    // key triggered
-    case KEY:
+    // Background index 5
+    case BACK5:
       digitalWriteFast(OUTGPIO0, LOW);
       digitalWriteFast(OUTGPIO1, HIGH);
       digitalWriteFast(OUTGPIO2, HIGH);
       digitalWriteFast(OUTGPIO3, LOW);
       break;
 
-    // RFID state
-    case RFID_QUEEN:
+    // Background index 6
+    case BACK6:
       digitalWriteFast(OUTGPIO0, HIGH);
       digitalWriteFast(OUTGPIO1, HIGH);
       digitalWriteFast(OUTGPIO2, HIGH);
       digitalWriteFast(OUTGPIO3, LOW);
       break;
 
-    // RFID state
-    case RFID_UNDER:
+    // Background index 7
+    case BACK7:
       digitalWriteFast(OUTGPIO0, LOW);
       digitalWriteFast(OUTGPIO1, LOW);
       digitalWriteFast(OUTGPIO2, LOW);
       digitalWriteFast(OUTGPIO3, HIGH);
       break;
 
-    // RFID state
-    case RFID_COME:
+    // Background index 8
+    case BACK8:
       digitalWriteFast(OUTGPIO0, HIGH);
       digitalWriteFast(OUTGPIO1, LOW);
       digitalWriteFast(OUTGPIO2, LOW);
       digitalWriteFast(OUTGPIO3, HIGH);
       break;
 
-    // RFID state
-    case RFID_KIVSEE:
+    // Background index 9
+    case BACK9:
       digitalWriteFast(OUTGPIO0, LOW);
+      digitalWriteFast(OUTGPIO1, HIGH);
+      digitalWriteFast(OUTGPIO2, LOW);
+      digitalWriteFast(OUTGPIO3, HIGH);
+      break;
+
+    // RFID state
+    case RFID_CHIP:
+      digitalWriteFast(OUTGPIO0, HIGH);
       digitalWriteFast(OUTGPIO1, HIGH);
       digitalWriteFast(OUTGPIO2, LOW);
       digitalWriteFast(OUTGPIO3, HIGH);

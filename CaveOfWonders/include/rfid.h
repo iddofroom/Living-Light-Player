@@ -6,7 +6,7 @@
 #include <MFRC522.h>
 #include "state.h"
 
-static const enum State RFID_STATE_MAP[] = {RFID_QUEEN, RFID_QUEEN, RFID_QUEEN, RFID_UNDER, RFID_UNDER, RFID_UNDER, RFID_COME, RFID_COME, RFID_COME, RFID_COME};
+static const enum State RFID_STATE_MAP[] = {RFID_CHIP};
 static const byte UID_TABLE[] = {0x56, 0xE5, 0x74, 0x45,        // Card group 1
                                  0xD6, 0xBF, 0x5A, 0x46,        // Card group 1
                                  0xF6, 0x3A, 0x77, 0x45,        // Card group 1

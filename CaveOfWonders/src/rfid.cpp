@@ -125,7 +125,7 @@ enum State checkUidTable(byte UID[])
       return RFID_STATE_MAP[i >> 2];
     }
   }
-  return RFID_KIVSEE;
+  return RFID_CHIP;
 }
 
 /**

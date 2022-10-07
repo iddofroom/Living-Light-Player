@@ -76,7 +76,7 @@ u_int8_t reading;
 unsigned long lastMonitorTime = 0;
 unsigned long MonitorDelay = 5000;
 
-const char *files_iter_rr[] = {"cave1.wav", "cave2.wav", "cave3.wav", "cave4.wav", "cave5.wav", "cave6.wav", "cave7.wav", "cave8.wav", "cave9.wav", "cave10.wav"};
+const char *files_iter_rr[] = {"silence.wav", "silence.wav", "silence.wav", "silence.wav", "silence.wav", "silence.wav", "silence.wav", "silence.wav", "silence.wav", "silence.wav", "chip.wav"};
 
 void setup() {
   Serial.begin(115200);
