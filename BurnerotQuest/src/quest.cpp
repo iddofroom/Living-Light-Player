@@ -69,3 +69,7 @@ QuestState handleQuestLogic(MFRC522 &rfid)
         }
     }
 }
+
+void clearQuestCurrUid () {
+    clearStoredUid (p_nuidPICC, sizeof(nuidPICC));
+}

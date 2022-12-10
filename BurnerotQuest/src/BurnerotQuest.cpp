@@ -45,8 +45,8 @@ unsigned long frame_timestamp;
 #define STATE_DEBOUNCE_TIME 2
 
 int curr_file_i = 0;
-enum State back_states[] = {BACK0, BACK1, BACK2};
-const char *files_iter_rr[] = {"kivsee", "kivsee", "kivsee", "kivsee", "kivsee", "kivsee", "kivsee", "kivsee", "kivsee", "kivsee"};
+enum State back_states[] = {BACK0, BACK1, BACK2, BACK3, BACK4, BACK5};
+const char *files_iter_rr[] = {"0", "1", "2", "3", "4", "5", "quest_fail", "quest_success", "quest_too_soon", "quest_done"};
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
  * and writing it to the leds.
@@ -185,10 +185,11 @@ void loop()
     bool status = sd_leds_player.load_file(files_iter_rr[state - 1]); // minus 1 to translate state to filename because IDLE state is 0
     if (!status)
     {
-      Serial.println("file load from SD failed");
+      // Serial.println("file load from SD failed");
       delay(1000);
     }
     curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
+    clearQuestCurrUid();
     frame_timestamp = sd_leds_player.load_next_frame();
   }
 

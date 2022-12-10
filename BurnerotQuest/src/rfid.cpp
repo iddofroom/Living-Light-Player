@@ -86,10 +86,10 @@ bool rfidReadNuid(MFRC522 &rfid, byte *nuidPICC, byte nuidSize)
     return false;
   }
 
-  Serial.println(F("This code scans the MIFARE Classic NUID only."));
-  Serial.print(F("PICC type: "));
+  // Serial.println(F("This code scans the MIFARE Classic NUID only."));
+  // Serial.print(F("PICC type: "));
   MFRC522::PICC_Type piccType = rfid.PICC_GetType(rfid.uid.sak);
-  Serial.println(rfid.PICC_GetTypeName(piccType));
+  // Serial.println(rfid.PICC_GetTypeName(piccType));
 
   // Check is the PICC of Classic MIFARE type
   if (piccType != MFRC522::PICC_TYPE_MIFARE_MINI &&
@@ -120,13 +120,13 @@ bool rfidReadNuid(MFRC522 &rfid, byte *nuidPICC, byte nuidSize)
       nuidPICC[i] = rfid.uid.uidByte[i];
     }
 
-    Serial.println(F("The NUID tag is:"));
-    Serial.print(F("In hex: "));
-    printHex(rfid.uid.uidByte, rfid.uid.size);
-    Serial.println();
-    Serial.print(F("In dec: "));
-    printDec(rfid.uid.uidByte, rfid.uid.size);
-    Serial.println();
+    // Serial.println(F("The NUID tag is:"));
+    // Serial.print(F("In hex: "));
+    // printHex(rfid.uid.uidByte, rfid.uid.size);
+    // Serial.println();
+    // Serial.print(F("In dec: "));
+    // printDec(rfid.uid.uidByte, rfid.uid.size);
+    // Serial.println();
     return true;
   }
 
@@ -218,9 +218,9 @@ bool writeStationIdToChip(MFRC522 &rfid, byte stationId) {
 
   newChipData[QUEST_BYTE_INDEX] = stationId;
 
-  byte eventTracker = newChipData[RFID_BLOCK_SIZE - 1];
+  byte eventTracker = newChipData[15]; // event tracker is at byte 15, counting from 0
   eventTracker |= (1 << EVENT_ID_BIT);
-  newChipData[RFID_BLOCK_SIZE - 1] = eventTracker;
+  newChipData[15] = eventTracker;
 
   bool write_success = write_and_verify(blockAddr, newChipData, buffer, size, rfid);
   if(!write_success) {
