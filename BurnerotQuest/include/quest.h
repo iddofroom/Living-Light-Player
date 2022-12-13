@@ -16,6 +16,7 @@ enum QuestState {
 
 QuestState handleQuestLogic(MFRC522 &rfid);
 
+void initSdWriter();
 void clearQuestCurrUid();
 
 #endif // __QUEST_H__
