@@ -29,7 +29,6 @@
 MFRC522 rfid(SS_PIN, RST_PIN); // Instance of the class
 volatile bool rfidUnhandledInterrupt = false;
 bool rfidBooted = false;
-bool rfidKivseeFlag = false;
 
 // leds
 #define LEDS_PER_STRIP 254
@@ -46,7 +45,7 @@ unsigned long frame_timestamp;
 
 int curr_file_i = 0;
 enum State back_states[] = {BACK0, BACK1, BACK2, BACK3, BACK4, BACK5};
-const char *files_iter_rr[] = {"0", "1", "2", "3", "4", "5", "quest_fail", "quest_success", "quest_too_soon", "quest_done"};
+const char *files_iter_rr[] = {"kivsee", "kivsee", "kivsee", "kivsee", "kivsee", "kivsee", "quest_fail", "quest_success", "quest_too_soon", "quest_done"};
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
  * and writing it to the leds.
@@ -91,6 +90,7 @@ void setup()
     delay(1000);
   }
   Serial.println("SD card started.");
+  initSdWriter();
   sd_leds_player.setBrightness(brightness);
 
   // Error LEDs setup
@@ -137,7 +137,7 @@ void loop()
   {
     if (rfidUnhandledInterrupt)
     { // new read interrupt
-      Serial.println(F("RFID reader interrupt triggered. "));
+      // Serial.println(F("RFID reader interrupt triggered. "));
       QuestState questState = handleQuestLogic(rfid);
       switch(questState) {
         case QUEST_STATE_FAILED:

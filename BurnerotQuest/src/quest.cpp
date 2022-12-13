@@ -1,9 +1,24 @@
 
 #include "quest.h"
 #include "rfid.h"
+#include "SD.h"
 
 byte nuidPICC[4] = {0x0, 0x0, 0x0, 0x0};
 byte *p_nuidPICC = nuidPICC;
+
+File questLoggerFile;
+
+void initSdWriter()
+{
+    if (!SD.begin(BUILTIN_SDCARD))
+    {
+        Serial.println(F("SD card begin() failed"));
+        return;
+    }
+    Serial.println(F("SD card begin() success"));
+
+    questLoggerFile = SD.open("questlog.txt", FILE_WRITE);
+}
 
 QuestState handleQuestLogic(MFRC522 &rfid)
 {
@@ -32,6 +47,13 @@ QuestState handleQuestLogic(MFRC522 &rfid)
     Serial.print("read stationIdFromChip is: ");
     Serial.println(stationIdFromChip);
 
+    questLoggerFile.print("read chip with level " + String(stationIdFromChip) + " at station " + String(MY_LEVEL) + " chip unique ID: ");
+    for (byte i = 0; i < 4; i++)
+    {
+        questLoggerFile.print(nuidPICC[i] < 0x10 ? " 0" : " ");
+        questLoggerFile.print(nuidPICC[i], HEX);
+    }
+
     if (stationIdFromChip == MY_LEVEL - 1)
     {
         // happy path
@@ -40,6 +62,8 @@ QuestState handleQuestLogic(MFRC522 &rfid)
         {
             Serial.println(F("write failed"));
             clearStoredUid(p_nuidPICC, sizeof(nuidPICC));
+            questLoggerFile.println(" tried to write station id" + String(MY_LEVEL) + " to chip. it FAILED");
+            questLoggerFile.flush();
             return QUEST_STATE_FAILED;
         }
         else
@@ -47,6 +71,8 @@ QuestState handleQuestLogic(MFRC522 &rfid)
             Serial.print("wrote station ID to chip: ");
             Serial.println(MY_LEVEL);
             Serial.println("playing sound - good");
+            questLoggerFile.println(" wrote station id " + String(MY_LEVEL) + " to chip. this is good");
+            questLoggerFile.flush();
             closeComm(rfid);
             return QUEST_STATE_SUCCESSFUL;
         }
@@ -57,6 +83,8 @@ QuestState handleQuestLogic(MFRC522 &rfid)
         {
             // play sound - go back
             Serial.println("playing sound - bad, you missed a station");
+            questLoggerFile.println(" did not write to chip. chip is too far back");
+            questLoggerFile.flush();
             closeComm(rfid);
             return QUEST_STATE_TOO_SOON;
         }
@@ -64,12 +92,15 @@ QuestState handleQuestLogic(MFRC522 &rfid)
         {
             // play you were here before - no need to come back
             Serial.println("playing sound - bad, already visited");
+            questLoggerFile.println(" did not write to chip. chip was already in this station");
+            questLoggerFile.flush();
             closeComm(rfid);
             return QUEST_STATE_DONE;
         }
     }
 }
 
-void clearQuestCurrUid () {
-    clearStoredUid (p_nuidPICC, sizeof(nuidPICC));
+void clearQuestCurrUid()
+{
+    clearStoredUid(p_nuidPICC, sizeof(nuidPICC));
 }
