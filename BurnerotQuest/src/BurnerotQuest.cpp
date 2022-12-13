@@ -45,7 +45,7 @@ unsigned long frame_timestamp;
 
 int curr_file_i = 0;
 enum State back_states[] = {BACK0, BACK1, BACK2, BACK3, BACK4, BACK5};
-const char *files_iter_rr[] = {"kivsee", "kivsee", "kivsee", "kivsee", "kivsee", "kivsee", "quest_fail", "quest_success", "quest_too_soon", "quest_done"};
+const char *files_iter_rr[] = {"0", "1", "2", "3", "4", "5", "quest_fail", "quest_success", "quest_too_soon", "quest_done"};
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
  * and writing it to the leds.
