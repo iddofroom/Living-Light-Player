@@ -24,7 +24,7 @@
 #define SS_PIN 10
 #define RST_PIN 9
 #define IRQ_PIN 1 // Configurable, depends on hardware
-#define ERRORLED1 23
+// #define ERRORLED1 23
 
 MFRC522 rfid(SS_PIN, RST_PIN); // Instance of the class
 volatile bool rfidUnhandledInterrupt = false;
@@ -94,11 +94,11 @@ void setup()
   sd_leds_player.setBrightness(brightness);
 
   // Error LEDs setup
-  pinMode(ERRORLED1, OUTPUT);
-  digitalWrite(ERRORLED1, LOW);
-  Serial.print("Error LEDs pins set to: ");
-  Serial.print(ERRORLED1);
-  Serial.println(" ");
+//   pinMode(ERRORLED1, OUTPUT);
+//   digitalWrite(ERRORLED1, LOW);
+//   Serial.print("Error LEDs pins set to: ");
+//   Serial.print(ERRORLED1);
+//   Serial.println(" ");
 
   // Teensies State setup
   stateInit();
@@ -112,7 +112,7 @@ void setup()
   else
   {
     Serial.println(F("RFID initialization failed, continuing without it and turning on ERROR LED"));
-    digitalWrite(ERRORLED1, HIGH);
+    // digitalWrite(ERRORLED1, HIGH);
   }
   // interrupt section
   /* setup IRQ pin */

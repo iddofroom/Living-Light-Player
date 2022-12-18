@@ -58,10 +58,10 @@ AudioControlSGTL5000     sgtl5000_1;
 //#define SDCARD_MOSI_PIN  11
 //#define SDCARD_SCK_PIN   13
 
-#define GPIO0 29
-#define GPIO1 30
-#define GPIO2 31
-#define GPIO3 32
+#define GPIO0 1
+#define GPIO1 2
+#define GPIO2 3
+#define GPIO3 4
 #define DEBOUNCE_TIME 1
 
 u_int8_t state, prevState = 0;
