@@ -35,6 +35,8 @@ bool rfidBooted = false;
 #define MAX_BRIGHTNESS 255
 #define DEFAULT_BRIGHTNESS 50 // range is 0 (off) to 255 (max brightness)
 
+#define LIGHT_THRESHOLD 900
+
 DMAMEM int display_memory[LEDS_PER_STRIP * 6];
 int drawing_memory[LEDS_PER_STRIP * 6];
 uint8_t brightness = DEFAULT_BRIGHTNESS;
@@ -79,7 +81,8 @@ JOYSTICK_LEFT, JOYSTICK_RIGHT, BTN_EXTRA_1, BTN_EXTRA_2 };
 #define STATE_DEBOUNCE_TIME 2
 
 int curr_file_i = 0;
-enum State back_states[] = {BACK0, BACK1, BACK2, BACK3, BACK4, BACK5};
+// enum State back_states[] = {BACK0, BACK1, BACK2, BACK3, BACK4, BACK5};
+enum State back_states[] = {BACK1};
 const char *files_iter_rr[] = {"0", "1", "2", "3", "4", "5", "quest_fail", "quest_success", "quest_too_soon", "quest_done"};
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
@@ -159,6 +162,9 @@ void setup_buttons() {
   for (int i = 0; i < BTN_COUNT; i++) {
     pinMode(buttons[i], INPUT_PULLUP);   
   }
+
+  pinMode(RELAY, OUTPUT);
+  digitalWrite(RELAY, LOW);
   
   // we are initializing an array of maximum number of ports
   for (int i = 0; i < MAX_IO; i++) {
@@ -179,37 +185,37 @@ void setup()
   setup_buttons();
   Serial.println("Initialized Buttons.");
   
-  // while (!sd_leds_player.setup())
-  // {
-  //   Serial.println("SD card setup failed, fix and reset to continue");
-  //   delay(1000);
-  // }
-  // Serial.println("SD card started.");
-  // initSdWriter();
-  // sd_leds_player.setBrightness(brightness);
+  while (!sd_leds_player.setup())
+  {
+    Serial.println("SD card setup failed, fix and reset to continue");
+    delay(1000);
+  }
+  Serial.println("SD card started.");
+  initSdWriter();
+  sd_leds_player.setBrightness(brightness);
 
   // Teensies State setup
-  //stateInit();
+  stateInit();
 
   // RFID reader setup
-  // rfidBooted = rfidInit(rfid);
-  // if (rfidBooted)
-  // {
-  //   Serial.println(F("RFID Card reader initialized successfully."));
-  // }
-  // else
-  // {
-  //   Serial.println(F("RFID initialization failed, continuing without it and turning on ERROR LED"));
-  // }
+  rfidBooted = rfidInit(rfid);
+  if (rfidBooted)
+  {
+    Serial.println(F("RFID Card reader initialized successfully."));
+  }
+  else
+  {
+    Serial.println(F("RFID initialization failed, continuing without it and turning on ERROR LED"));
+  }
   // interrupt section
   /* setup IRQ pin */
-  // pinMode(IRQ_PIN, INPUT_PULLUP);
-  // /* Allow selected irq to be propagated to IRQ pin */
-  // allowRfidRxInt(rfid);
-  // /* Activate interrupt in teensy */
-  // attachInterrupt(digitalPinToInterrupt(IRQ_PIN), readCard, FALLING);
-  // // set interrupt flag
-  // rfidUnhandledInterrupt = false;
+  pinMode(IRQ_PIN, INPUT_PULLUP);
+  /* Allow selected irq to be propagated to IRQ pin */
+  allowRfidRxInt(rfid);
+  /* Activate interrupt in teensy */
+  attachInterrupt(digitalPinToInterrupt(IRQ_PIN), readCard, FALLING);
+  // set interrupt flag
+  rfidUnhandledInterrupt = false;
 
   // // Some delay to allow the audio teensy to wake up first
   delay(1000);
@@ -240,16 +246,16 @@ void read_rfid_using_interrupts() {
         break;
     }
     // Load leds file according to logic selected state
-    // if (state != IDLE) 
-    // {
-    //   bool status = sd_leds_player.load_file(files_iter_rr[state - 1]);
-    //   if (!status)
-    //   {
-    //     Serial.println("file load from SD failed");
-    //     delay(1000);
-    //   }
-    //   frame_timestamp = sd_leds_player.load_next_frame();
-    // }
+    if (state != IDLE) 
+    {
+      bool status = sd_leds_player.load_file(files_iter_rr[state - 1]);
+      if (!status)
+      {
+        Serial.println("file load from SD failed");
+        delay(1000);
+      }
+      frame_timestamp = sd_leds_player.load_next_frame();
+    }
     Serial.print(F("Quest logic set state to: "));
     Serial.println(state);
     clearRfidInt(rfid);
@@ -258,6 +264,14 @@ void read_rfid_using_interrupts() {
     // Serial.println(millis() - tic);
   }
   activateRfidReception(rfid);
+}
+
+bool is_light_sensor_triggered() {
+  int lightValue = analogRead(LIGHT_SENSOR);
+  if (lightValue > LIGHT_THRESHOLD) {
+    return true;
+  }
+  return false;
 }
 
 void loop()
@@ -273,49 +287,55 @@ void loop()
   is_button_pressed(JOYSTICK_RIGHT);
   is_button_pressed(BTN_EXTRA_1);
   is_button_pressed(BTN_EXTRA_2);
+  bool light_triggered = is_light_sensor_triggered();
+  if(light_triggered) {
+      digitalWrite(RELAY, HIGH);
+  }else {
+      digitalWrite(RELAY, LOW);
+  }
   
   read_rfid_using_interrupts();
 
   // Background LED file loading
 
-  // if (!sd_leds_player.is_file_playing())
-  // {
-  //   state = back_states[curr_file_i];
-  //   Serial.print("No file is playing, loading new file number: ");
-  //   Serial.println(files_iter_rr[state - 1]);
-  //   bool status = sd_leds_player.load_file(files_iter_rr[state - 1]); // minus 1 to translate state to filename because IDLE state is 0
-  //   if (!status)
-  //   {
-  //     // Serial.println("file load from SD failed");
-  //     delay(1000);
-  //   }
-  //   curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
-  //   clearQuestCurrUid();
-  //   frame_timestamp = sd_leds_player.load_next_frame();
-  // }
+  if (!sd_leds_player.is_file_playing())
+  {
+    state = back_states[curr_file_i];
+    Serial.print("No file is playing, loading new file number: ");
+    Serial.println(files_iter_rr[state - 1]);
+    bool status = sd_leds_player.load_file(files_iter_rr[state - 1]); // minus 1 to translate state to filename because IDLE state is 0
+    if (!status)
+    {
+      // Serial.println("file load from SD failed");
+      delay(1000);
+    }
+    curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
+    clearQuestCurrUid();
+    frame_timestamp = sd_leds_player.load_next_frame();
+  }
 
   // State tracking between two teensies
-  // if (state != prevState)
-  // {
-  //   songStartTime = millis();
-  //   stateEncode(state);
-  // }
-  // prevState = state;
-  // // Holding non IDLE state for a short while so we can use debounce on second teensy to capture state safely
-  // if (state != IDLE)
-  // {
-  //   if ((millis() - songStartTime) > stateDebounceDelay)
-  //   {
-  //     state = IDLE;
-  //   }
-  // }
+  if (state != prevState)
+  {
+    songStartTime = millis();
+    stateEncode(state);
+  }
+  prevState = state;
+  // Holding non IDLE state for a short while so we can use debounce on second teensy to capture state safely
+  if (state != IDLE)
+  {
+    if ((millis() - songStartTime) > stateDebounceDelay)
+    {
+      state = IDLE;
+    }
+  }
 
   // Current song frame tracking
-  // currSongTime = millis() - songStartTime;
-  // if (currSongTime >= frame_timestamp)
-  // {
-  //   sd_leds_player.show_next_frame();
-  //   frame_timestamp = sd_leds_player.load_next_frame();
-  // }
+  currSongTime = millis() - songStartTime;
+  if (currSongTime >= frame_timestamp)
+  {
+    sd_leds_player.show_next_frame();
+    frame_timestamp = sd_leds_player.load_next_frame();
+  }
 
 }
