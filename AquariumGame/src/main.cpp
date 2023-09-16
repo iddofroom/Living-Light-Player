@@ -219,7 +219,7 @@ void setup()
 }
 
 void set_song_by_state() {
-  bool status = sd_leds_player.load_file(files_iter_rr[state - 1]);
+  bool status = sd_leds_player.load_file(files_iter_rr[state]);
     if (!status)
     {
       Serial.println("file load from SD failed");
@@ -296,7 +296,7 @@ bool is_light_sensor_triggered() {
 void loop()
 {
   // Only on idle state we should listen for events
-  bool should_listen_for_events = state != IDLE;
+  bool should_listen_for_events = state == IDLE;
   if(should_listen_for_events) {
     is_button_pressed(BTN_RED);
     is_button_pressed(BTN_BLUE);
@@ -334,7 +334,7 @@ void loop()
   {
     state = IDLE; // Return to first background idle music
     Serial.print("No file is playing, restarting first file ");
-    Serial.println(files_iter_rr[state - 1]);
+    Serial.println(files_iter_rr[state]);
     set_song_by_state();
   }
 
