@@ -6,7 +6,7 @@
 #define OUTGPIO2 22
 #define OUTGPIO3 23
 
-enum State {IDLE, BACK0, BACK1, BACK2, BACK3, BACK4, BACK5, RFID_FAILED, RFID_SUCCESSFUL, RFID_TOO_SOON, RFID_DONE};
+enum State {IDLE, BACK0, RFID, COIN, ON_ON, STAGE1, STAGE2, STAGE3, STAGE4};
 
 void stateInit();
 void stateEncode(State state);

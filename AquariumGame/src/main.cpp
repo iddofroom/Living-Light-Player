@@ -1,7 +1,7 @@
 #include "SdLedsPlayer.h"
 #include "state.h"
 #include "rfid.h"
-#include "quest.h"
+#include "SD.h"
 
 /*
 --------------------------
@@ -31,7 +31,7 @@ volatile bool rfidUnhandledInterrupt = false;
 bool rfidBooted = false;
 
 // leds
-#define LEDS_PER_STRIP 61
+#define LEDS_PER_STRIP 10
 #define MAX_BRIGHTNESS 255
 #define DEFAULT_BRIGHTNESS 50 // range is 0 (off) to 255 (max brightness)
 
@@ -62,8 +62,8 @@ unsigned long debounceDelay = BTN_DEBOUNCE_TIME;
 #define BTN_RED 35
 #define BTN_GREEN 36
 
-#define BTN_EXTRA_1 37
-#define BTN_EXTRA_2 39
+#define BTN_ON_ON 37
+#define KNOB 39
 #define RELAY 40
 #define LIGHT_SENSOR 41
 
@@ -72,18 +72,25 @@ unsigned long debounceDelay = BTN_DEBOUNCE_TIME;
 #define JOYSTICK_LEFT 4
 #define JOYSTICK_RIGHT 13
 
+int knob_last_value = 0;
+
 int buttons[] = { BTN_RED, BTN_YELLOW,
 BTN_BLUE, BTN_GREEN, JOYSTICK_UP, JOYSTICK_DOWN,
-JOYSTICK_LEFT, JOYSTICK_RIGHT, BTN_EXTRA_1, BTN_EXTRA_2 };
+JOYSTICK_LEFT, JOYSTICK_RIGHT, BTN_ON_ON };
 
+File questLoggerFile;
+
+int on_on_btn_state = LOW;
 
 // audio
 #define STATE_DEBOUNCE_TIME 2
 
+int KNOB_CHANGE = 5; // minimum change to consider triggered
 int curr_file_i = 0;
-// enum State back_states[] = {BACK0, BACK1, BACK2, BACK3, BACK4, BACK5};
-enum State back_states[] = {BACK1};
-const char *files_iter_rr[] = {"0", "1", "2", "3", "4", "5", "quest_fail", "quest_success", "quest_too_soon", "quest_done"};
+// Hidden coupling between files_iter_rr to this array
+// enum State {IDLE, BACK0, RFID, COIN, ON_ON, STAGE1, STAGE2, STAGE3, STAGE4};
+enum State back_states[] = { BACK0 };
+const char *files_iter_rr[] = {"loop", "rfid", "coin", "on_on", "stage1", "stage2", "stage3", "stage4"};
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
  * and writing it to the leds.
@@ -114,6 +121,18 @@ void readCard()
   rfidUnhandledInterrupt = true;
 }
 
+void initSdWriter()
+{
+    Serial.println("SD card started.");
+    if (!SD.begin(BUILTIN_SDCARD))
+    {
+        Serial.println(F("SD card begin() failed"));
+        return;
+    }
+    Serial.println(F("SD card begin() success"));
+    questLoggerFile = SD.open("aquarium.txt", FILE_WRITE);
+}
+
 // Debounced check that button is indeed pressed
 bool is_button_pressed(int btn_port) {
   int reading = digitalRead(btn_port);
@@ -134,35 +153,14 @@ bool is_button_pressed(int btn_port) {
   lastBtnsState[btn_port] = reading;
 
   return false;
-
-
-
-  // // Key switch reading with debounce
-  // int reading = digitalRead(btn_port);
-  // if (reading != lastBtnsState[btn_port]) {
-  //   // Reset the debouncing timer
-  //   //lastDebouncedTime[btn_port] = millis();
-  //   lastDTime = millis();
-  // }
-  // lastBtnsState[btn_port] = reading;
-  // if ((millis() - lastDTime) > debounceDelay) {
-  //   if (reading != lastBtnsState[btn_port]) {
-  //     lastBtnsState[btn_port] = reading;
-  //     if (lastBtnsState[btn_port] == HIGH) {
-  //       Serial.println("Button triggered!");
-  //       // Serial.println(btn_port);
-  //       return true;
-  //     }
-  //   }
-  // }
-  // return false;
 }
+
 
 void setup_buttons() {
   for (int i = 0; i < BTN_COUNT; i++) {
     pinMode(buttons[i], INPUT_PULLUP);   
   }
-
+  
   pinMode(RELAY, OUTPUT);
   digitalWrite(RELAY, LOW);
   
@@ -190,7 +188,6 @@ void setup()
     Serial.println("SD card setup failed, fix and reset to continue");
     delay(1000);
   }
-  Serial.println("SD card started.");
   initSdWriter();
   sd_leds_player.setBrightness(brightness);
 
@@ -221,41 +218,26 @@ void setup()
   delay(1000);
 }
 
+void set_song_by_state() {
+  bool status = sd_leds_player.load_file(files_iter_rr[state - 1]);
+    if (!status)
+    {
+      Serial.println("file load from SD failed");
+      delay(1000);
+    }
+    frame_timestamp = sd_leds_player.load_next_frame();
+}
+
 void read_rfid_using_interrupts() {
   if (!rfidBooted) {
     return;
   }
   if (rfidUnhandledInterrupt)
   { // new read interrupt
-    // Serial.println(F("RFID reader interrupt triggered. "));
-    QuestState questState = handleQuestLogic(rfid);
-    switch(questState) {
-      case QUEST_STATE_FAILED:
-        state = RFID_FAILED;
-        break;
-      case QUEST_STATE_SUCCESSFUL:
-        state = RFID_SUCCESSFUL;
-        break;
-      case QUEST_STATE_TOO_SOON:
-        state = RFID_TOO_SOON;
-        break;
-      case QUEST_STATE_DONE:
-        state = RFID_DONE;
-        break;
-      default:
-        break;
-    }
-    // Load leds file according to logic selected state
-    if (state != IDLE) 
-    {
-      bool status = sd_leds_player.load_file(files_iter_rr[state - 1]);
-      if (!status)
-      {
-        Serial.println("file load from SD failed");
-        delay(1000);
-      }
-      frame_timestamp = sd_leds_player.load_next_frame();
-    }
+    Serial.println(F("RFID reader interrupt triggered. "));
+    state = RFID;
+    set_song_by_state();
+    
     Serial.print(F("Quest logic set state to: "));
     Serial.println(state);
     clearRfidInt(rfid);
@@ -266,8 +248,45 @@ void read_rfid_using_interrupts() {
   activateRfidReception(rfid);
 }
 
+// Knob is triggered if change from last read is bigger than KNOB_CHANGE
+bool is_knob_triggered() {
+  int knobValue = analogRead(KNOB);
+  int absoluteChange = abs(knobValue - knob_last_value);
+  if(absoluteChange > KNOB_CHANGE) {
+    return true;
+  }
+  return false;
+}
+
+// Valid upon starting the game (aka big red button pressed)
+void check_game_state() {
+  if (state == STAGE1) {
+    if(is_button_pressed(BTN_GREEN)) {
+      state = STAGE2;
+      set_song_by_state();
+    }
+  } else if (state == STAGE2 || state == STAGE3) {
+    bool is_joystick_pressed = (
+      is_button_pressed(JOYSTICK_UP) || 
+      is_button_pressed(JOYSTICK_DOWN) ||
+      is_button_pressed(JOYSTICK_LEFT) ||
+      is_button_pressed(JOYSTICK_RIGHT)
+      );
+
+    if (is_joystick_pressed) {
+      state = STAGE3; // LOUGH as long as people play with it
+      set_song_by_state();
+    }
+    if(state == STAGE3 && is_knob_triggered()) {
+      state = STAGE4;
+      set_song_by_state();
+    }
+  }
+}
+
 bool is_light_sensor_triggered() {
   int lightValue = analogRead(LIGHT_SENSOR);
+  // TODO - add debounced
   if (lightValue > LIGHT_THRESHOLD) {
     return true;
   }
@@ -276,42 +295,47 @@ bool is_light_sensor_triggered() {
 
 void loop()
 {
-  is_button_pressed(BTN_BIG_RED);
-  is_button_pressed(BTN_RED);
-  is_button_pressed(BTN_BLUE);
-  is_button_pressed(BTN_GREEN);  
-  is_button_pressed(BTN_YELLOW);
-  is_button_pressed(JOYSTICK_DOWN);
-  is_button_pressed(JOYSTICK_UP);
-  is_button_pressed(JOYSTICK_LEFT);
-  is_button_pressed(JOYSTICK_RIGHT);
-  is_button_pressed(BTN_EXTRA_1);
-  is_button_pressed(BTN_EXTRA_2);
-  bool light_triggered = is_light_sensor_triggered();
-  if(light_triggered) {
+  // Only on idle state we should listen for events
+  bool should_listen_for_events = state != IDLE;
+  if(should_listen_for_events) {
+    is_button_pressed(BTN_RED);
+    is_button_pressed(BTN_BLUE);
+    is_button_pressed(BTN_YELLOW);
+    is_button_pressed(JOYSTICK_DOWN);
+    is_button_pressed(JOYSTICK_UP);
+    is_button_pressed(JOYSTICK_LEFT);
+    is_button_pressed(JOYSTICK_RIGHT);
+
+    if(is_button_pressed(BTN_ON_ON)) {
+        state = ON_ON;
+        set_song_by_state();
+    }
+
+    if(is_button_pressed(BTN_BIG_RED)) {
+      // Start Game
+      state = STAGE1;
       digitalWrite(RELAY, HIGH);
-  }else {
-      digitalWrite(RELAY, LOW);
+      set_song_by_state();
+    }
+
+    check_game_state();
+
+    bool light_triggered = is_light_sensor_triggered();
+    if(light_triggered) {
+        state = COIN;
+        set_song_by_state();
+    }
+    
+    read_rfid_using_interrupts();
   }
-  
-  read_rfid_using_interrupts();
 
-  // Background LED file loading
-
+  // If file ended - restart same file
   if (!sd_leds_player.is_file_playing())
   {
-    state = back_states[curr_file_i];
-    Serial.print("No file is playing, loading new file number: ");
+    state = IDLE; // Return to first background idle music
+    Serial.print("No file is playing, restarting first file ");
     Serial.println(files_iter_rr[state - 1]);
-    bool status = sd_leds_player.load_file(files_iter_rr[state - 1]); // minus 1 to translate state to filename because IDLE state is 0
-    if (!status)
-    {
-      // Serial.println("file load from SD failed");
-      delay(1000);
-    }
-    curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
-    clearQuestCurrUid();
-    frame_timestamp = sd_leds_player.load_next_frame();
+    set_song_by_state();
   }
 
   // State tracking between two teensies
