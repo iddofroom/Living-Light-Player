@@ -45,7 +45,6 @@ unsigned long frame_timestamp;
 // buttons
 
 #define BTN_DEBOUNCE_TIME 50
-#define STATE_DEBOUNCE_TIME 2
 #define BTN_COUNT 10
 #define MAX_IO 50 //50 is the max number of IO pins
 
@@ -219,7 +218,7 @@ void setup()
 }
 
 void set_song_by_state() {
-  bool status = sd_leds_player.load_file(files_iter_rr[state]);
+  bool status = sd_leds_player.load_file(files_iter_rr[state-1]); // -1 to translate state to filename because IDLE state is 0 and must not be used
     if (!status)
     {
       Serial.println("file load from SD failed");
@@ -295,8 +294,8 @@ bool is_light_sensor_triggered() {
 
 void loop()
 {
-  // Only on idle state we should listen for events
-  bool should_listen_for_events = state == IDLE;
+  // Only on background state we should listen for events
+  bool should_listen_for_events = state == BACK0;
   if(should_listen_for_events) {
     is_button_pressed(BTN_RED);
     is_button_pressed(BTN_BLUE);
@@ -332,9 +331,9 @@ void loop()
   // If file ended - restart same file
   if (!sd_leds_player.is_file_playing())
   {
-    state = IDLE; // Return to first background idle music
+    state = BACK0; // Return to first background idle music
     Serial.print("No file is playing, restarting first file ");
-    Serial.println(files_iter_rr[state]);
+    Serial.println(files_iter_rr[state-1]);
     set_song_by_state();
   }
 
