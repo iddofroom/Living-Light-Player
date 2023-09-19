@@ -54,22 +54,24 @@ unsigned long lastDebouncedTime[MAX_IO];
 
 unsigned long debounceDelay = BTN_DEBOUNCE_TIME;
 
-#define BTN_BIG_RED 38
+#define BTN_BIG_RED 37
 
 #define BTN_YELLOW 33
 #define BTN_BLUE 34
 #define BTN_RED 35
 #define BTN_GREEN 36
 
-#define BTN_ON_ON 37
-#define KNOB 39
-#define RELAY 40
-#define LIGHT_SENSOR 41
+#define BTN_ON_ON 28
+#define MOTOR 29
 
-#define JOYSTICK_UP 0
-#define JOYSTICK_DOWN 3
-#define JOYSTICK_LEFT 4
-#define JOYSTICK_RIGHT 13
+#define KNOB 40
+#define RELAY 39
+#define LIGHT_SENSOR 38
+
+#define JOYSTICK_UP 24
+#define JOYSTICK_DOWN 25
+#define JOYSTICK_LEFT 26
+#define JOYSTICK_RIGHT 27
 
 int knob_last_value = 0;
 
