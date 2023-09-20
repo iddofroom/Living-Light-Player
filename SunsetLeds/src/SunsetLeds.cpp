@@ -3,7 +3,7 @@
 #include "SD.h"
 
 // boot mode
-#define BOOT_MODE_PIN 23
+#define BOOT_MODE_PIN 9
 
 // leds
 #define LEDS_PER_STRIP 254
