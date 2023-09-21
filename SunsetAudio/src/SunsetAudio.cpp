@@ -122,11 +122,14 @@ unsigned long lastDebouncedTime[MAX_IO];
 
 unsigned long debounceDelay = BTN_DEBOUNCE_TIME;
 
-#define BTN_MUSHROOM 33
-#define BTN_ACID 34
-#define BTN_SUNRISE 35
-#define BTN_SUNSET 36
-#define RELAY 40
+#define ARDUINO_RFID 33
+#define AUTOMODE 36
+
+#define BTN_MUSHROOM 37
+#define BTN_ACID 38
+#define BTN_SUNRISE 40
+#define BTN_SUNSET 39
+#define RELAY 34
 
 int buttons[] = { BTN_SUNRISE, BTN_MUSHROOM, BTN_ACID, BTN_SUNSET };
 
