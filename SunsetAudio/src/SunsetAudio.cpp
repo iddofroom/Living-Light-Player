@@ -90,7 +90,6 @@ const char *files_iter_rr[] = {"sunset1.wav", "sunset2.wav", "sunset3.wav", "sun
 // buttons
 
 #define BTN_DEBOUNCE_TIME 50
-#define BTN_COUNT 4
 #define MAX_IO 50 //50 is the max number of IO pins
 
 int lastBtnsState[MAX_IO]; 
@@ -108,7 +107,7 @@ unsigned long debounceDelay = BTN_DEBOUNCE_TIME;
 #define BTN_SUNRISE 40
 #define RELAY 34
 
-int buttons[] = { ARDUINO_RFID, BTN_MUSHROOM, BTN_ACID, BTN_SUNSET, BTN_SUNRISE };
+byte buttons[] = { ARDUINO_RFID, BTN_MUSHROOM, BTN_ACID, BTN_SUNSET, BTN_SUNRISE };
 
 // Debounced check that button is indeed pressed
 bool is_button_pressed(int btn_port) {
@@ -133,7 +132,7 @@ bool is_button_pressed(int btn_port) {
 }
 
 void setup_buttons() {
-  for (int i = 0; i < BTN_COUNT; i++) {
+  for (byte i = 0; i < (sizeof(buttons)/sizeof(buttons[0])); i++) {
     pinMode(buttons[i], INPUT_PULLUP);   
   }
   
@@ -141,7 +140,7 @@ void setup_buttons() {
   digitalWrite(RELAY, LOW);
   
   // we are initializing an array of maximum number of ports
-  for (int i = 0; i < MAX_IO; i++) {
+  for (byte i = 0; i < MAX_IO; i++) {
     lastBtnsState[i] = HIGH;
     btnsState[i] = HIGH;
     lastDebouncedTime[i] = 0;
