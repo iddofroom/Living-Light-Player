@@ -30,35 +30,8 @@
 #include <SPI.h>
 #include <SD.h>
 #include <SerialFlash.h>
-#include "rfid.h"
 #include "state.h"
 
-/*
---------------------------
-|      RFID WIRING       |
---------------------------
-|Teensy 3.5 ->    RFID   |
---------------------------
-|    G      |      G     |
-|    3.3V   |     3.3V   |
-|    1      |     IRQ    |
-|    9      |     RST    |
-|    10     |     SDA    | // this collides with the Audio, can change to what?
-|    11     |     MOSI   |
-|    12     |     MISO   |
-|    13     |     SCK    |
---------------------------
-*/
-
-// rfid
-#define SS_PIN 10
-#define RST_PIN 9
-#define IRQ_PIN 1 // Configurable, depends on hardware
-// #define ERRORLED1 23
-
-MFRC522 rfid(SS_PIN, RST_PIN); // Instance of the class
-volatile bool rfidUnhandledInterrupt = false;
-bool rfidBooted = false;
 
 // audio
 
@@ -88,6 +61,10 @@ AudioControlSGTL5000     sgtl5000_1;
 //#define SDCARD_CS_PIN    4
 //#define SDCARD_MOSI_PIN  11
 //#define SDCARD_SCK_PIN   13
+
+// playing mode
+bool interactiveMode = true;
+bool playingInteractiveSong = false;
 
 #define STATE_DEBOUNCE_TIME 1
 
@@ -123,15 +100,15 @@ unsigned long lastDebouncedTime[MAX_IO];
 unsigned long debounceDelay = BTN_DEBOUNCE_TIME;
 
 #define ARDUINO_RFID 33
-#define AUTOMODE 36
+#define BOOT_MODE_PIN 36
 
 #define BTN_MUSHROOM 37
 #define BTN_ACID 38
-#define BTN_SUNRISE 40
 #define BTN_SUNSET 39
+#define BTN_SUNRISE 40
 #define RELAY 34
 
-int buttons[] = { BTN_SUNRISE, BTN_MUSHROOM, BTN_ACID, BTN_SUNSET };
+int buttons[] = { ARDUINO_RFID, BTN_MUSHROOM, BTN_ACID, BTN_SUNSET, BTN_SUNRISE };
 
 // Debounced check that button is indeed pressed
 bool is_button_pressed(int btn_port) {
@@ -172,18 +149,6 @@ void setup_buttons() {
 }
 
 
-// RFID callback function
-/**
- * MFRC522 interrupt serving routine
- */
-void readCard()
-{
-    // we only flag that we got interrupt.
-    // this will be handled in the loop
-    rfidUnhandledInterrupt = true;
-}
-
-
 void setup() {
     Serial.begin(115200);
     Serial.println("Serial Port Started.");
@@ -214,26 +179,16 @@ void setup() {
     // Teensies State setup
     stateInit();
 
-    // RFID reader setup
-    rfidBooted = rfidInit(rfid);
-    if (rfidBooted)
+    // boot mode
+    pinMode(BOOT_MODE_PIN, INPUT_PULLUP);
+    if (digitalRead(BOOT_MODE_PIN) == LOW)
     {
-        Serial.println(F("RFID Card reader initialized successfully."));
+        interactiveMode = false;
+        Serial.println("Boot mode pin is LOW, mode is set to AUTO");
+    } else {
+        interactiveMode = true;
+        Serial.println("Boot mode pin is HIGH, mode is set to INTERACTIVE");
     }
-    else
-    {
-        Serial.println(F("RFID initialization failed, continuing without it and turning on ERROR LED"));
-        // digitalWrite(ERRORLED1, HIGH);
-    }
-    // interrupt section
-    /* setup IRQ pin */
-    pinMode(IRQ_PIN, INPUT_PULLUP);
-    /* Allow selected irq to be propagated to IRQ pin */
-    allowRfidRxInt(rfid);
-    /* Activate interrupt in teensy */
-    attachInterrupt(digitalPinToInterrupt(IRQ_PIN), readCard, FALLING);
-    // set interrupt flag
-    rfidUnhandledInterrupt = false;
 }
 
 void playFile(const char *filename)
@@ -264,70 +219,72 @@ void stopFile()
     playWav1.stop();
 }
 
-void read_rfid_using_interrupts() {
-  if (!rfidBooted) {
-    return;
-  }
-  if (rfidUnhandledInterrupt)
-  { // new read interrupt
-    Serial.println(F("RFID reader interrupt triggered. "));
+void handle_rfid() {
+  if (is_button_pressed(ARDUINO_RFID))
+  {
+    Serial.println(F("RFID reader indication is HIGH. "));
     state = RFID;
     Serial.print(F("RFID set state to: "));
     Serial.println(state);
 
-    playFile(files_iter_rr[state-1]);
     digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, TODO: verify relay on/off settings
-
-    clearRfidInt(rfid);
-    rfid.PICC_HaltA(); // Halting the PICC takes relatively alot of time but it doesn't matter as we change the track anyways
-    rfidUnhandledInterrupt = false;
+    playFile(files_iter_rr[state-1]);
+    playingInteractiveSong = true;
   }
-  activateRfidReception(rfid);
 }
 
 
 void loop() {
-    // Check for user request from buttons, do we want to handle case of SUNRISE+SUNSET pressed? currently priority is given to SUNRISE
-    if (is_button_pressed(BTN_SUNRISE)) {
-        if (is_button_pressed(BTN_ACID)) {
-            Serial.println("SUNRISE button pressed with ACID select");
-            state = SUNRISE_ACID;
-        } else if (is_button_pressed(BTN_MUSHROOM)) {
-            Serial.println("SUNRISE button pressed with MUSHROOM select");
-            state = SUNRISE_MUSHROOM;
-        } else {
-            Serial.println("SUNRISE button pressed with no select");
-            state = SUNRISE;
+    if (!playingInteractiveSong){
+        // Check for user request from buttons, do we want to handle case of SUNRISE+SUNSET pressed? currently priority is given to SUNRISE
+        if (is_button_pressed(BTN_SUNRISE)) {
+            if (is_button_pressed(BTN_ACID)) {
+                Serial.println("SUNRISE button pressed with ACID select");
+                state = SUNRISE_ACID;
+            } else if (is_button_pressed(BTN_MUSHROOM)) {
+                Serial.println("SUNRISE button pressed with MUSHROOM select");
+                state = SUNRISE_MUSHROOM;
+            } else {
+                Serial.println("SUNRISE button pressed with no select");
+                state = SUNRISE;
+            }
+            digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, TODO: verify relay on/off settings
+            playFile(files_iter_rr[state-1]);
+            playingInteractiveSong = true;
+        } else if (is_button_pressed(BTN_SUNSET)) {
+            if (is_button_pressed(BTN_ACID)) {
+                Serial.println("SUNSET button pressed with ACID select");
+                state = SUNSET_ACID;
+            } else if (is_button_pressed(BTN_MUSHROOM)) {
+                Serial.println("SUNSET button pressed with MUSHROOM select");
+                state = SUNSET_MUSHROOM;
+            } else {
+                Serial.println("SUNSET button pressed with no select");
+                state = SUNSET;
+            }
+            digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, TODO: verify relay on/off settings
+            playFile(files_iter_rr[state-1]);
+            playingInteractiveSong = true;
         }
-        digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, TODO: verify relay on/off settings
-        playFile(files_iter_rr[state-1]);
-    } else if (is_button_pressed(BTN_SUNSET)) {
-        if (is_button_pressed(BTN_ACID)) {
-            Serial.println("SUNSET button pressed with ACID select");
-            state = SUNSET_ACID;
-        } else if (is_button_pressed(BTN_MUSHROOM)) {
-            Serial.println("SUNSET button pressed with MUSHROOM select");
-            state = SUNSET_MUSHROOM;
-        } else {
-            Serial.println("SUNSET button pressed with no select");
-            state = SUNSET;
-        }
-        digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, TODO: verify relay on/off settings
-        playFile(files_iter_rr[state-1]);
-    } else {
-        state = IDLE;
-    }
 
-    // RFID reading using interrupts
-    read_rfid_using_interrupts();
+        // RFID indication handling
+        handle_rfid();
+    }
 
     // If no file is playing for more than the quietDelay set, play next background file
     if (!playWav1.isPlaying()) {
+        playingInteractiveSong = false; // reallow interaction if no song is playing
         if((millis() - lastPlayTime) > quietDelay) {
-            state = back_states[curr_file_i];
+            if (!interactiveMode) {     // non interactive mode rotates on background states
+                state = back_states[curr_file_i];
+                curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
+            } else {
+                state = BACK5; // TODO: what is the background state for interactive mode?
+            }
+            Serial.print("No file is playing, loading new file number: ");
+            Serial.println(files_iter_rr[state - 1]);
             playFile(files_iter_rr[state-1]);
             lastPlayTime = millis();
-            curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
         }
     } else {
         lastPlayTime = millis();
