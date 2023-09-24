@@ -66,7 +66,7 @@ AudioControlSGTL5000     sgtl5000_1;
 bool interactiveMode = true;
 bool playingInteractiveSong = false;
 
-#define STATE_DEBOUNCE_TIME 1
+#define STATE_DEBOUNCE_TIME 500
 
 State state, prevState = IDLE;
 State lastState = IDLE;
@@ -75,7 +75,7 @@ unsigned long stateDebounceDelay = STATE_DEBOUNCE_TIME;
 unsigned long songStartTime = 0;
 
 unsigned long lastPlayTime = 0;
-unsigned long quietDelay = 300000; // in ms, divide by 60000 for minutes
+unsigned long quietDelay = 1000; // in ms, divide by 60000 for minutes
 
 unsigned long lastMonitorTime = 0;
 unsigned long MonitorDelay = 5000;
@@ -92,8 +92,8 @@ const char *files_iter_rr[] = {"sunset1.wav", "sunset2.wav", "sunset3.wav", "sun
 #define BTN_DEBOUNCE_TIME 50
 #define MAX_IO 50 //50 is the max number of IO pins
 
-int lastBtnsState[MAX_IO]; 
-int btnsState[MAX_IO];
+uint8_t lastBtnsState[MAX_IO]; 
+uint8_t btnsState[MAX_IO];
 unsigned long lastDebouncedTime[MAX_IO];
 
 unsigned long debounceDelay = BTN_DEBOUNCE_TIME;
@@ -103,15 +103,15 @@ unsigned long debounceDelay = BTN_DEBOUNCE_TIME;
 
 #define BTN_MUSHROOM 38
 #define BTN_ACID 39
-#define BTN_SUNSET 40
-#define BTN_SUNRISE 41
+#define BTN_SUNSET 24
+#define BTN_SUNRISE 26
 #define RELAY 34
 
-byte buttons[] = { ARDUINO_RFID, BTN_MUSHROOM, BTN_ACID, BTN_SUNSET, BTN_SUNRISE };
+uint8_t buttons[] = { ARDUINO_RFID, BTN_MUSHROOM, BTN_ACID, BTN_SUNSET, BTN_SUNRISE };
 
 // Debounced check that button is indeed pressed
-bool is_button_pressed(int btn_port) {
-  int reading = digitalRead(btn_port);
+bool is_button_pressed(uint8_t btn_port) {
+  uint8_t reading = digitalRead(btn_port);
   if (reading != lastBtnsState[btn_port]) {
     // reset the debouncing timer
     lastDebouncedTime[btn_port] = millis();
@@ -119,7 +119,7 @@ bool is_button_pressed(int btn_port) {
   if ((millis() - lastDebouncedTime[btn_port]) > debounceDelay) {
     if (reading != btnsState[btn_port]) {
       btnsState[btn_port] = reading;
-      if (btnsState[btn_port] == HIGH) {
+      if (btnsState[btn_port] == LOW) {
         Serial.println("Button pressed");
         Serial.println(btn_port);
         return true;
@@ -132,7 +132,7 @@ bool is_button_pressed(int btn_port) {
 }
 
 void setup_buttons() {
-  for (byte i = 0; i < (sizeof(buttons)/sizeof(buttons[0])); i++) {
+  for (uint8_t i = 0; i < (sizeof(buttons)/sizeof(buttons[0])); i++) {
     pinMode(buttons[i], INPUT_PULLUP);   
   }
   
@@ -140,9 +140,9 @@ void setup_buttons() {
   digitalWrite(RELAY, LOW);
   
   // we are initializing an array of maximum number of ports
-  for (byte i = 0; i < MAX_IO; i++) {
-    lastBtnsState[i] = HIGH;
-    btnsState[i] = HIGH;
+  for (uint8_t i = 0; i < MAX_IO; i++) {
+    lastBtnsState[i] = LOW;
+    btnsState[i] = LOW;
     lastDebouncedTime[i] = 0;
   }
 }
@@ -237,10 +237,10 @@ void loop() {
     if (!playingInteractiveSong){
         // Check for user request from buttons, do we want to handle case of SUNRISE+SUNSET pressed? currently priority is given to SUNRISE
         if (is_button_pressed(BTN_SUNRISE)) {
-            if (is_button_pressed(BTN_ACID)) {
+            if (digitalRead(BTN_ACID)) {
                 Serial.println("SUNRISE button pressed with ACID select");
                 state = SUNRISE_ACID;
-            } else if (is_button_pressed(BTN_MUSHROOM)) {
+            } else if (digitalRead(BTN_MUSHROOM)) {
                 Serial.println("SUNRISE button pressed with MUSHROOM select");
                 state = SUNRISE_MUSHROOM;
             } else {
@@ -251,10 +251,10 @@ void loop() {
             playFile(files_iter_rr[state-1]);
             playingInteractiveSong = true;
         } else if (is_button_pressed(BTN_SUNSET)) {
-            if (is_button_pressed(BTN_ACID)) {
+            if (digitalRead(BTN_ACID)) {
                 Serial.println("SUNSET button pressed with ACID select");
                 state = SUNSET_ACID;
-            } else if (is_button_pressed(BTN_MUSHROOM)) {
+            } else if (digitalRead(BTN_MUSHROOM)) {
                 Serial.println("SUNSET button pressed with MUSHROOM select");
                 state = SUNSET_MUSHROOM;
             } else {
