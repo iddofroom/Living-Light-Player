@@ -101,10 +101,10 @@ unsigned long debounceDelay = BTN_DEBOUNCE_TIME;
 #define ARDUINO_RFID 33
 #define BOOT_MODE_PIN 36
 
-#define BTN_MUSHROOM 37
-#define BTN_ACID 38
-#define BTN_SUNSET 39
-#define BTN_SUNRISE 40
+#define BTN_MUSHROOM 38
+#define BTN_ACID 39
+#define BTN_SUNSET 40
+#define BTN_SUNRISE 41
 #define RELAY 34
 
 byte buttons[] = { ARDUINO_RFID, BTN_MUSHROOM, BTN_ACID, BTN_SUNSET, BTN_SUNRISE };
