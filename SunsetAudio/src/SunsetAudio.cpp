@@ -222,6 +222,9 @@ void stopFile()
 
 void playInteractive(State state)
 {
+    if (state == IDLE) {
+        return;
+    }
     Serial.print(F("Playing interactive song: "));
     Serial.println(state);
     playFile(files_iter_rr[state-1]);
@@ -244,9 +247,7 @@ void loop() {
                 Serial.println("SUNRISE button pressed with no select");
                 state = SUNRISE;
             }
-            digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, RELAY is inverse logic
-            playFile(files_iter_rr[state-1]);
-            playingInteractiveSong = true;
+            playInteractive(state);
         } else if (is_button_pressed(BTN_SUNSET)) {
             if (!digitalRead(BTN_ACID)) { // selector buttons are active low
                 Serial.println("SUNSET button pressed with ACID select");
@@ -259,13 +260,12 @@ void loop() {
                 Serial.println("SUNSET button pressed with no select");
                 state = SUNSET;
             }
-            digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, RELAY is inverse logic
-            playFile(files_iter_rr[state-1]);
-            playingInteractiveSong = true;
+            playInteractive(state);
         } else if (easterEggEnabled && !digitalRead(BTN_ACID) && !digitalRead(BTN_MUSHROOM)) { // Easter egg handling
             state = RFID;
             Serial.println("Easter egg triggered! state set to: ");
             Serial.println(state);
+            playInteractive(state);
         }
 
         // RFID indication handling
@@ -273,9 +273,8 @@ void loop() {
         {
             Serial.println(F("RFID reader indication is HIGH. "));
             state = RFID;
+            playInteractive(state);
         }
-
-        playInteractive(state);
     }
 
     // If no file is playing for more than the quietDelay set, play next background file
