@@ -65,6 +65,7 @@ AudioControlSGTL5000     sgtl5000_1;
 // playing mode
 bool interactiveMode = true;
 bool playingInteractiveSong = false;
+bool easterEggEnabled = false;
 
 #define STATE_DEBOUNCE_TIME 500
 
@@ -180,6 +181,7 @@ void setup() {
 
     // boot mode
     pinMode(BOOT_MODE_PIN, INPUT_PULLUP);
+    delay(200);
     if (digitalRead(BOOT_MODE_PIN) == LOW)
     {
         interactiveMode = false;
@@ -218,18 +220,13 @@ void stopFile()
     playWav1.stop();
 }
 
-void handle_rfid() {
-  if (is_button_pressed(ARDUINO_RFID))
-  {
-    Serial.println(F("RFID reader indication is HIGH. "));
-    state = RFID;
-    Serial.print(F("RFID set state to: "));
+void playInteractive(State state)
+{
+    Serial.print(F("Playing interactive song: "));
     Serial.println(state);
-
-    digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, TODO: verify relay on/off settings
     playFile(files_iter_rr[state-1]);
     playingInteractiveSong = true;
-  }
+    digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, RELAY is inverse logic
 }
 
 
@@ -237,42 +234,54 @@ void loop() {
     if (!playingInteractiveSong){
         // Check for user request from buttons, do we want to handle case of SUNRISE+SUNSET pressed? currently priority is given to SUNRISE
         if (is_button_pressed(BTN_SUNRISE)) {
-            if (digitalRead(BTN_ACID)) {
+            if (!digitalRead(BTN_ACID)) { // selector buttons are active low
                 Serial.println("SUNRISE button pressed with ACID select");
                 state = SUNRISE_ACID;
-            } else if (digitalRead(BTN_MUSHROOM)) {
+            } else if (!digitalRead(BTN_MUSHROOM)) { // selector buttons are active low
                 Serial.println("SUNRISE button pressed with MUSHROOM select");
                 state = SUNRISE_MUSHROOM;
             } else {
                 Serial.println("SUNRISE button pressed with no select");
                 state = SUNRISE;
             }
-            digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, TODO: verify relay on/off settings
+            digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, RELAY is inverse logic
             playFile(files_iter_rr[state-1]);
             playingInteractiveSong = true;
         } else if (is_button_pressed(BTN_SUNSET)) {
-            if (digitalRead(BTN_ACID)) {
+            if (!digitalRead(BTN_ACID)) { // selector buttons are active low
                 Serial.println("SUNSET button pressed with ACID select");
                 state = SUNSET_ACID;
-            } else if (digitalRead(BTN_MUSHROOM)) {
+            } else if (!digitalRead(BTN_MUSHROOM)) { // selector buttons are active low
                 Serial.println("SUNSET button pressed with MUSHROOM select");
                 state = SUNSET_MUSHROOM;
+                easterEggEnabled = true; // allowing easter egg to be played
             } else {
                 Serial.println("SUNSET button pressed with no select");
                 state = SUNSET;
             }
-            digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, TODO: verify relay on/off settings
+            digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, RELAY is inverse logic
             playFile(files_iter_rr[state-1]);
             playingInteractiveSong = true;
+        } else if (easterEggEnabled && !digitalRead(BTN_ACID) && !digitalRead(BTN_MUSHROOM)) { // Easter egg handling
+            state = RFID;
+            Serial.println("Easter egg triggered! state set to: ");
+            Serial.println(state);
         }
 
         // RFID indication handling
-        handle_rfid();
+        if (is_button_pressed(ARDUINO_RFID))
+        {
+            Serial.println(F("RFID reader indication is HIGH. "));
+            state = RFID;
+        }
+
+        playInteractive(state);
     }
 
     // If no file is playing for more than the quietDelay set, play next background file
     if (!playWav1.isPlaying()) {
         playingInteractiveSong = false; // reallow interaction if no song is playing
+        digitalWrite(RELAY, LOW);       // Turn on relay when no song is playing, RELAY is inverse logic
         if((millis() - lastPlayTime) > quietDelay) {
             if (!interactiveMode) {     // non interactive mode rotates on background states
                 state = back_states[curr_file_i];
@@ -284,6 +293,7 @@ void loop() {
             Serial.println(files_iter_rr[state - 1]);
             playFile(files_iter_rr[state-1]);
             lastPlayTime = millis();
+            easterEggEnabled = false; // easter egg time window closed
         }
     } else {
         lastPlayTime = millis();
