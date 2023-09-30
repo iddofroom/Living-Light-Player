@@ -30,7 +30,7 @@
 #include <SPI.h>
 #include <SD.h>
 #include <SerialFlash.h>
-#include "state.h"
+#include "state_out.h"
 
 
 // audio
@@ -177,7 +177,7 @@ void setup() {
     Serial.println("Audio setup done.");
 
     // Teensies State setup
-    stateInit();
+    stateInitOutput();
 
     // boot mode
     pinMode(BOOT_MODE_PIN, INPUT_PULLUP);

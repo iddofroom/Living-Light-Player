@@ -1,12 +1,12 @@
 #include "SdLedsPlayer.h"
-#include "state.h"
+#include "state_in.h"
 #include "SD.h"
 
 // boot mode
 #define BOOT_MODE_PIN 9
 
 // leds
-#define LEDS_PER_STRIP 254
+#define LEDS_PER_STRIP 821
 #define MAX_BRIGHTNESS 255
 #define DEFAULT_BRIGHTNESS 50 // range is 0 (off) to 255 (max brightness)
 
@@ -16,11 +16,11 @@ uint8_t brightness = DEFAULT_BRIGHTNESS;
 unsigned long frame_timestamp;
 
 // audio
-#define STATE_DEBOUNCE_TIME 1
+#define STATE_DEBOUNCE_TIME 100
 
 int curr_file_i = 0;
 enum State back_states[] = {BACK0, BACK1, BACK2, BACK3, BACK4, BACK5};
-const char *files_iter_rr[] = {"0", "1", "2", "3", "4", "5", "rfid", "sunrise", "sunrise_a", "sunrise_m", "sunset", "sunset_a", "sunset_m"};
+const char *files_iter_rr[] = {"0", "1", "2", "3", "4", "loop", "rfid", "sunrise", "sunrise_a", "sunrise_m", "sunset", "sunset_a", "sunset_m"};
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
  * and writing it to the leds.
@@ -38,7 +38,7 @@ unsigned long lastDebounceTime = 0;
 unsigned long debounceDelay = STATE_DEBOUNCE_TIME;
 
 unsigned long lastPlayTime = 0;
-unsigned long quietDelay = 600000; // in ms, divide by 60000 for minutes
+unsigned long quietDelay = 1000; // in ms
 
 // Monitoring vars
 unsigned long lastMonitorTime = 0;
@@ -84,8 +84,12 @@ void setup()
     initSdWriter();
     loggerFile.println("Sunset Leds started");
 
+    // Teensies State setup
+    stateInitInput();
+
     // boot mode
     pinMode(BOOT_MODE_PIN, INPUT_PULLUP);
+    delay(200);
     if (digitalRead(BOOT_MODE_PIN) == LOW)
     {
         interactiveMode = false;
@@ -126,9 +130,11 @@ void loop()
                 Serial.print("New state received: "); Serial.println(state);
                 loggerFile.println("New state received: " + String(state) + " on GPIO interface");
                 loggerFile.flush();
-                sd_leds_player.load_file(files_iter_rr[state - 1]); // -1 to translate state to filename because IDLE state is 0 and must not be used
-                lastPlayTime = millis();
-                playingInteractiveSong = true;
+                if (state != IDLE) {
+                    sd_leds_player.load_file(files_iter_rr[state - 1]); // -1 to translate state to filename because IDLE state is 0 and must not be used
+                    lastPlayTime = millis();
+                    playingInteractiveSong = true;
+                }
             }
         }
         lastState = reading;
@@ -164,7 +170,6 @@ void loop()
     if (state != prevState)
     {
         songStartTime = millis();
-        stateEncode(state);
     }
     prevState = state;
     // Holding non IDLE state for a short while so we can use debounce on second teensy to capture state safely
