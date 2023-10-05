@@ -66,6 +66,7 @@ AudioControlSGTL5000     sgtl5000_1;
 bool interactiveMode = true;
 bool playingInteractiveSong = false;
 bool easterEggEnabled = false;
+bool firstTimeSong = true;
 
 #define STATE_DEBOUNCE_TIME 500
 
@@ -230,6 +231,7 @@ void playInteractive(State state)
     playFile(files_iter_rr[state-1]);
     playingInteractiveSong = true;
     digitalWrite(RELAY, HIGH);          // Shut off relay when user selects song, RELAY is inverse logic
+    firstTimeSong = false;
 }
 
 
@@ -278,7 +280,7 @@ void loop() {
     }
 
     // If no file is playing for more than the quietDelay set, play next background file
-    if (!playWav1.isPlaying()) {
+    if (!playWav1.isPlaying() && !firstTimeSong) {
         playingInteractiveSong = false; // reallow interaction if no song is playing
         digitalWrite(RELAY, LOW);       // Turn on relay when no song is playing, RELAY is inverse logic
         if((millis() - lastPlayTime) > quietDelay) {
