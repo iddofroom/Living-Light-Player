@@ -1,7 +1,8 @@
 #include "SdLedsPlayer.h"
 #include "state.h"
+#include "SD.h"
 
-#define LEDS_PER_STRIP 254
+#define LEDS_PER_STRIP 300
 #define MAX_BRIGHTNESS 255
 #define DEFAULT_BRIGHTNESS 50  // range is 0 (off) to 255 (max brightness)
 #define STATE_DEBOUNCE_TIME 2
@@ -42,7 +43,11 @@ void setup() {
   //   delay(1);
   // }
   Serial.println("Serial Port Started.");
-  sd_leds_player.setup();
+  while (! sd_leds_player.setup()) {
+    Serial.println("SD card setup failed, fix and reset to continue");
+    delay(1000);
+  }
+  Serial.println("SD card started.");
   sd_leds_player.setBrightness(brightness);
   Serial.print("Brightness set to: "); Serial.print(brightness); Serial.println(" out of 255.");
   
