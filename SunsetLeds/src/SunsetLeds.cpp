@@ -133,7 +133,7 @@ void loop()
                 if (state != IDLE) {
                     sd_leds_player.load_file(files_iter_rr[state - 1]); // -1 to translate state to filename because IDLE state is 0 and must not be used
                     lastPlayTime = millis();
-                    playingInteractiveSong = true;
+                    playingInteractiveSong = false;
                 }
             }
         }
