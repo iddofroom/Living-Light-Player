@@ -73,41 +73,17 @@ void stateEncode (enum State state) {
       break;
 
     // RFID state
-    case RFID_FAILED:
+    case RFID_DONE:
       digitalWriteFast(OUTGPIO0, HIGH);
       digitalWriteFast(OUTGPIO1, HIGH);
       digitalWriteFast(OUTGPIO2, HIGH);
       digitalWriteFast(OUTGPIO3, LOW);
       break;
 
-    // RFID state
-    case RFID_SUCCESSFUL:
-      digitalWriteFast(OUTGPIO0, LOW);
-      digitalWriteFast(OUTGPIO1, LOW);
-      digitalWriteFast(OUTGPIO2, LOW);
-      digitalWriteFast(OUTGPIO3, HIGH);
-      break;
-
-    // RFID state
-    case RFID_TOO_SOON:
-      digitalWriteFast(OUTGPIO0, HIGH);
-      digitalWriteFast(OUTGPIO1, LOW);
-      digitalWriteFast(OUTGPIO2, LOW);
-      digitalWriteFast(OUTGPIO3, HIGH);
-      break;
-
-    // RFID state
-    case RFID_DONE:
-      digitalWriteFast(OUTGPIO0, LOW);
-      digitalWriteFast(OUTGPIO1, HIGH);
-      digitalWriteFast(OUTGPIO2, LOW);
-      digitalWriteFast(OUTGPIO3, HIGH);
-      break;
-
     // LIGHT state
     case LIGHT_TRIGGERED:
-      digitalWriteFast(OUTGPIO0, HIGH);
-      digitalWriteFast(OUTGPIO1, HIGH);
+      digitalWriteFast(OUTGPIO0, LOW);
+      digitalWriteFast(OUTGPIO1, LOW);
       digitalWriteFast(OUTGPIO2, LOW);
       digitalWriteFast(OUTGPIO3, HIGH);
       break;

@@ -29,10 +29,10 @@
 MFRC522 rfid(SS_PIN, RST_PIN); // Instance of the class
 volatile bool rfidUnhandledInterrupt = false;
 bool rfidBooted = false;
-bool rfidEnabled = true;
+bool rfidEnabled = false;
 
 // leds
-#define LEDS_PER_STRIP 254
+#define LEDS_PER_STRIP 451  // CHANGE ACCORDING TO PROJECT LONGEST STRIP + 1 TO MATCH LED FILE
 #define MAX_BRIGHTNESS 255
 #define DEFAULT_BRIGHTNESS 50 // range is 0 (off) to 255 (max brightness)
 
@@ -43,15 +43,16 @@ unsigned long frame_timestamp;
 
 // Light sensor
 #define LIGHT_PIN 23
-#define LIGHT_SENSE_THR 100
-bool lightSenseEnabled = true;
+#define LIGHT_SENSE_THR 900
+int lightLevel = 0;
+bool lightSenseEnabled = false;
 
 // audio
 #define STATE_DEBOUNCE_TIME 2
 
 int curr_file_i = 0;
 enum State back_states[] = {BACK0};
-const char *files_iter_rr[] = {"0", "1", "2", "3", "4", "5", "quest_fail", "quest_success", "quest_too_soon", "quest_done", "light_sens"};
+const char *files_iter_rr[] = {"kayla", "1", "2", "3", "4", "5", "pachamama", "overthinker"};
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
  * and writing it to the leds.
@@ -130,6 +131,9 @@ void setup()
     // set interrupt flag
     rfidUnhandledInterrupt = false;
 
+    // Light sensor setup
+    pinMode(LIGHT_PIN, INPUT);
+
     // Some delay to allow the audio teensy to wake up first
     delay(1000);
 }
@@ -147,15 +151,6 @@ void loop()
             QuestState questState = handleQuestLogic(rfid);
             switch (questState)
             {
-            case QUEST_STATE_FAILED:
-                state = RFID_FAILED;
-                break;
-            case QUEST_STATE_SUCCESSFUL:
-                state = RFID_SUCCESSFUL;
-                break;
-            case QUEST_STATE_TOO_SOON:
-                state = RFID_TOO_SOON;
-                break;
             case QUEST_STATE_DONE:
                 state = RFID_DONE;
                 break;
@@ -166,6 +161,7 @@ void loop()
             if (state != IDLE)
             {
                 rfidEnabled = false; // disable rfid reading when playing rfid song
+                lightSenseEnabled = false; // disable light sensor when playing rfid song
                 bool status = sd_leds_player.load_file(files_iter_rr[state - 1]);
                 if (!status)
                 {
@@ -187,13 +183,14 @@ void loop()
     // Light sensor reading
     if (lightSenseEnabled)
     {
-        int lightLevel = analogRead(LIGHT_PIN);
+        lightLevel = analogRead(LIGHT_PIN);
         if (lightLevel > LIGHT_SENSE_THR)
         {
-            state = LIGHT_TRIGGERED;
             Serial.print("Light sensor triggered with level: ");
             Serial.println(lightLevel);
-            lightSenseEnabled = false;
+            state = LIGHT_TRIGGERED;
+            lightSenseEnabled = false; // disable light sensor when playing light song
+            rfidEnabled = false; // disable rfid reading when playing light song
             // Load leds file
             bool status = sd_leds_player.load_file(files_iter_rr[state - 1]);
             if (!status)
@@ -250,7 +247,7 @@ void loop()
 
     // Monitor printing, not really needed
     // if((millis() - lastMonitorTime) > MonitorDelay) {
-    //   Serial.println(F("COW Leds Alive"));
+    //   Serial.println(F("Leds Alive"));
     //   lastMonitorTime = millis();
     // }
 
