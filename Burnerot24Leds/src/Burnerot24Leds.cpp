@@ -32,7 +32,7 @@ bool rfidBooted = false;
 bool rfidEnabled = false;
 
 // leds
-#define LEDS_PER_STRIP 451  // CHANGE ACCORDING TO PROJECT LONGEST STRIP + 1 TO MATCH LED FILE
+#define LEDS_PER_STRIP 302  // CHANGE ACCORDING TO PROJECT LONGEST STRIP + 1 TO MATCH LED FILE
 #define MAX_BRIGHTNESS 255
 #define DEFAULT_BRIGHTNESS 50 // range is 0 (off) to 255 (max brightness)
 
@@ -42,7 +42,7 @@ uint8_t brightness = DEFAULT_BRIGHTNESS;
 unsigned long frame_timestamp;
 
 // Light sensor
-#define LIGHT_PIN 23
+#define LIGHT_PIN 35
 #define LIGHT_SENSE_THR 900
 int lightLevel = 0;
 bool lightSenseEnabled = false;
