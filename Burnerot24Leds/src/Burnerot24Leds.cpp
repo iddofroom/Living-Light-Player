@@ -83,6 +83,10 @@ void readCard()
     rfidUnhandledInterrupt = true;
 }
 
+void resetController() {
+  SCB_AIRCR = 0x05FA0004; // Request a system reset
+}
+
 void setup()
 {
     Serial.begin(115200);
@@ -136,6 +140,17 @@ void setup()
 
     // Some delay to allow the audio teensy to wake up first
     delay(1000);
+
+    state = BACK0;
+    bool status = sd_leds_player.load_file(files_iter_rr[state - 1]);
+    if (!status)
+    {
+        Serial.println("file load from SD failed");
+        delay(1000);
+    }
+    frame_timestamp = sd_leds_player.load_next_frame();
+    rfidEnabled = true;
+    lightSenseEnabled = true;
 }
 
 void loop()
@@ -205,20 +220,21 @@ void loop()
     // Background LED file loading
     if (!sd_leds_player.is_file_playing())
     {
-        state = back_states[curr_file_i];
-        Serial.print("No file is playing, loading new file number: ");
-        Serial.println(files_iter_rr[state - 1]);
-        bool status = sd_leds_player.load_file(files_iter_rr[state - 1]); // minus 1 to translate state to filename because IDLE state is 0
-        if (!status)
-        {
-            // Serial.println("file load from SD failed");
-            delay(1000);
-        }
-        curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
-        rfidEnabled = true;
-        lightSenseEnabled = true;
-        clearQuestCurrUid();
-        frame_timestamp = sd_leds_player.load_next_frame();
+        resetController();
+        // state = back_states[curr_file_i];
+        // Serial.print("No file is playing, loading new file number: ");
+        // Serial.println(files_iter_rr[state - 1]);
+        // bool status = sd_leds_player.load_file(files_iter_rr[state - 1]); // minus 1 to translate state to filename because IDLE state is 0
+        // if (!status)
+        // {
+        //     // Serial.println("file load from SD failed");
+        //     delay(1000);
+        // }
+        // curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
+        // rfidEnabled = true;
+        // lightSenseEnabled = true;
+        // clearQuestCurrUid();
+        // frame_timestamp = sd_leds_player.load_next_frame();
     }
 
     // State tracking between two teensies
