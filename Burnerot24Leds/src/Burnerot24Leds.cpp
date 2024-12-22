@@ -47,6 +47,9 @@ unsigned long frame_timestamp;
 int lightLevel = 0;
 bool lightSenseEnabled = false;
 
+// GPIO
+#define ARD_INPUT_PIN 36
+
 // audio
 #define STATE_DEBOUNCE_TIME 2
 
@@ -138,6 +141,9 @@ void setup()
     // Light sensor setup
     pinMode(LIGHT_PIN, INPUT);
 
+    // GPIO setup
+    pinMode(ARD_INPUT_PIN, INPUT);
+
     // Some delay to allow the audio teensy to wake up first
     delay(1000);
 
@@ -193,6 +199,23 @@ void loop()
             // Serial.println(millis() - tic);
         }
         activateRfidReception(rfid);
+    }
+
+    // Arduino input used as RFID trigger
+    if (digitalRead(ARD_INPUT_PIN) == HIGH && rfidEnabled)
+    {
+        Serial.println(F("Arduino input triggered."));
+        state = RFID_DONE;
+        // Load leds file
+        bool status = sd_leds_player.load_file(files_iter_rr[state - 1]);
+        if (!status)
+        {
+            Serial.println("file load from SD failed");
+            delay(1000);
+        }
+        frame_timestamp = sd_leds_player.load_next_frame();
+        rfidEnabled = false; // disable rfid reading when playing rfid song
+        lightSenseEnabled = false; // disable light sensor when playing rfid song
     }
 
     // Light sensor reading
