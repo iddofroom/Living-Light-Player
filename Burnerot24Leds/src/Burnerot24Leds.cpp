@@ -43,19 +43,21 @@ unsigned long frame_timestamp;
 
 // Light sensor
 #define LIGHT_PIN 35
-#define LIGHT_SENSE_THR 900
-int lightLevel = 0;
+#define LIGHT_SENSE_THR 600
+int lightLevel;
+int prevLightLevel;
 bool lightSenseEnabled = false;
 
 // GPIO
-#define ARD_INPUT_PIN 36
+#define ARD_INPUT_PIN 34
+#define SWITCH_MODE_PIN 36
 
 // audio
 #define STATE_DEBOUNCE_TIME 2
 
 int curr_file_i = 0;
-enum State back_states[] = {BACK0};
-const char *files_iter_rr[] = {"kayla", "1", "2", "3", "4", "5", "pachamama", "overthinker"};
+enum State back_states[] = {BACK0, BACK1, BACK2};
+const char *files_iter_rr[] = {"kayla", "pachamama", "overthinker", "3", "4", "5", "pachamama", "overthinker"};
 /*
  * SdLedsPlayer is the class that handles reading frames from file on SD card,
  * and writing it to the leds.
@@ -140,13 +142,17 @@ void setup()
 
     // Light sensor setup
     pinMode(LIGHT_PIN, INPUT);
+    lightLevel = analogRead(LIGHT_PIN);
+    prevLightLevel = lightLevel;
 
     // GPIO setup
     pinMode(ARD_INPUT_PIN, INPUT);
+    pinMode(SWITCH_MODE_PIN, INPUT);
 
     // Some delay to allow the audio teensy to wake up first
     delay(1000);
 
+    // Load first background file
     state = BACK0;
     bool status = sd_leds_player.load_file(files_iter_rr[state - 1]);
     if (!status)
@@ -155,8 +161,13 @@ void setup()
         delay(1000);
     }
     frame_timestamp = sd_leds_player.load_next_frame();
-    rfidEnabled = true;
-    lightSenseEnabled = true;
+
+    // Enable RFID and light sensor by default according to switch position
+    if (digitalRead(SWITCH_MODE_PIN) == LOW)
+    {
+        rfidEnabled = true;
+        lightSenseEnabled = true;
+    }
 }
 
 void loop()
@@ -202,7 +213,7 @@ void loop()
     }
 
     // Arduino input used as RFID trigger
-    if (digitalRead(ARD_INPUT_PIN) == HIGH && rfidEnabled)
+    if (digitalRead(ARD_INPUT_PIN) == LOW && rfidEnabled)
     {
         Serial.println(F("Arduino input triggered."));
         state = RFID_DONE;
@@ -219,13 +230,14 @@ void loop()
     }
 
     // Light sensor reading
+    prevLightLevel = lightLevel;
+    lightLevel = analogRead(LIGHT_PIN);
     if (lightSenseEnabled)
     {
-        lightLevel = analogRead(LIGHT_PIN);
-        if (lightLevel > LIGHT_SENSE_THR)
+        if ((lightLevel > LIGHT_SENSE_THR && prevLightLevel <= LIGHT_SENSE_THR) || (lightLevel <= LIGHT_SENSE_THR && prevLightLevel > LIGHT_SENSE_THR))
         {
-            Serial.print("Light sensor triggered with level: ");
-            Serial.println(lightLevel);
+            Serial.print("Light sensor triggered with level: "); Serial.print(lightLevel);
+            Serial.print(" and previous light level: "); Serial.println(prevLightLevel);
             state = LIGHT_TRIGGERED;
             lightSenseEnabled = false; // disable light sensor when playing light song
             rfidEnabled = false; // disable rfid reading when playing light song
@@ -243,21 +255,27 @@ void loop()
     // Background LED file loading
     if (!sd_leds_player.is_file_playing())
     {
-        resetController();
-        // state = back_states[curr_file_i];
-        // Serial.print("No file is playing, loading new file number: ");
-        // Serial.println(files_iter_rr[state - 1]);
-        // bool status = sd_leds_player.load_file(files_iter_rr[state - 1]); // minus 1 to translate state to filename because IDLE state is 0
-        // if (!status)
-        // {
-        //     // Serial.println("file load from SD failed");
-        //     delay(1000);
-        // }
-        // curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
-        // rfidEnabled = true;
-        // lightSenseEnabled = true;
-        // clearQuestCurrUid();
-        // frame_timestamp = sd_leds_player.load_next_frame();
+        if (SWITCH_MODE_PIN == LOW) // sensors enabled mode, reset after every song
+        {
+            resetController();
+        }
+        else    //  sensors disabled mode, play background songs in a loop
+        {
+            state = back_states[curr_file_i];
+            Serial.print("No file is playing, loading new file number: ");
+            Serial.println(files_iter_rr[state - 1]);
+            bool status = sd_leds_player.load_file(files_iter_rr[state - 1]); // minus 1 to translate state to filename because IDLE state is 0
+            if (!status)
+            {
+                // Serial.println("file load from SD failed");
+                delay(1000);
+            }
+            curr_file_i = (curr_file_i + 1) % (sizeof(back_states) / sizeof(back_states[0]));
+            rfidEnabled = false;
+            lightSenseEnabled = false;
+            clearQuestCurrUid();
+            frame_timestamp = sd_leds_player.load_next_frame();
+        }
     }
 
     // State tracking between two teensies
