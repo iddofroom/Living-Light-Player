@@ -43,7 +43,7 @@ unsigned long frame_timestamp;
 
 // Light sensor
 #define LIGHT_PIN 35
-#define LIGHT_SENSE_THR 600
+#define LIGHT_SENSE_THR 900
 int lightLevel;
 int prevLightLevel;
 bool lightSenseEnabled = false;
