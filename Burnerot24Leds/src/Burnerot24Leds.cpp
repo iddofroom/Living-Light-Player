@@ -213,7 +213,7 @@ void loop()
     }
 
     // Arduino input used as RFID trigger
-    if (digitalRead(ARD_INPUT_PIN) == LOW && rfidEnabled)
+    if (digitalRead(ARD_INPUT_PIN) == HIGH && rfidEnabled)
     {
         Serial.println(F("Arduino input triggered."));
         state = RFID_DONE;
