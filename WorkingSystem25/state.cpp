@@ -87,7 +87,55 @@ void stateEncode (enum State state) {
       digitalWriteFast(OUTGPIO2, LOW);
       digitalWriteFast(OUTGPIO3, HIGH);
       break;
+    
+    case BACK8:
+      digitalWriteFast(OUTGPIO0, HIGH);
+      digitalWriteFast(OUTGPIO1, LOW);
+      digitalWriteFast(OUTGPIO2, LOW);
+      digitalWriteFast(OUTGPIO3, HIGH);
+      break;
 
+    case BACK9:
+      digitalWriteFast(OUTGPIO0, LOW);
+      digitalWriteFast(OUTGPIO1, HIGH);
+      digitalWriteFast(OUTGPIO2, LOW);
+      digitalWriteFast(OUTGPIO3, HIGH);
+      break;
+ 
+    case BACK10:
+      digitalWriteFast(OUTGPIO0, HIGH);
+      digitalWriteFast(OUTGPIO1, HIGH);
+      digitalWriteFast(OUTGPIO2, LOW);
+      digitalWriteFast(OUTGPIO3, HIGH);
+      break;     
+      
+    case BACK11:
+      digitalWriteFast(OUTGPIO0, LOW);
+      digitalWriteFast(OUTGPIO1, LOW);
+      digitalWriteFast(OUTGPIO2, HIGH);
+      digitalWriteFast(OUTGPIO3, HIGH);
+      break;   
+        
+    case BACK12:
+      digitalWriteFast(OUTGPIO0, LOW);
+      digitalWriteFast(OUTGPIO1, HIGH);
+      digitalWriteFast(OUTGPIO2, HIGH);
+      digitalWriteFast(OUTGPIO3, HIGH);
+      break;     
+      
+    case BACK13:
+      digitalWriteFast(OUTGPIO0, HIGH);
+      digitalWriteFast(OUTGPIO1, LOW);
+      digitalWriteFast(OUTGPIO2, HIGH);
+      digitalWriteFast(OUTGPIO3, HIGH);
+      break;   
+        
+    case BACK14:
+      digitalWriteFast(OUTGPIO0, HIGH);
+      digitalWriteFast(OUTGPIO1, HIGH);
+      digitalWriteFast(OUTGPIO2, HIGH);
+      digitalWriteFast(OUTGPIO3, HIGH);
+      break;   
     default:
       digitalWriteFast(OUTGPIO0, LOW);
       digitalWriteFast(OUTGPIO1, LOW);
