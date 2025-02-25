@@ -1,6 +1,5 @@
 #include "SdLedsPlayer.h"
 #include "state.h"
-#include "SD.h"
 
 
 #define CPU_RESTART_ADDR (uint32_t *)0xE000ED0C
@@ -10,7 +9,7 @@
 #define LEDS_PER_STRIP 690
 #define MAX_BRIGHTNESS 255
 #define DEFAULT_BRIGHTNESS 50  // range is 0 (off) to 255 (max brightness)
-#define STATE_DEBOUNCE_TIME 20  
+#define STATE_DEBOUNCE_TIME 2  
 #define ERRORLED1 23
 // #define ERRORLED2 23
 
@@ -18,7 +17,7 @@
 int curr_file_i = 0;
 enum State back_states[] = {BACK0, BACK1};
 const char *files_iter_rr[] = {"pachamama", "overthinker"}; // Make sure file list is not longer than state list
-// Song tracking
+// Song trackin g
 enum State state, prevState = IDLE;
 unsigned long currSongTime = 0, songStartTime = 0, procTime = 0;
 unsigned long stateDebounceDelay = STATE_DEBOUNCE_TIME;
